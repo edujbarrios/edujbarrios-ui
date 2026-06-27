@@ -41,6 +41,14 @@ Initial components include:
 - Source Citation Card
 - Model Switcher
 - Token Usage Pill
+- Gradient Split Button
+- Glass Metric Card
+- Neural Search Input
+- Voice Wave Loader
+- Context Menu Panel
+- Shortcut Key
+- Modal Shell
+- Status Toast Stack
 
 ## Getting Started
 

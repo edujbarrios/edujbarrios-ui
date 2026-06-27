@@ -1,16 +1,24 @@
 import type { ComponentSlug } from "@/lib/components";
 import { AgentStepTimeline } from "@/components/ui/agent-step-timeline";
 import { AiChatInput } from "@/components/ui/ai-chat-input";
+import { ContextMenuPanel } from "@/components/ui/context-menu-panel";
 import { CopyCodeCard } from "@/components/ui/copy-code-card";
 import { FloatingNavDock } from "@/components/ui/floating-nav-dock";
 import { GlassCommandCard } from "@/components/ui/glass-command-card";
+import { GlassMetricCard } from "@/components/ui/glass-metric-card";
 import { GlowLoader } from "@/components/ui/glow-loader";
+import { GradientSplitButton } from "@/components/ui/gradient-split-button";
+import { ModalShell } from "@/components/ui/modal-shell";
 import { ModelSwitcher } from "@/components/ui/model-switcher";
+import { NeuralSearchInput } from "@/components/ui/neural-search-input";
 import { NeonGradientButton } from "@/components/ui/neon-gradient-button";
 import { PromptBadge } from "@/components/ui/prompt-badge";
+import { ShortcutKey } from "@/components/ui/shortcut-key";
 import { SourceCitationCard } from "@/components/ui/source-citation-card";
+import { StatusToastStack } from "@/components/ui/status-toast-stack";
 import { StreamingResponseBubble } from "@/components/ui/streaming-response-bubble";
 import { TokenUsagePill } from "@/components/ui/token-usage-pill";
+import { VoiceWaveLoader } from "@/components/ui/voice-wave-loader";
 
 const previews: Record<ComponentSlug, React.ComponentType> = {
   "neon-gradient-button": NeonGradientButton,
@@ -25,6 +33,14 @@ const previews: Record<ComponentSlug, React.ComponentType> = {
   "source-citation-card": SourceCitationCard,
   "model-switcher": ModelSwitcher,
   "token-usage-pill": TokenUsagePill,
+  "gradient-split-button": GradientSplitButton,
+  "glass-metric-card": GlassMetricCard,
+  "neural-search-input": NeuralSearchInput,
+  "voice-wave-loader": VoiceWaveLoader,
+  "context-menu-panel": ContextMenuPanel,
+  "shortcut-key": ShortcutKey,
+  "modal-shell": ModalShell,
+  "status-toast-stack": StatusToastStack,
 };
 
 type ComponentPreviewProps = {

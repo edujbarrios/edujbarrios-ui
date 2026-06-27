@@ -20,7 +20,7 @@ export function NeonGradientButton({ children = "Launch interface" }: NeonGradie
       <div className="mt-4 rounded-lg border border-[#40E0D0]/24 bg-[#40E0D0]/8 px-3 py-2 text-sm text-[#d8fffb]">
         Generate dashboard layout
       </div>
-      <p className="mt-3 text-xs text-slate-400">3 actions ready · 1 agent online</p>
+      <p className="mt-3 text-xs text-slate-400">3 actions ready - 1 agent online</p>
     </div>
   );
 }`,
@@ -116,7 +116,7 @@ export function FloatingNavDock() {
   return (
     <figure className="w-full max-w-sm rounded-lg border border-[#fb923c]/24 bg-[#fb923c]/8 p-4">
       <blockquote className="text-sm text-orange-50">Grounded responses should show the trail back to source material.</blockquote>
-      <figcaption className="mt-3 text-xs font-medium text-[#fdba74]">Source · docs/agent-interface.md</figcaption>
+      <figcaption className="mt-3 text-xs font-medium text-[#fdba74]">Source - docs/agent-interface.md</figcaption>
     </figure>
   );
 }`,
@@ -145,6 +145,134 @@ export function ModelSwitcher() {
       </span>
       4.2k tokens
     </span>
+  );
+}`,
+  "gradient-split-button": `export function GradientSplitButton() {
+  return (
+    <div className="inline-flex overflow-hidden rounded-full border border-[#40E0D0]/25 bg-[#0b0f14] shadow-[0_0_28px_rgba(64,224,208,0.16)]">
+      <button className="bg-[#40E0D0] px-4 py-2.5 text-sm font-bold text-[#0b0f14]" type="button">
+        Deploy
+      </button>
+      <button
+        aria-label="Open deploy options"
+        className="border-l border-[#0b0f14]/20 px-3 py-2.5 text-sm font-bold text-[#d8fffb] transition hover:bg-[#40E0D0]/12"
+        type="button"
+      >
+        v
+      </button>
+    </div>
+  );
+}`,
+  "glass-metric-card": `export function GlassMetricCard() {
+  return (
+    <div className="w-full max-w-xs rounded-lg border border-[#40E0D0]/20 bg-white/[0.06] p-5 backdrop-blur">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Eval score</p>
+      <div className="mt-3 flex items-end justify-between">
+        <span className="text-4xl font-black text-white">94.8%</span>
+        <span className="rounded-full bg-[#40E0D0]/12 px-2.5 py-1 text-xs font-semibold text-[#d8fffb]">+6.2</span>
+      </div>
+      <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#1b1b1d]">
+        <div className="h-full w-[82%] rounded-full bg-gradient-to-r from-[#40E0D0] to-[#a78bfa]" />
+      </div>
+    </div>
+  );
+}`,
+  "neural-search-input": `export function NeuralSearchInput() {
+  return (
+    <label className="flex w-full max-w-sm items-center gap-3 rounded-full border border-[#40E0D0]/25 bg-[#0b0f14]/80 px-4 py-3 shadow-2xl">
+      <span className="h-2.5 w-2.5 rounded-full bg-[#40E0D0] shadow-[0_0_14px_rgba(64,224,208,0.75)]" />
+      <span className="sr-only">Search components</span>
+      <input
+        className="min-w-0 flex-1 bg-transparent text-sm text-white outline-none placeholder:text-slate-500"
+        placeholder="Search command, prompt, or UI..."
+        type="search"
+      />
+      <kbd className="rounded border border-white/10 bg-white/[0.06] px-2 py-1 text-xs text-slate-300">/</kbd>
+    </label>
+  );
+}`,
+  "voice-wave-loader": `const bars = ["h-5", "h-8", "h-12", "h-7", "h-10", "h-6"];
+
+export function VoiceWaveLoader() {
+  return (
+    <div className="flex items-center gap-1.5" role="status" aria-label="Audio processing">
+      {bars.map((height, index) => (
+        <span
+          key={\`\${height}-\${index}\`}
+          className={\`\${height} w-2 animate-pulse rounded-full bg-[#40E0D0] shadow-[0_0_16px_rgba(64,224,208,0.45)]\`}
+          style={{ animationDelay: \`\${index * 90}ms\` }}
+        />
+      ))}
+    </div>
+  );
+}`,
+  "context-menu-panel": `const actions = ["Duplicate", "Copy link", "Open in agent", "Archive"];
+
+export function ContextMenuPanel() {
+  return (
+    <div className="w-56 rounded-lg border border-white/12 bg-[#0b0f14]/92 p-2 shadow-2xl backdrop-blur">
+      {actions.map((action, index) => (
+        <button
+          key={action}
+          className="flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-sm text-slate-200 transition hover:bg-[#40E0D0]/10 hover:text-white"
+          type="button"
+        >
+          <span>{action}</span>
+          {index === 2 ? <span className="text-xs text-[#40E0D0]">new</span> : null}
+        </button>
+      ))}
+    </div>
+  );
+}`,
+  "shortcut-key": `export function ShortcutKey() {
+  return (
+    <span className="inline-flex items-center gap-1 rounded-md border border-white/12 bg-white/[0.06] p-1 text-xs font-semibold text-slate-200">
+      <kbd className="rounded bg-[#1b1b1d] px-2 py-1 text-[#d8fffb]">Ctrl</kbd>
+      <span className="text-slate-500">+</span>
+      <kbd className="rounded bg-[#1b1b1d] px-2 py-1 text-[#d8fffb]">K</kbd>
+    </span>
+  );
+}`,
+  "modal-shell": `export function ModalShell() {
+  return (
+    <div className="w-full max-w-sm rounded-lg border border-[#40E0D0]/20 bg-[#0b0f14] p-5 shadow-[0_22px_80px_rgba(0,0,0,0.45)]">
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Confirm action</p>
+          <h2 className="mt-2 text-lg font-bold text-white">Publish component?</h2>
+        </div>
+        <button aria-label="Close modal" className="rounded-full bg-white/8 px-2 py-1 text-sm text-slate-300" type="button">
+          x
+        </button>
+      </div>
+      <p className="mt-3 text-sm leading-6 text-slate-400">This will make the component visible in the public gallery.</p>
+      <div className="mt-5 flex justify-end gap-2">
+        <button className="rounded-full border border-white/12 px-4 py-2 text-sm font-semibold text-slate-200" type="button">
+          Cancel
+        </button>
+        <button className="rounded-full bg-[#40E0D0] px-4 py-2 text-sm font-bold text-[#0b0f14]" type="button">
+          Publish
+        </button>
+      </div>
+    </div>
+  );
+}`,
+  "status-toast-stack": `const toasts = [
+  { label: "Build passed", color: "bg-[#40E0D0]" },
+  { label: "Preview deployed", color: "bg-[#a78bfa]" },
+  { label: "Docs synced", color: "bg-[#fb923c]" },
+];
+
+export function StatusToastStack() {
+  return (
+    <div className="grid w-full max-w-xs gap-2">
+      {toasts.map((toast) => (
+        <div key={toast.label} className="flex items-center gap-3 rounded-lg border border-white/12 bg-white/[0.06] px-4 py-3 shadow-xl backdrop-blur">
+          <span className={\`h-2.5 w-2.5 rounded-full \${toast.color}\`} />
+          <span className="text-sm font-semibold text-white">{toast.label}</span>
+        </div>
+      ))}
+    </div>
   );
 }`,
 } as const;
