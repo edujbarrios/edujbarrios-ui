@@ -40,13 +40,13 @@ export default async function ComponentDetailPage({ params }: PageProps) {
 
   return (
     <article className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <Link href="/components" className="text-sm font-semibold text-cyan-100 transition hover:text-white">
+      <Link href="/components" className="text-sm font-semibold text-[#d8fffb] transition hover:text-white">
         Back to components
       </Link>
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[0.92fr_1.08fr]">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-200">{component.category}</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#40E0D0]">{component.category}</p>
           <h1 className="mt-4 text-4xl font-black text-white sm:text-5xl">{component.name}</h1>
           <p className="mt-5 text-base leading-8 text-slate-300">{component.description}</p>
           <div className="mt-5 flex flex-wrap gap-2">

@@ -23,7 +23,7 @@ export function CopyButton({ value, label = "Copy code", className }: CopyButton
       type="button"
       onClick={handleCopy}
       className={cn(
-        "rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1.5 text-xs font-semibold text-cyan-100 transition hover:border-cyan-200/40 hover:bg-cyan-300/16",
+        "rounded-full border border-[#40E0D0]/20 bg-[#40E0D0]/10 px-3 py-1.5 text-xs font-semibold text-[#d8fffb] transition hover:border-[#40E0D0]/45 hover:bg-[#40E0D0]/16",
         className,
       )}
     >

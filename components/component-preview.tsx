@@ -36,8 +36,8 @@ export function ComponentPreview({ slug, large = false }: ComponentPreviewProps)
   const Preview = previews[slug];
 
   return (
-    <div className="relative overflow-hidden rounded-lg border border-white/10 bg-slate-950/72">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,211,238,0.14),transparent_34%),radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.12),transparent_32%)]" />
+    <div className="relative overflow-hidden rounded-lg border border-white/10 bg-[#0b0f14]/82">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(64,224,208,0.14),transparent_34%),radial-gradient(circle_at_70%_80%,rgba(167,139,250,0.12),transparent_32%)]" />
       <div className={large ? "relative grid min-h-80 place-items-center p-8" : "relative grid min-h-52 place-items-center p-6"}>
         <Preview />
       </div>

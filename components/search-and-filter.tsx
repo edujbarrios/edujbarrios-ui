@@ -31,7 +31,7 @@ export function SearchAndFilter({ components }: SearchAndFilterProps) {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Search by component name..."
-              className="w-full rounded-lg border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/40"
+              className="w-full rounded-lg border border-white/10 bg-[#0b0f14]/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-[#40E0D0]/40"
             />
           </label>
           <div className="flex gap-2 overflow-x-auto pb-1">
@@ -43,7 +43,7 @@ export function SearchAndFilter({ components }: SearchAndFilterProps) {
                 className={cn(
                   "shrink-0 rounded-full border px-3 py-2 text-sm transition",
                   category === item
-                    ? "border-cyan-300/40 bg-cyan-300/14 text-cyan-100"
+                    ? "border-[#40E0D0]/45 bg-[#40E0D0]/14 text-[#d8fffb]"
                     : "border-white/10 bg-white/[0.03] text-slate-300 hover:border-white/20 hover:text-white",
                 )}
               >

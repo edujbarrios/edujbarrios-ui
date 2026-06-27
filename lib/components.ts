@@ -114,7 +114,7 @@ export const components: ComponentItem[] = [
   {
     slug: "glow-loader",
     name: "Glow Loader",
-    description: "A three-dot animated loader with cyan, violet, and emerald glow accents.",
+    description: "A three-dot animated loader with turquoise, violet, and warm orange glow accents.",
     category: "Loaders",
     tags: ["loader", "animation", "status"],
     difficulty: "Beginner",

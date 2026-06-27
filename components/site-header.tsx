@@ -15,10 +15,10 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/72 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#1b1b1d]/82 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
-          <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-cyan-300 via-violet-400 to-emerald-300 text-sm font-black text-slate-950">
+          <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-[#40E0D0] via-[#a78bfa] to-[#fb923c] text-sm font-black text-[#0b0f14]">
             eu
           </span>
           <span>
@@ -42,7 +42,7 @@ export function SiteHeader() {
         <div className="hidden items-center gap-3 md:flex">
           <a
             href={siteConfig.links.github}
-            className="rounded-full border border-white/12 px-4 py-2 text-sm font-medium text-slate-100 transition hover:border-cyan-300/40 hover:bg-cyan-300/10"
+            className="rounded-full border border-white/12 px-4 py-2 text-sm font-medium text-slate-100 transition hover:border-[#40E0D0]/40 hover:bg-[#40E0D0]/10"
           >
             GitHub
           </a>
