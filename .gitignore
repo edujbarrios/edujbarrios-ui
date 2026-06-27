@@ -5,6 +5,10 @@ node_modules
 .next
 out
 
+# platform / local tooling
+.vercel
+.agents
+
 # production
 build
 
