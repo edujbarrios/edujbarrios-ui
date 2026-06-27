@@ -13,7 +13,7 @@ const principles = [
 ];
 
 export default function Home() {
-  const featured = components.filter((component) => component.featured);
+  const featured = components.filter((component) => component.featured).slice(0, 4);
 
   return (
     <>

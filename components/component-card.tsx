@@ -9,25 +9,25 @@ type ComponentCardProps = {
 
 export function ComponentCard({ component }: ComponentCardProps) {
   return (
-    <article className="glow-border rounded-lg bg-[#0b0f14]/70 p-px">
-      <div className="glass h-full rounded-lg p-4">
+    <article className="glow-border h-full rounded-lg bg-[#0b0f14]/70 p-px">
+      <div className="glass flex h-full flex-col rounded-lg p-4">
         <ComponentPreview slug={component.slug} />
-        <div className="mt-4 flex items-start justify-between gap-3">
-          <div>
+        <div className="mt-4 flex min-h-20 items-start justify-between gap-3">
+          <div className="min-w-0">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">{component.category}</p>
             <h3 className="mt-2 text-lg font-semibold text-white">{component.name}</h3>
           </div>
-          <span className="rounded-full border border-white/10 px-2.5 py-1 text-xs text-slate-300">{component.difficulty}</span>
+          <span className="shrink-0 rounded-full border border-white/10 px-2.5 py-1 text-xs text-slate-300">{component.difficulty}</span>
         </div>
-        <p className="mt-3 text-sm leading-6 text-slate-400">{component.description}</p>
-        <div className="mt-4 flex flex-wrap gap-2">
+        <p className="mt-3 min-h-18 text-sm leading-6 text-slate-400">{component.description}</p>
+        <div className="mt-4 flex min-h-14 flex-wrap content-start gap-2">
           {component.tags.map((tag) => (
             <span key={tag} className="rounded-full bg-white/7 px-2.5 py-1 text-xs text-slate-300">
               {tag}
             </span>
           ))}
         </div>
-        <div className="mt-5 flex flex-wrap gap-3">
+        <div className="mt-auto flex flex-wrap gap-3 pt-5">
           <Link
             href={`/components/${component.slug}`}
             className="rounded-full bg-[#40E0D0] px-4 py-2 text-sm font-semibold text-[#0b0f14] transition hover:bg-[#7ff2e8]"
