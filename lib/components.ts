@@ -98,7 +98,6 @@ export const components: ComponentItem[] = [
     code: componentCode["agent-step-timeline"],
     usage: `<AgentStepTimeline />`,
     accessibility: "The ordered list preserves step order for assistive technologies.",
-    featured: true,
   },
   {
     slug: "floating-nav-dock",
@@ -187,6 +186,7 @@ export const components: ComponentItem[] = [
     code: componentCode["glass-metric-card"],
     usage: `<GlassMetricCard />`,
     accessibility: "Keep the numeric value as visible text and do not rely only on the progress bar.",
+    featured: true,
   },
   {
     slug: "neural-search-input",
