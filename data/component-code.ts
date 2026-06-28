@@ -365,4 +365,90 @@ export function CodeTabSwitcher() {
     </div>
   );
 }`,
+  "agent-memory-card": `const memories = ["Prefers compact dashboards", "Uses eval scorecards", "Ships with dark themes"];
+
+export function AgentMemoryCard() {
+  return (
+    <section className="w-full max-w-sm rounded-lg border border-[#40E0D0]/22 bg-white/[0.06] p-5 shadow-2xl backdrop-blur">
+      <div className="flex items-center justify-between gap-3">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Agent memory</p>
+          <h3 className="mt-2 text-lg font-bold text-white">Eduardo workspace</h3>
+        </div>
+        <span className="rounded-full bg-[#40E0D0]/12 px-2.5 py-1 text-xs font-semibold text-[#d8fffb]">3 saved</span>
+      </div>
+      <ul className="mt-4 space-y-2">
+        {memories.map((memory) => (
+          <li key={memory} className="flex items-center gap-2 text-sm text-slate-300">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#a78bfa]" />
+            {memory}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}`,
+  "eval-radar-card": `const scores = [
+  { label: "Accuracy", value: "96" },
+  { label: "Latency", value: "42ms" },
+  { label: "Grounding", value: "91" },
+];
+
+export function EvalRadarCard() {
+  return (
+    <section className="w-full max-w-sm rounded-lg border border-white/12 bg-[#0b0f14]/88 p-5 shadow-2xl">
+      <div className="flex items-center justify-between">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Eval radar</p>
+        <span className="rounded-full bg-[#fb923c]/12 px-2.5 py-1 text-xs font-semibold text-[#fdba74]">live</span>
+      </div>
+      <div className="mt-5 grid grid-cols-3 gap-2">
+        {scores.map((score) => (
+          <div key={score.label} className="rounded-md border border-white/10 bg-white/[0.04] p-3">
+            <p className="text-[0.65rem] uppercase tracking-[0.14em] text-slate-500">{score.label}</p>
+            <p className="mt-2 text-xl font-black text-white">{score.value}</p>
+          </div>
+        ))}
+      </div>
+      <div className="mt-4 h-2 overflow-hidden rounded-full bg-[#1b1b1d]">
+        <div className="h-full w-[88%] rounded-full bg-gradient-to-r from-[#40E0D0] via-[#a78bfa] to-[#fb923c]" />
+      </div>
+    </section>
+  );
+}`,
+  "prompt-version-select": `const versions = ["v3.2 production", "v3.1 stable", "v2.9 fallback"];
+
+export function PromptVersionSelect() {
+  return (
+    <label className="grid w-full max-w-sm gap-2 rounded-lg border border-white/12 bg-[#0b0f14]/82 p-4 shadow-2xl">
+      <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Prompt version</span>
+      <select className="rounded-md border border-[#40E0D0]/24 bg-white/[0.05] px-3 py-2.5 text-sm font-semibold text-white outline-none transition focus:border-[#40E0D0]/60">
+        {versions.map((version) => (
+          <option key={version}>{version}</option>
+        ))}
+      </select>
+      <span className="text-xs text-slate-400">Pinned for deterministic release reviews</span>
+    </label>
+  );
+}`,
+  "api-key-field": `export function ApiKeyField() {
+  return (
+    <div className="w-full max-w-sm rounded-lg border border-[#40E0D0]/20 bg-white/[0.06] p-4 shadow-2xl backdrop-blur">
+      <label htmlFor="api-key" className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">
+        API key
+      </label>
+      <div className="mt-3 flex min-w-0 items-center gap-2 rounded-md border border-white/10 bg-[#0b0f14]/80 p-2">
+        <input
+          id="api-key"
+          className="min-w-0 flex-1 bg-transparent text-sm text-white outline-none placeholder:text-slate-500"
+          placeholder="sk_live_************"
+          type="password"
+        />
+        <button className="rounded-md bg-[#40E0D0] px-3 py-1.5 text-xs font-bold text-[#0b0f14]" type="button">
+          Save
+        </button>
+      </div>
+      <p className="mt-2 text-xs text-slate-400">Use environment variables in production.</p>
+    </div>
+  );
+}`,
 } as const;

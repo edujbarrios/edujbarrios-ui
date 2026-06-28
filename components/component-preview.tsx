@@ -1,9 +1,12 @@
 import type { ComponentSlug } from "@/lib/components";
+import { AgentMemoryCard } from "@/components/ui/agent-memory-card";
 import { AgentStepTimeline } from "@/components/ui/agent-step-timeline";
 import { AiChatInput } from "@/components/ui/ai-chat-input";
+import { ApiKeyField } from "@/components/ui/api-key-field";
 import { CodeTabSwitcher } from "@/components/ui/code-tab-switcher";
 import { ContextMenuPanel } from "@/components/ui/context-menu-panel";
 import { CopyCodeCard } from "@/components/ui/copy-code-card";
+import { EvalRadarCard } from "@/components/ui/eval-radar-card";
 import { FileDropzone } from "@/components/ui/file-dropzone";
 import { FloatingNavDock } from "@/components/ui/floating-nav-dock";
 import { GlassCommandCard } from "@/components/ui/glass-command-card";
@@ -18,6 +21,7 @@ import { NeonGradientButton } from "@/components/ui/neon-gradient-button";
 import { NotificationBell } from "@/components/ui/notification-bell";
 import { PricingTierCard } from "@/components/ui/pricing-tier-card";
 import { ProgressStepper } from "@/components/ui/progress-stepper";
+import { PromptVersionSelect } from "@/components/ui/prompt-version-select";
 import { PromptBadge } from "@/components/ui/prompt-badge";
 import { ShortcutKey } from "@/components/ui/shortcut-key";
 import { SourceCitationCard } from "@/components/ui/source-citation-card";
@@ -53,6 +57,10 @@ const previews: Record<ComponentSlug, React.ComponentType> = {
   "progress-stepper": ProgressStepper,
   "notification-bell": NotificationBell,
   "code-tab-switcher": CodeTabSwitcher,
+  "agent-memory-card": AgentMemoryCard,
+  "eval-radar-card": EvalRadarCard,
+  "prompt-version-select": PromptVersionSelect,
+  "api-key-field": ApiKeyField,
 };
 
 type ComponentPreviewProps = {
