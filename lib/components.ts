@@ -40,7 +40,6 @@ export const components: ComponentItem[] = [
     code: componentCode["neon-gradient-button"],
     usage: `<NeonGradientButton>Launch interface</NeonGradientButton>`,
     accessibility: "Use clear button text and keep it inside a form or action region where the intent is obvious.",
-    featured: true,
   },
   {
     slug: "glass-command-card",
@@ -52,7 +51,6 @@ export const components: ComponentItem[] = [
     code: componentCode["glass-command-card"],
     usage: `<GlassCommandCard />`,
     accessibility: "Keyboard hints should match the supported platform shortcut in your app.",
-    featured: true,
   },
   {
     slug: "ai-chat-input",
@@ -98,6 +96,7 @@ export const components: ComponentItem[] = [
     code: componentCode["agent-step-timeline"],
     usage: `<AgentStepTimeline />`,
     accessibility: "The ordered list preserves step order for assistive technologies.",
+    featured: true,
   },
   {
     slug: "floating-nav-dock",
@@ -153,6 +152,7 @@ export const components: ComponentItem[] = [
     code: componentCode["model-switcher"],
     usage: `<ModelSwitcher />`,
     accessibility: "For production, manage selected state and expose it with aria-pressed or radio semantics.",
+    featured: true,
   },
   {
     slug: "token-usage-pill",
