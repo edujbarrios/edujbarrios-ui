@@ -275,4 +275,94 @@ export function StatusToastStack() {
     </div>
   );
 }`,
+  "icon-pulse-button": `export function IconPulseButton() {
+  return (
+    <button
+      aria-label="Run agent"
+      className="relative grid h-14 w-14 place-items-center rounded-full border border-[#40E0D0]/30 bg-[#40E0D0]/10 text-[#d8fffb] shadow-[0_0_28px_rgba(64,224,208,0.18)] transition hover:scale-105 hover:bg-[#40E0D0]/16"
+      type="button"
+    >
+      <span className="absolute inset-0 animate-ping rounded-full border border-[#40E0D0]/30" />
+      <span className="relative text-xl font-black">AI</span>
+    </button>
+  );
+}`,
+  "pricing-tier-card": `const perks = ["20 components", "Copy source", "MIT-free remix"];
+
+export function PricingTierCard() {
+  return (
+    <section className="w-full max-w-xs rounded-lg border border-[#40E0D0]/22 bg-white/[0.06] p-5 backdrop-blur">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Creator kit</p>
+      <div className="mt-3 flex items-end gap-2">
+        <span className="text-4xl font-black text-white">$0</span>
+        <span className="pb-1 text-sm text-slate-400">open source</span>
+      </div>
+      <ul className="mt-4 space-y-2 text-sm text-slate-300">
+        {perks.map((perk) => (
+          <li key={perk} className="flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#40E0D0]" />
+            {perk}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}`,
+  "file-dropzone": `export function FileDropzone() {
+  return (
+    <label className="grid w-full max-w-sm cursor-pointer place-items-center rounded-lg border border-dashed border-[#40E0D0]/35 bg-[#40E0D0]/8 px-6 py-8 text-center transition hover:bg-[#40E0D0]/12">
+      <span className="grid h-10 w-10 place-items-center rounded-full bg-[#40E0D0]/14 text-sm font-black text-[#d8fffb]">UP</span>
+      <span className="mt-3 text-sm font-semibold text-white">Drop UI references here</span>
+      <span className="mt-1 text-xs text-slate-400">PNG, JPG, or SVG up to 5MB</span>
+      <input className="sr-only" type="file" />
+    </label>
+  );
+}`,
+  "progress-stepper": `const stages = ["Brief", "Design", "Code"];
+
+export function ProgressStepper() {
+  return (
+    <ol className="flex w-full max-w-sm items-center">
+      {stages.map((stage, index) => (
+        <li key={stage} className="flex flex-1 items-center">
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#40E0D0]/30 bg-[#40E0D0]/10 text-xs font-bold text-[#d8fffb]">
+            {index + 1}
+          </span>
+          <span className="ml-2 text-xs font-semibold text-slate-300">{stage}</span>
+          {index < stages.length - 1 ? <span className="mx-3 h-px flex-1 bg-gradient-to-r from-[#40E0D0]/60 to-[#a78bfa]/40" /> : null}
+        </li>
+      ))}
+    </ol>
+  );
+}`,
+  "notification-bell": `export function NotificationBell() {
+  return (
+    <button
+      aria-label="Open notifications"
+      className="relative rounded-full border border-white/12 bg-white/[0.06] p-4 text-white shadow-xl transition hover:border-[#40E0D0]/35 hover:bg-[#40E0D0]/10"
+      type="button"
+    >
+      <span className="block h-6 w-6 rounded-full border-2 border-current border-b-transparent" />
+      <span className="absolute right-3 top-3 h-3 w-3 rounded-full border-2 border-[#0b0f14] bg-[#fb923c]" />
+      <span className="absolute inset-x-0 bottom-2 mx-auto h-1 w-3 rounded-full bg-current" />
+    </button>
+  );
+}`,
+  "code-tab-switcher": `const tabs = ["Preview", "Code", "Usage"];
+
+export function CodeTabSwitcher() {
+  return (
+    <div className="inline-flex rounded-lg border border-white/12 bg-[#0b0f14]/82 p-1">
+      {tabs.map((tab) => (
+        <button
+          key={tab}
+          className={\`rounded-md px-3 py-2 text-xs font-semibold transition \${tab === "Code" ? "bg-[#40E0D0] text-[#0b0f14]" : "text-slate-400 hover:text-white"}\`}
+          type="button"
+        >
+          {tab}
+        </button>
+      ))}
+    </div>
+  );
+}`,
 } as const;

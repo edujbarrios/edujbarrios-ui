@@ -1,17 +1,23 @@
 import type { ComponentSlug } from "@/lib/components";
 import { AgentStepTimeline } from "@/components/ui/agent-step-timeline";
 import { AiChatInput } from "@/components/ui/ai-chat-input";
+import { CodeTabSwitcher } from "@/components/ui/code-tab-switcher";
 import { ContextMenuPanel } from "@/components/ui/context-menu-panel";
 import { CopyCodeCard } from "@/components/ui/copy-code-card";
+import { FileDropzone } from "@/components/ui/file-dropzone";
 import { FloatingNavDock } from "@/components/ui/floating-nav-dock";
 import { GlassCommandCard } from "@/components/ui/glass-command-card";
 import { GlassMetricCard } from "@/components/ui/glass-metric-card";
 import { GlowLoader } from "@/components/ui/glow-loader";
 import { GradientSplitButton } from "@/components/ui/gradient-split-button";
+import { IconPulseButton } from "@/components/ui/icon-pulse-button";
 import { ModalShell } from "@/components/ui/modal-shell";
 import { ModelSwitcher } from "@/components/ui/model-switcher";
 import { NeuralSearchInput } from "@/components/ui/neural-search-input";
 import { NeonGradientButton } from "@/components/ui/neon-gradient-button";
+import { NotificationBell } from "@/components/ui/notification-bell";
+import { PricingTierCard } from "@/components/ui/pricing-tier-card";
+import { ProgressStepper } from "@/components/ui/progress-stepper";
 import { PromptBadge } from "@/components/ui/prompt-badge";
 import { ShortcutKey } from "@/components/ui/shortcut-key";
 import { SourceCitationCard } from "@/components/ui/source-citation-card";
@@ -41,6 +47,12 @@ const previews: Record<ComponentSlug, React.ComponentType> = {
   "shortcut-key": ShortcutKey,
   "modal-shell": ModalShell,
   "status-toast-stack": StatusToastStack,
+  "icon-pulse-button": IconPulseButton,
+  "pricing-tier-card": PricingTierCard,
+  "file-dropzone": FileDropzone,
+  "progress-stepper": ProgressStepper,
+  "notification-bell": NotificationBell,
+  "code-tab-switcher": CodeTabSwitcher,
 };
 
 type ComponentPreviewProps = {

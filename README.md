@@ -63,6 +63,12 @@ Current components:
 - Token Usage Pill
 - Modal Shell
 - Status Toast Stack
+- Icon Pulse Button
+- Pricing Tier Card
+- File Dropzone
+- Progress Stepper
+- Notification Bell
+- Code Tab Switcher
 
 ## Getting Started
 
