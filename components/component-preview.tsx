@@ -1,4 +1,6 @@
+import type { CSSProperties, ComponentType } from "react";
 import type { ComponentSlug } from "@/lib/components";
+import { brandColor } from "@/lib/color-accent";
 import { AgentMemoryCard } from "@/components/ui/agent-memory-card";
 import { AgentStepTimeline } from "@/components/ui/agent-step-timeline";
 import { AiChatInput } from "@/components/ui/ai-chat-input";
@@ -46,7 +48,7 @@ import { SchemaFieldRow } from "@/components/ui/schema-field-row";
 import { ToggleSettingRow } from "@/components/ui/toggle-setting-row";
 import { UsageSparklineCard } from "@/components/ui/usage-sparkline-card";
 
-const previews: Record<ComponentSlug, React.ComponentType> = {
+const previews: Record<ComponentSlug, ComponentType> = {
   "neon-gradient-button": NeonGradientButton,
   "glass-command-card": GlassCommandCard,
   "ai-chat-input": AiChatInput,
@@ -98,17 +100,58 @@ const previews: Record<ComponentSlug, React.ComponentType> = {
 type ComponentPreviewProps = {
   slug: ComponentSlug;
   large?: boolean;
+  accentColor?: string;
 };
 
-export function ComponentPreview({ slug, large = false }: ComponentPreviewProps) {
+export function ComponentPreview({ slug, large = false, accentColor = brandColor }: ComponentPreviewProps) {
   const Preview = previews[slug];
+  const previewStyle = getPreviewAccentStyle(accentColor);
 
   return (
     <div className="relative shrink-0 overflow-hidden rounded-lg border border-white/10 bg-[#0b0f14]/82">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(64,224,208,0.14),transparent_34%),radial-gradient(circle_at_70%_80%,rgba(167,139,250,0.12),transparent_32%)]" />
-      <div className={large ? "relative flex min-h-80 items-center justify-center p-8" : "relative flex h-52 items-center justify-center p-4 sm:p-5"}>
+      <div
+        className={large ? "relative flex min-h-80 items-center justify-center p-8" : "relative flex h-52 items-center justify-center p-4 sm:p-5"}
+        style={previewStyle}
+      >
         <Preview />
       </div>
     </div>
   );
+}
+
+function getPreviewAccentStyle(accentColor: string): CSSProperties | undefined {
+  const hueShift = getHue(accentColor) - getHue(brandColor);
+
+  if (Math.abs(hueShift) < 1) {
+    return undefined;
+  }
+
+  return {
+    filter: `hue-rotate(${hueShift}deg)`,
+  };
+}
+
+function getHue(hex: string) {
+  const normalized = hex.replace("#", "");
+  const r = Number.parseInt(normalized.slice(0, 2), 16) / 255;
+  const g = Number.parseInt(normalized.slice(2, 4), 16) / 255;
+  const b = Number.parseInt(normalized.slice(4, 6), 16) / 255;
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  const delta = max - min;
+
+  if (delta === 0) {
+    return 0;
+  }
+
+  if (max === r) {
+    return 60 * (((g - b) / delta) % 6);
+  }
+
+  if (max === g) {
+    return 60 * ((b - r) / delta + 2);
+  }
+
+  return 60 * ((r - g) / delta + 4);
 }

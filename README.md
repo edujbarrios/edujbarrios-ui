@@ -12,7 +12,7 @@ Self-made React + TypeScript UI components ready to copy, paste, recolor, and us
 - Live previews and detail pages
 - Search and category filters
 - Copy-to-clipboard source snippets
-- Color roller copy control for custom accent colors
+- Color roller previews and copy control for custom accent colors
 - Local typed registry, no backend required
 
 ## Tech Stack

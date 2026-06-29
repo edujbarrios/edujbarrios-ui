@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CodeBlock } from "@/components/code-block";
+import { ComponentColorPlayground } from "@/components/component-color-playground";
 import { ComponentCard } from "@/components/component-card";
-import { ComponentPreview } from "@/components/component-preview";
 import { components, getComponent, getRelatedComponents } from "@/lib/components";
 
 type PageProps = {
@@ -67,12 +67,12 @@ export default async function ComponentDetailPage({ params }: PageProps) {
             </div>
           ) : null}
         </div>
-        <ComponentPreview slug={component.slug} large />
+        <ComponentColorPlayground component={component} />
       </div>
 
       <div className="mt-10 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
         <CodeBlock code={component.code} />
-        <CodeBlock code={component.usage} label="Usage" colorCopy={false} />
+        <CodeBlock code={component.usage} label="Usage" />
       </div>
 
       {related.length > 0 ? (

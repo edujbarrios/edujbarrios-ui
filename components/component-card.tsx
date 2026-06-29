@@ -1,7 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { ComponentPreview } from "@/components/component-preview";
 import { ColorCopyButton } from "@/components/color-copy-button";
 import { CopyButton } from "@/components/copy-button";
+import { brandColor } from "@/lib/color-accent";
 import type { ComponentItem } from "@/lib/components";
 
 type ComponentCardProps = {
@@ -9,10 +13,12 @@ type ComponentCardProps = {
 };
 
 export function ComponentCard({ component }: ComponentCardProps) {
+  const [accentColor, setAccentColor] = useState(brandColor);
+
   return (
     <article className="glow-border h-full rounded-lg bg-[#0b0f14]/70 p-px">
       <div className="glass flex h-full flex-col rounded-lg p-4">
-        <ComponentPreview slug={component.slug} />
+        <ComponentPreview slug={component.slug} accentColor={accentColor} />
         <div className="mt-4 flex min-h-20 items-start justify-between gap-3">
           <div className="min-w-0">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">{component.category}</p>
@@ -36,7 +42,7 @@ export function ComponentCard({ component }: ComponentCardProps) {
             View component
           </Link>
           <CopyButton value={component.code} />
-          <ColorCopyButton value={component.code} />
+          <ColorCopyButton value={component.code} color={accentColor} onColorChange={setAccentColor} />
         </div>
       </div>
     </article>
