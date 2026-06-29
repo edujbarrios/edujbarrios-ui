@@ -69,6 +69,26 @@ Current components:
 - Progress Stepper
 - Notification Bell
 - Code Tab Switcher
+- Agent Memory Card
+- Eval Radar Card
+- Prompt Version Select
+- API Key Field
+- Inline Alert Banner
+- Confidence Meter
+- Workflow Breadcrumb
+- Schema Field Row
+- Skeleton Card
+- Stat Strip
+- Command Hint Bar
+- Toggle Setting Row
+- Avatar Stack
+- Empty State Panel
+- Release Checklist
+- Prompt Diff Viewer
+- Color Token Swatch
+- Integration Status Grid
+- Usage Sparkline Card
+- Data Pipeline Card
 
 ## Getting Started
 

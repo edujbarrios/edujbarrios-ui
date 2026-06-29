@@ -622,4 +622,121 @@ export function AvatarStack() {
     </section>
   );
 }`,
+  "release-checklist": `const checks = ["Types pass", "Preview built", "Docs updated"];
+
+export function ReleaseChecklist() {
+  return (
+    <section className="w-full max-w-sm rounded-lg border border-[#40E0D0]/20 bg-white/[0.06] p-5 shadow-2xl backdrop-blur">
+      <div className="flex items-center justify-between gap-3">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Release check</p>
+        <span className="rounded-full bg-[#40E0D0]/12 px-2.5 py-1 text-xs font-semibold text-[#d8fffb]">3/3</span>
+      </div>
+      <ul className="mt-4 space-y-3">
+        {checks.map((check) => (
+          <li key={check} className="flex items-center gap-3 text-sm font-semibold text-slate-200">
+            <span className="grid h-6 w-6 place-items-center rounded-full bg-[#40E0D0] text-xs font-black text-[#0b0f14]">OK</span>
+            {check}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}`,
+  "prompt-diff-viewer": `const changes = [
+  { mark: "-", text: "Write a short answer" },
+  { mark: "+", text: "Answer with source-backed steps" },
+];
+
+export function PromptDiffViewer() {
+  return (
+    <div className="w-full max-w-sm overflow-hidden rounded-lg border border-white/12 bg-[#0b0f14]/88 shadow-2xl">
+      <div className="border-b border-white/10 px-4 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#40E0D0]">Prompt diff</div>
+      <div className="grid gap-1 p-3 font-mono text-xs">
+        {changes.map((change) => (
+          <p key={change.text} className={change.mark === "+" ? "rounded bg-[#40E0D0]/10 px-3 py-2 text-[#d8fffb]" : "rounded bg-[#fb923c]/10 px-3 py-2 text-[#fdba74]"}>
+            <span className="mr-2 font-bold">{change.mark}</span>
+            {change.text}
+          </p>
+        ))}
+      </div>
+    </div>
+  );
+}`,
+  "color-token-swatch": `const tokens = [
+  { name: "brand", value: "#40E0D0" },
+  { name: "violet", value: "#a78bfa" },
+  { name: "orange", value: "#fb923c" },
+];
+
+export function ColorTokenSwatch() {
+  return (
+    <div className="grid w-full max-w-sm gap-2 rounded-lg border border-white/12 bg-white/[0.06] p-4 shadow-2xl backdrop-blur">
+      {tokens.map((token) => (
+        <div key={token.name} className="flex items-center justify-between rounded-md border border-white/10 bg-[#0b0f14]/70 px-3 py-2">
+          <span className="flex items-center gap-2 text-sm font-semibold text-white">
+            <span className="h-5 w-5 rounded-full" style={{ backgroundColor: token.value }} />
+            {token.name}
+          </span>
+          <code className="text-xs text-slate-400">{token.value}</code>
+        </div>
+      ))}
+    </div>
+  );
+}`,
+  "integration-status-grid": `const integrations = [
+  { name: "GitHub", state: "synced" },
+  { name: "Vercel", state: "live" },
+  { name: "Docs", state: "ready" },
+];
+
+export function IntegrationStatusGrid() {
+  return (
+    <div className="grid w-full max-w-sm grid-cols-3 gap-2">
+      {integrations.map((integration) => (
+        <div key={integration.name} className="rounded-lg border border-[#40E0D0]/20 bg-[#40E0D0]/8 p-4 text-center shadow-xl">
+          <span className="mx-auto block h-2.5 w-2.5 rounded-full bg-[#40E0D0] shadow-[0_0_14px_rgba(64,224,208,0.7)]" />
+          <p className="mt-3 text-sm font-bold text-white">{integration.name}</p>
+          <p className="mt-1 text-xs text-slate-400">{integration.state}</p>
+        </div>
+      ))}
+    </div>
+  );
+}`,
+  "usage-sparkline-card": `const bars = ["h-5", "h-8", "h-6", "h-10", "h-7", "h-12", "h-9"];
+
+export function UsageSparklineCard() {
+  return (
+    <section className="w-full max-w-xs rounded-lg border border-white/12 bg-[#0b0f14]/86 p-5 shadow-2xl">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Usage trend</p>
+      <div className="mt-4 flex h-16 items-end gap-2">
+        {bars.map((bar, index) => (
+          <span key={\`\${bar}-\${index}\`} className={\`\${bar} flex-1 rounded-t bg-gradient-to-t from-[#40E0D0] to-[#a78bfa]\`} />
+        ))}
+      </div>
+      <div className="mt-4 flex items-end justify-between">
+        <span className="text-3xl font-black text-white">12.4k</span>
+        <span className="rounded-full bg-[#40E0D0]/12 px-2.5 py-1 text-xs font-semibold text-[#d8fffb]">+18%</span>
+      </div>
+    </section>
+  );
+}`,
+  "data-pipeline-card": `const nodes = ["Input", "Clean", "Ship"];
+
+export function DataPipelineCard() {
+  return (
+    <section className="w-full max-w-xs rounded-lg border border-[#40E0D0]/20 bg-white/[0.06] p-5 shadow-2xl backdrop-blur">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Pipeline</p>
+      <div className="mt-5 grid grid-cols-3 gap-2">
+        {nodes.map((node, index) => (
+          <div key={node} className="rounded-md border border-white/10 bg-[#0b0f14]/60 p-2 text-center">
+            <span className="mx-auto grid h-8 w-8 place-items-center rounded-full border border-[#40E0D0]/35 bg-[#40E0D0]/12 text-xs font-black text-[#d8fffb]">
+              {index + 1}
+            </span>
+            <span className="mt-2 block text-xs font-semibold text-slate-300">{node}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}`,
 } as const;

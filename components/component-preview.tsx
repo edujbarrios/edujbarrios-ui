@@ -3,11 +3,14 @@ import { AgentMemoryCard } from "@/components/ui/agent-memory-card";
 import { AgentStepTimeline } from "@/components/ui/agent-step-timeline";
 import { AiChatInput } from "@/components/ui/ai-chat-input";
 import { ApiKeyField } from "@/components/ui/api-key-field";
+import { AvatarStack } from "@/components/ui/avatar-stack";
 import { CodeTabSwitcher } from "@/components/ui/code-tab-switcher";
+import { ColorTokenSwatch } from "@/components/ui/color-token-swatch";
 import { CommandHintBar } from "@/components/ui/command-hint-bar";
 import { ConfidenceMeter } from "@/components/ui/confidence-meter";
 import { ContextMenuPanel } from "@/components/ui/context-menu-panel";
 import { CopyCodeCard } from "@/components/ui/copy-code-card";
+import { DataPipelineCard } from "@/components/ui/data-pipeline-card";
 import { EmptyStatePanel } from "@/components/ui/empty-state-panel";
 import { EvalRadarCard } from "@/components/ui/eval-radar-card";
 import { FileDropzone } from "@/components/ui/file-dropzone";
@@ -18,6 +21,7 @@ import { GlowLoader } from "@/components/ui/glow-loader";
 import { GradientSplitButton } from "@/components/ui/gradient-split-button";
 import { IconPulseButton } from "@/components/ui/icon-pulse-button";
 import { InlineAlertBanner } from "@/components/ui/inline-alert-banner";
+import { IntegrationStatusGrid } from "@/components/ui/integration-status-grid";
 import { ModalShell } from "@/components/ui/modal-shell";
 import { ModelSwitcher } from "@/components/ui/model-switcher";
 import { NeuralSearchInput } from "@/components/ui/neural-search-input";
@@ -25,8 +29,10 @@ import { NeonGradientButton } from "@/components/ui/neon-gradient-button";
 import { NotificationBell } from "@/components/ui/notification-bell";
 import { PricingTierCard } from "@/components/ui/pricing-tier-card";
 import { ProgressStepper } from "@/components/ui/progress-stepper";
+import { PromptDiffViewer } from "@/components/ui/prompt-diff-viewer";
 import { PromptVersionSelect } from "@/components/ui/prompt-version-select";
 import { PromptBadge } from "@/components/ui/prompt-badge";
+import { ReleaseChecklist } from "@/components/ui/release-checklist";
 import { ShortcutKey } from "@/components/ui/shortcut-key";
 import { SourceCitationCard } from "@/components/ui/source-citation-card";
 import { SkeletonCard } from "@/components/ui/skeleton-card";
@@ -38,7 +44,7 @@ import { VoiceWaveLoader } from "@/components/ui/voice-wave-loader";
 import { WorkflowBreadcrumb } from "@/components/ui/workflow-breadcrumb";
 import { SchemaFieldRow } from "@/components/ui/schema-field-row";
 import { ToggleSettingRow } from "@/components/ui/toggle-setting-row";
-import { AvatarStack } from "@/components/ui/avatar-stack";
+import { UsageSparklineCard } from "@/components/ui/usage-sparkline-card";
 
 const previews: Record<ComponentSlug, React.ComponentType> = {
   "neon-gradient-button": NeonGradientButton,
@@ -81,6 +87,12 @@ const previews: Record<ComponentSlug, React.ComponentType> = {
   "toggle-setting-row": ToggleSettingRow,
   "avatar-stack": AvatarStack,
   "empty-state-panel": EmptyStatePanel,
+  "release-checklist": ReleaseChecklist,
+  "prompt-diff-viewer": PromptDiffViewer,
+  "color-token-swatch": ColorTokenSwatch,
+  "integration-status-grid": IntegrationStatusGrid,
+  "usage-sparkline-card": UsageSparklineCard,
+  "data-pipeline-card": DataPipelineCard,
 };
 
 type ComponentPreviewProps = {
