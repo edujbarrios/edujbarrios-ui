@@ -6,9 +6,9 @@ export function FloatingNavDock() {
       <ul className="flex gap-1">
         {items.map((item) => (
           <li key={item}>
-            <a className="block rounded-full px-3 py-2 text-xs font-medium text-slate-300 transition hover:bg-white/10 hover:text-white" href="#">
+            <button className="block rounded-full px-3 py-2 text-xs font-medium text-slate-300 transition hover:bg-white/10 hover:text-white" type="button">
               {item}
-            </a>
+            </button>
           </li>
         ))}
       </ul>

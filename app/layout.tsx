@@ -4,21 +4,24 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { siteConfig } from "@/lib/config";
 
+const title = "edujbarrios-ui - Self-made UI components";
+const description = "An open-source collection of handcrafted TypeScript UI components by Eduardo J. Barrios.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.links.live),
-  title: "edujbarrios-ui — Self-made UI components",
-  description: "An open-source collection of handcrafted TypeScript UI components by Eduardo J. Barrios.",
+  title,
+  description,
   openGraph: {
-    title: "edujbarrios-ui — Self-made UI components",
-    description: "An open-source collection of handcrafted TypeScript UI components by Eduardo J. Barrios.",
+    title,
+    description,
     url: siteConfig.links.live,
     siteName: siteConfig.name,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "edujbarrios-ui — Self-made UI components",
-    description: "An open-source collection of handcrafted TypeScript UI components by Eduardo J. Barrios.",
+    title,
+    description,
   },
 };
 

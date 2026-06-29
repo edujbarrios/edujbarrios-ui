@@ -6,9 +6,9 @@ export function WorkflowBreadcrumb() {
       <ol className="flex items-center gap-2 text-xs font-semibold">
         {crumbs.map((crumb, index) => (
           <li key={crumb} className="flex items-center gap-2">
-            <a className={index === crumbs.length - 1 ? "text-[#d8fffb]" : "text-slate-400 transition hover:text-white"} href="#">
+            <button className={index === crumbs.length - 1 ? "text-[#d8fffb]" : "text-slate-400 transition hover:text-white"} type="button">
               {crumb}
-            </a>
+            </button>
             {index < crumbs.length - 1 ? <span className="text-slate-600">/</span> : null}
           </li>
         ))}

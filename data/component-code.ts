@@ -83,9 +83,9 @@ export function FloatingNavDock() {
       <ul className="flex gap-1">
         {items.map((item) => (
           <li key={item}>
-            <a className="block rounded-full px-3 py-2 text-xs font-medium text-slate-300 transition hover:bg-white/10 hover:text-white" href="#">
+            <button className="block rounded-full px-3 py-2 text-xs font-medium text-slate-300 transition hover:bg-white/10 hover:text-white" type="button">
               {item}
-            </a>
+            </button>
           </li>
         ))}
       </ul>
@@ -499,9 +499,9 @@ export function WorkflowBreadcrumb() {
       <ol className="flex items-center gap-2 text-xs font-semibold">
         {crumbs.map((crumb, index) => (
           <li key={crumb} className="flex items-center gap-2">
-            <a className={index === crumbs.length - 1 ? "text-[#d8fffb]" : "text-slate-400 transition hover:text-white"} href="#">
+            <button className={index === crumbs.length - 1 ? "text-[#d8fffb]" : "text-slate-400 transition hover:text-white"} type="button">
               {crumb}
-            </a>
+            </button>
             {index < crumbs.length - 1 ? <span className="text-slate-600">/</span> : null}
           </li>
         ))}
