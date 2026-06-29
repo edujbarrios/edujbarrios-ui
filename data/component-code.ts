@@ -451,4 +451,175 @@ export function PromptVersionSelect() {
     </div>
   );
 }`,
+  "inline-alert-banner": `export function InlineAlertBanner() {
+  return (
+    <div className="flex w-full max-w-md items-start gap-3 rounded-lg border border-[#fb923c]/25 bg-[#fb923c]/10 p-4 shadow-xl">
+      <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-[#fb923c]/16 text-xs font-black text-[#fdba74]">!</span>
+      <div>
+        <p className="text-sm font-semibold text-orange-50">Usage spike detected</p>
+        <p className="mt-1 text-xs leading-5 text-slate-400">Token volume is 28% higher than the last release window.</p>
+      </div>
+    </div>
+  );
+}`,
+  "confidence-meter": `const signals = [
+  { label: "Grounded", value: "91%", width: "w-[91%]" },
+  { label: "Coverage", value: "84%", width: "w-[84%]" },
+  { label: "Risk", value: "12%", width: "w-[12%]" },
+];
+
+export function ConfidenceMeter() {
+  return (
+    <section className="w-full max-w-sm rounded-lg border border-[#40E0D0]/20 bg-white/[0.06] p-5 shadow-2xl backdrop-blur">
+      <div className="flex items-center justify-between">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Confidence</p>
+        <span className="rounded-full bg-[#40E0D0]/12 px-2.5 py-1 text-xs font-semibold text-[#d8fffb]">ready</span>
+      </div>
+      <div className="mt-4 space-y-3">
+        {signals.map((signal) => (
+          <div key={signal.label}>
+            <div className="flex justify-between text-xs font-semibold text-slate-300">
+              <span>{signal.label}</span>
+              <span>{signal.value}</span>
+            </div>
+            <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-[#1b1b1d]">
+              <div className={\`\${signal.width} h-full rounded-full bg-gradient-to-r from-[#40E0D0] to-[#a78bfa]\`} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}`,
+  "workflow-breadcrumb": `const crumbs = ["Workspace", "Agents", "Release"];
+
+export function WorkflowBreadcrumb() {
+  return (
+    <nav aria-label="Workflow breadcrumb" className="rounded-full border border-white/12 bg-[#0b0f14]/82 px-3 py-2 shadow-xl backdrop-blur">
+      <ol className="flex items-center gap-2 text-xs font-semibold">
+        {crumbs.map((crumb, index) => (
+          <li key={crumb} className="flex items-center gap-2">
+            <a className={index === crumbs.length - 1 ? "text-[#d8fffb]" : "text-slate-400 transition hover:text-white"} href="#">
+              {crumb}
+            </a>
+            {index < crumbs.length - 1 ? <span className="text-slate-600">/</span> : null}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  );
+}`,
+  "schema-field-row": `export function SchemaFieldRow() {
+  return (
+    <label className="grid w-full max-w-sm gap-2 rounded-lg border border-white/12 bg-[#0b0f14]/82 p-4 shadow-2xl">
+      <span className="flex items-center justify-between gap-3">
+        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Field name</span>
+        <span className="rounded-full bg-[#a78bfa]/12 px-2 py-0.5 text-[0.65rem] font-bold text-[#ddd6fe]">required</span>
+      </span>
+      <input
+        className="rounded-md border border-white/10 bg-white/[0.05] px-3 py-2.5 text-sm text-white outline-none placeholder:text-slate-500 focus:border-[#40E0D0]/55"
+        defaultValue="customer_segment"
+      />
+      <span className="text-xs text-slate-400">String - used by the recommendation model</span>
+    </label>
+  );
+}`,
+  "skeleton-card": `export function SkeletonCard() {
+  return (
+    <div className="w-full max-w-sm rounded-lg border border-white/12 bg-white/[0.06] p-5 shadow-2xl backdrop-blur" role="status" aria-label="Loading card">
+      <div className="h-3 w-24 animate-pulse rounded-full bg-[#40E0D0]/25" />
+      <div className="mt-5 h-8 w-40 animate-pulse rounded-md bg-white/12" />
+      <div className="mt-4 space-y-2">
+        <div className="h-2.5 w-full animate-pulse rounded-full bg-white/10" />
+        <div className="h-2.5 w-4/5 animate-pulse rounded-full bg-white/10" />
+        <div className="h-2.5 w-2/3 animate-pulse rounded-full bg-white/10" />
+      </div>
+    </div>
+  );
+}`,
+  "stat-strip": `const stats = [
+  { label: "Runs", value: "1.8k" },
+  { label: "Pass", value: "98%" },
+  { label: "Cost", value: "$42" },
+];
+
+export function StatStrip() {
+  return (
+    <dl className="grid w-full max-w-md grid-cols-3 overflow-hidden rounded-lg border border-[#40E0D0]/20 bg-[#0b0f14]/86 shadow-2xl">
+      {stats.map((stat) => (
+        <div key={stat.label} className="border-r border-white/10 p-4 last:border-r-0">
+          <dt className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-slate-500">{stat.label}</dt>
+          <dd className="mt-2 text-2xl font-black text-white">{stat.value}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}`,
+  "command-hint-bar": `const hints = [
+  { key: "K", label: "Command" },
+  { key: "Enter", label: "Run" },
+  { key: "Esc", label: "Close" },
+];
+
+export function CommandHintBar() {
+  return (
+    <div className="flex flex-wrap items-center gap-2 rounded-full border border-white/12 bg-[#0b0f14]/82 px-3 py-2 shadow-xl backdrop-blur">
+      {hints.map((hint) => (
+        <span key={hint.label} className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400">
+          <kbd className="rounded-md border border-white/10 bg-white/[0.06] px-2 py-1 text-[#d8fffb]">{hint.key}</kbd>
+          {hint.label}
+        </span>
+      ))}
+    </div>
+  );
+}`,
+  "toggle-setting-row": `export function ToggleSettingRow() {
+  return (
+    <div className="flex w-full max-w-sm items-center justify-between gap-4 rounded-lg border border-white/12 bg-white/[0.06] p-4 shadow-2xl backdrop-blur">
+      <div>
+        <p className="text-sm font-semibold text-white">Auto-run evals</p>
+        <p className="mt-1 text-xs leading-5 text-slate-400">Start checks whenever a prompt version changes.</p>
+      </div>
+      <button
+        aria-pressed="true"
+        className="flex h-7 w-12 shrink-0 items-center justify-end rounded-full border border-[#40E0D0]/35 bg-[#40E0D0]/18 p-1"
+        type="button"
+      >
+        <span className="h-5 w-5 rounded-full bg-[#40E0D0] shadow-[0_0_16px_rgba(64,224,208,0.55)]" />
+      </button>
+    </div>
+  );
+}`,
+  "avatar-stack": `const people = ["EB", "AI", "QA"];
+
+export function AvatarStack() {
+  return (
+    <div className="inline-flex items-center rounded-full border border-white/12 bg-[#0b0f14]/82 px-3 py-2 shadow-xl">
+      <div className="flex -space-x-2">
+        {people.map((person, index) => (
+          <span
+            key={person}
+            className="grid h-9 w-9 place-items-center rounded-full border-2 border-[#0b0f14] bg-[#40E0D0]/14 text-xs font-black text-[#d8fffb]"
+            style={{ zIndex: people.length - index }}
+          >
+            {person}
+          </span>
+        ))}
+      </div>
+      <span className="ml-3 text-xs font-semibold text-slate-300">3 reviewers</span>
+    </div>
+  );
+}`,
+  "empty-state-panel": `export function EmptyStatePanel() {
+  return (
+    <section className="grid w-full max-w-sm place-items-center rounded-lg border border-dashed border-[#40E0D0]/30 bg-[#40E0D0]/8 p-8 text-center">
+      <span className="grid h-12 w-12 place-items-center rounded-full bg-[#40E0D0]/14 text-sm font-black text-[#d8fffb]">+</span>
+      <h3 className="mt-4 text-base font-bold text-white">No variants yet</h3>
+      <p className="mt-2 max-w-xs text-sm leading-6 text-slate-400">Create the first prompt variant to compare quality, cost, and latency.</p>
+      <button className="mt-5 rounded-full bg-[#40E0D0] px-4 py-2 text-sm font-bold text-[#0b0f14]" type="button">
+        Add variant
+      </button>
+    </section>
+  );
+}`,
 } as const;

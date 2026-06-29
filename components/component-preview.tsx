@@ -4,8 +4,11 @@ import { AgentStepTimeline } from "@/components/ui/agent-step-timeline";
 import { AiChatInput } from "@/components/ui/ai-chat-input";
 import { ApiKeyField } from "@/components/ui/api-key-field";
 import { CodeTabSwitcher } from "@/components/ui/code-tab-switcher";
+import { CommandHintBar } from "@/components/ui/command-hint-bar";
+import { ConfidenceMeter } from "@/components/ui/confidence-meter";
 import { ContextMenuPanel } from "@/components/ui/context-menu-panel";
 import { CopyCodeCard } from "@/components/ui/copy-code-card";
+import { EmptyStatePanel } from "@/components/ui/empty-state-panel";
 import { EvalRadarCard } from "@/components/ui/eval-radar-card";
 import { FileDropzone } from "@/components/ui/file-dropzone";
 import { FloatingNavDock } from "@/components/ui/floating-nav-dock";
@@ -14,6 +17,7 @@ import { GlassMetricCard } from "@/components/ui/glass-metric-card";
 import { GlowLoader } from "@/components/ui/glow-loader";
 import { GradientSplitButton } from "@/components/ui/gradient-split-button";
 import { IconPulseButton } from "@/components/ui/icon-pulse-button";
+import { InlineAlertBanner } from "@/components/ui/inline-alert-banner";
 import { ModalShell } from "@/components/ui/modal-shell";
 import { ModelSwitcher } from "@/components/ui/model-switcher";
 import { NeuralSearchInput } from "@/components/ui/neural-search-input";
@@ -25,10 +29,16 @@ import { PromptVersionSelect } from "@/components/ui/prompt-version-select";
 import { PromptBadge } from "@/components/ui/prompt-badge";
 import { ShortcutKey } from "@/components/ui/shortcut-key";
 import { SourceCitationCard } from "@/components/ui/source-citation-card";
+import { SkeletonCard } from "@/components/ui/skeleton-card";
 import { StatusToastStack } from "@/components/ui/status-toast-stack";
+import { StatStrip } from "@/components/ui/stat-strip";
 import { StreamingResponseBubble } from "@/components/ui/streaming-response-bubble";
 import { TokenUsagePill } from "@/components/ui/token-usage-pill";
 import { VoiceWaveLoader } from "@/components/ui/voice-wave-loader";
+import { WorkflowBreadcrumb } from "@/components/ui/workflow-breadcrumb";
+import { SchemaFieldRow } from "@/components/ui/schema-field-row";
+import { ToggleSettingRow } from "@/components/ui/toggle-setting-row";
+import { AvatarStack } from "@/components/ui/avatar-stack";
 
 const previews: Record<ComponentSlug, React.ComponentType> = {
   "neon-gradient-button": NeonGradientButton,
@@ -61,6 +71,16 @@ const previews: Record<ComponentSlug, React.ComponentType> = {
   "eval-radar-card": EvalRadarCard,
   "prompt-version-select": PromptVersionSelect,
   "api-key-field": ApiKeyField,
+  "inline-alert-banner": InlineAlertBanner,
+  "confidence-meter": ConfidenceMeter,
+  "workflow-breadcrumb": WorkflowBreadcrumb,
+  "schema-field-row": SchemaFieldRow,
+  "skeleton-card": SkeletonCard,
+  "stat-strip": StatStrip,
+  "command-hint-bar": CommandHintBar,
+  "toggle-setting-row": ToggleSettingRow,
+  "avatar-stack": AvatarStack,
+  "empty-state-panel": EmptyStatePanel,
 };
 
 type ComponentPreviewProps = {
