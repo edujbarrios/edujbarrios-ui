@@ -1,16 +1,21 @@
+import { ColorCopyButton } from "@/components/color-copy-button";
 import { CopyButton } from "@/components/copy-button";
 
 type CodeBlockProps = {
   code: string;
   label?: string;
+  colorCopy?: boolean;
 };
 
-export function CodeBlock({ code, label = "TypeScript" }: CodeBlockProps) {
+export function CodeBlock({ code, label = "TypeScript", colorCopy = label === "TypeScript" }: CodeBlockProps) {
   return (
     <div className="overflow-hidden rounded-lg border border-[#40E0D0]/18 bg-[#05080d] shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
-      <div className="flex items-center justify-between border-b border-[#40E0D0]/14 bg-[#1b1b1d]/72 px-4 py-3">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#40E0D0]/14 bg-[#1b1b1d]/72 px-4 py-3">
         <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#40E0D0]">{label}</span>
-        <CopyButton value={code} />
+        <div className="flex flex-wrap items-center gap-2">
+          <CopyButton value={code} />
+          {colorCopy ? <ColorCopyButton value={code} /> : null}
+        </div>
       </div>
       <pre className="code-scrollbar max-h-[560px] overflow-auto bg-[radial-gradient(circle_at_20%_0%,rgba(64,224,208,0.08),transparent_24rem)] p-4 text-sm leading-6 text-slate-200">
         <code dangerouslySetInnerHTML={{ __html: highlightCode(code) }} />

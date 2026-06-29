@@ -25,6 +25,7 @@ Use it to:
 - Individual component detail pages
 - Live previews for every component
 - Copy-to-clipboard source snippets
+- Color roller copy control for copying components with a chosen accent color
 - Usage examples and accessibility notes
 - Local typed component registry
 - No backend, no database, no auth

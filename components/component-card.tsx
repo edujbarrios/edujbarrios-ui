@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ComponentPreview } from "@/components/component-preview";
+import { ColorCopyButton } from "@/components/color-copy-button";
 import { CopyButton } from "@/components/copy-button";
 import type { ComponentItem } from "@/lib/components";
 
@@ -35,6 +36,7 @@ export function ComponentCard({ component }: ComponentCardProps) {
             View component
           </Link>
           <CopyButton value={component.code} />
+          <ColorCopyButton value={component.code} />
         </div>
       </div>
     </article>

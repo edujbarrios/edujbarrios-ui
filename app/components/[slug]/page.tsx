@@ -72,7 +72,7 @@ export default async function ComponentDetailPage({ params }: PageProps) {
 
       <div className="mt-10 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
         <CodeBlock code={component.code} />
-        <CodeBlock code={component.usage} label="Usage" />
+        <CodeBlock code={component.usage} label="Usage" colorCopy={false} />
       </div>
 
       {related.length > 0 ? (
