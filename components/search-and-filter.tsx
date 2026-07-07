@@ -12,10 +12,19 @@ type SearchAndFilterProps = {
 export function SearchAndFilter({ components }: SearchAndFilterProps) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
+  const categoryCounts = useMemo(() => {
+    return categories.reduce<Record<string, number>>((counts, item) => {
+      counts[item] = components.filter((component) => component.category === item).length;
+      return counts;
+    }, {});
+  }, [components]);
 
   const filtered = useMemo(() => {
+    const normalizedQuery = query.trim().toLowerCase();
+
     return components.filter((component) => {
-      const matchesQuery = component.name.toLowerCase().includes(query.toLowerCase());
+      const searchable = [component.name, component.description, component.category, ...component.tags].join(" ").toLowerCase();
+      const matchesQuery = normalizedQuery.length === 0 || searchable.includes(normalizedQuery);
       const matchesCategory = category === "All" || component.category === category;
       return matchesQuery && matchesCategory;
     });
@@ -23,18 +32,21 @@ export function SearchAndFilter({ components }: SearchAndFilterProps) {
 
   return (
     <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-      <div className="glass rounded-lg p-4">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+      <div className="glass rounded-lg p-4 sm:p-5">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
           <label className="flex-1">
             <span className="sr-only">Search components</span>
             <input
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="Search by component name..."
+              placeholder="Search by name, tag, category, or use case..."
               className="w-full rounded-lg border border-white/10 bg-[#0b0f14]/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-[#40E0D0]/40"
             />
+            <span className="mt-2 block text-xs text-slate-500">
+              Showing {filtered.length} of {components.length} components
+            </span>
           </label>
-          <div className="flex gap-2 overflow-x-auto pb-1">
+          <div className="flex max-w-3xl gap-2 overflow-x-auto pb-1">
             {["All", ...categories].map((item) => (
               <button
                 key={item}
@@ -48,6 +60,7 @@ export function SearchAndFilter({ components }: SearchAndFilterProps) {
                 )}
               >
                 {item}
+                <span className={category === item ? "ml-2 text-[#d8fffb]/75" : "ml-2 text-slate-500"}>{item === "All" ? components.length : categoryCounts[item]}</span>
               </button>
             ))}
           </div>

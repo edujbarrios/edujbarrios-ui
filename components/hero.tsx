@@ -4,7 +4,7 @@ import { ComponentPreview } from "@/components/component-preview";
 import { categories, components } from "@/lib/components";
 import { siteConfig } from "@/lib/config";
 
-const previewSlugs = ["usage-sparkline-card", "prompt-diff-viewer", "data-pipeline-card", "release-checklist"] as const;
+const previewSlugs = ["usage-sparkline-card", "agent-status-ribbon", "latency-budget-card", "feedback-score-card"] as const;
 const heroStats = [
   { label: "Components", value: components.length },
   { label: "Categories", value: categories.length },
