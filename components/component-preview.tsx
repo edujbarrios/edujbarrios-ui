@@ -5,6 +5,7 @@ import { AgentMemoryCard } from "@/components/ui/agent-memory-card";
 import { AgentStepTimeline } from "@/components/ui/agent-step-timeline";
 import { AiChatInput } from "@/components/ui/ai-chat-input";
 import { ApiKeyField } from "@/components/ui/api-key-field";
+import { ApprovalActionPanel } from "@/components/ui/approval-action-panel";
 import { AvatarStack } from "@/components/ui/avatar-stack";
 import { CodeTabSwitcher } from "@/components/ui/code-tab-switcher";
 import { ColorTokenSwatch } from "@/components/ui/color-token-swatch";
@@ -24,6 +25,7 @@ import { GradientSplitButton } from "@/components/ui/gradient-split-button";
 import { IconPulseButton } from "@/components/ui/icon-pulse-button";
 import { InlineAlertBanner } from "@/components/ui/inline-alert-banner";
 import { IntegrationStatusGrid } from "@/components/ui/integration-status-grid";
+import { LatencyBudgetCard } from "@/components/ui/latency-budget-card";
 import { ModalShell } from "@/components/ui/modal-shell";
 import { ModelSwitcher } from "@/components/ui/model-switcher";
 import { NeuralSearchInput } from "@/components/ui/neural-search-input";
@@ -35,6 +37,7 @@ import { PromptDiffViewer } from "@/components/ui/prompt-diff-viewer";
 import { PromptVersionSelect } from "@/components/ui/prompt-version-select";
 import { PromptBadge } from "@/components/ui/prompt-badge";
 import { ReleaseChecklist } from "@/components/ui/release-checklist";
+import { SegmentedFilterTabs } from "@/components/ui/segmented-filter-tabs";
 import { ShortcutKey } from "@/components/ui/shortcut-key";
 import { SourceCitationCard } from "@/components/ui/source-citation-card";
 import { SkeletonCard } from "@/components/ui/skeleton-card";
@@ -47,6 +50,7 @@ import { WorkflowBreadcrumb } from "@/components/ui/workflow-breadcrumb";
 import { SchemaFieldRow } from "@/components/ui/schema-field-row";
 import { ToggleSettingRow } from "@/components/ui/toggle-setting-row";
 import { UsageSparklineCard } from "@/components/ui/usage-sparkline-card";
+import { WebhookEventLog } from "@/components/ui/webhook-event-log";
 
 const previews: Record<ComponentSlug, ComponentType> = {
   "neon-gradient-button": NeonGradientButton,
@@ -95,6 +99,10 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "integration-status-grid": IntegrationStatusGrid,
   "usage-sparkline-card": UsageSparklineCard,
   "data-pipeline-card": DataPipelineCard,
+  "approval-action-panel": ApprovalActionPanel,
+  "segmented-filter-tabs": SegmentedFilterTabs,
+  "latency-budget-card": LatencyBudgetCard,
+  "webhook-event-log": WebhookEventLog,
 };
 
 type ComponentPreviewProps = {

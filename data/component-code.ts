@@ -739,4 +739,110 @@ export function DataPipelineCard() {
     </section>
   );
 }`,
+  "approval-action-panel": `const reviewers = ["Design", "Legal", "Ops"];
+
+export function ApprovalActionPanel() {
+  return (
+    <section className="w-full max-w-sm rounded-lg border border-[#40E0D0]/20 bg-[#0b0f14]/88 p-5 shadow-2xl">
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Approval</p>
+          <h3 className="mt-2 text-lg font-bold text-white">Publish launch prompt</h3>
+        </div>
+        <span className="rounded-full bg-[#fb923c]/12 px-2.5 py-1 text-xs font-semibold text-[#fdba74]">pending</span>
+      </div>
+      <div className="mt-4 flex flex-wrap gap-2">
+        {reviewers.map((reviewer) => (
+          <span key={reviewer} className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-semibold text-slate-300">
+            {reviewer}
+          </span>
+        ))}
+      </div>
+      <div className="mt-5 flex gap-2">
+        <button className="flex-1 rounded-full border border-white/12 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:bg-white/8" type="button">
+          Request edits
+        </button>
+        <button className="flex-1 rounded-full bg-[#40E0D0] px-4 py-2 text-sm font-bold text-[#0b0f14]" type="button">
+          Approve
+        </button>
+      </div>
+    </section>
+  );
+}`,
+  "segmented-filter-tabs": `const filters = [
+  { label: "All", count: "42" },
+  { label: "Live", count: "18" },
+  { label: "Draft", count: "7" },
+];
+
+export function SegmentedFilterTabs() {
+  return (
+    <div className="inline-flex rounded-lg border border-white/12 bg-[#0b0f14]/82 p-1 shadow-xl">
+      {filters.map((filter) => (
+        <button
+          key={filter.label}
+          className={filter.label === "Live" ? "rounded-md bg-[#40E0D0] px-3 py-2 text-xs font-bold text-[#0b0f14]" : "rounded-md px-3 py-2 text-xs font-semibold text-slate-400 transition hover:text-white"}
+          type="button"
+        >
+          {filter.label}
+          <span className={filter.label === "Live" ? "ml-2 text-[#0b0f14]/70" : "ml-2 text-slate-600"}>{filter.count}</span>
+        </button>
+      ))}
+    </div>
+  );
+}`,
+  "latency-budget-card": `const checkpoints = [
+  { label: "Queue", value: "18ms", width: "w-[18%]" },
+  { label: "Model", value: "212ms", width: "w-[62%]" },
+  { label: "Render", value: "41ms", width: "w-[28%]" },
+];
+
+export function LatencyBudgetCard() {
+  return (
+    <section className="w-full max-w-sm rounded-lg border border-white/12 bg-white/[0.06] p-5 shadow-2xl backdrop-blur">
+      <div className="flex items-center justify-between gap-3">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Latency budget</p>
+        <span className="rounded-full bg-[#40E0D0]/12 px-2.5 py-1 text-xs font-semibold text-[#d8fffb]">271ms</span>
+      </div>
+      <div className="mt-4 space-y-3">
+        {checkpoints.map((checkpoint) => (
+          <div key={checkpoint.label}>
+            <div className="flex justify-between text-xs font-semibold text-slate-300">
+              <span>{checkpoint.label}</span>
+              <span>{checkpoint.value}</span>
+            </div>
+            <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-[#1b1b1d]">
+              <div className={\`\${checkpoint.width} h-full rounded-full bg-gradient-to-r from-[#40E0D0] to-[#fb923c]\`} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}`,
+  "webhook-event-log": `const events = [
+  { name: "component.created", time: "14:22", state: "200" },
+  { name: "preview.rendered", time: "14:23", state: "200" },
+  { name: "docs.synced", time: "14:24", state: "202" },
+];
+
+export function WebhookEventLog() {
+  return (
+    <div className="w-full max-w-sm overflow-hidden rounded-lg border border-white/12 bg-[#0b0f14]/88 shadow-2xl">
+      <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#40E0D0]">Webhook log</p>
+        <span className="h-2.5 w-2.5 rounded-full bg-[#40E0D0] shadow-[0_0_14px_rgba(64,224,208,0.75)]" />
+      </div>
+      <div className="divide-y divide-white/8">
+        {events.map((event) => (
+          <div key={event.name} className="grid grid-cols-[1fr_auto_auto] items-center gap-3 px-4 py-3 text-xs">
+            <span className="font-semibold text-slate-200">{event.name}</span>
+            <time className="text-slate-500">{event.time}</time>
+            <span className="rounded-full bg-[#40E0D0]/12 px-2 py-0.5 font-bold text-[#d8fffb]">{event.state}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}`,
 } as const;
