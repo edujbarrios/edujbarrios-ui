@@ -845,4 +845,102 @@ export function WebhookEventLog() {
     </div>
   );
 }`,
+  "cost-estimate-card": `const lineItems = [
+  { label: "Input", value: "$0.12" },
+  { label: "Output", value: "$0.28" },
+  { label: "Cache", value: "-$0.05" },
+];
+
+export function CostEstimateCard() {
+  return (
+    <section className="w-full max-w-xs rounded-lg border border-[#40E0D0]/20 bg-white/[0.06] p-5 shadow-2xl backdrop-blur">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Run estimate</p>
+      <div className="mt-3 flex items-end justify-between">
+        <span className="text-4xl font-black text-white">$0.35</span>
+        <span className="rounded-full bg-[#40E0D0]/12 px-2.5 py-1 text-xs font-semibold text-[#d8fffb]">cached</span>
+      </div>
+      <dl className="mt-4 space-y-2">
+        {lineItems.map((item) => (
+          <div key={item.label} className="flex justify-between text-sm">
+            <dt className="text-slate-400">{item.label}</dt>
+            <dd className="font-semibold text-slate-100">{item.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+  );
+}`,
+  "dataset-upload-queue": `const files = [
+  { name: "prompts.csv", progress: "w-[78%]", state: "uploading" },
+  { name: "evals.jsonl", progress: "w-full", state: "ready" },
+  { name: "screens.zip", progress: "w-[42%]", state: "queued" },
+];
+
+export function DatasetUploadQueue() {
+  return (
+    <section className="w-full max-w-sm rounded-lg border border-white/12 bg-[#0b0f14]/88 p-4 shadow-2xl">
+      <div className="flex items-center justify-between">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Upload queue</p>
+        <span className="text-xs font-semibold text-slate-400">3 files</span>
+      </div>
+      <div className="mt-4 space-y-3">
+        {files.map((file) => (
+          <div key={file.name} className="rounded-md border border-white/10 bg-white/[0.04] p-3">
+            <div className="flex justify-between gap-3 text-xs font-semibold">
+              <span className="text-slate-100">{file.name}</span>
+              <span className="text-slate-500">{file.state}</span>
+            </div>
+            <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-[#1b1b1d]">
+              <div className={\`\${file.progress} h-full rounded-full bg-gradient-to-r from-[#40E0D0] to-[#a78bfa]\`} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}`,
+  "agent-status-ribbon": `const statuses = ["Planning", "Writing", "Reviewing"];
+
+export function AgentStatusRibbon() {
+  return (
+    <div className="flex w-full max-w-md flex-wrap items-center gap-2 rounded-full border border-[#40E0D0]/22 bg-[#0b0f14]/86 px-3 py-2 shadow-2xl backdrop-blur">
+      <span className="grid h-8 w-8 place-items-center rounded-full bg-[#40E0D0]/14 text-xs font-black text-[#d8fffb]">AI</span>
+      {statuses.map((status, index) => (
+        <span
+          key={status}
+          className={index === 1 ? "rounded-full bg-[#40E0D0] px-3 py-1.5 text-xs font-bold text-[#0b0f14]" : "rounded-full bg-white/[0.06] px-3 py-1.5 text-xs font-semibold text-slate-300"}
+        >
+          {status}
+        </span>
+      ))}
+    </div>
+  );
+}`,
+  "feedback-score-card": `const ratings = [
+  { label: "Useful", value: "94%" },
+  { label: "Clear", value: "89%" },
+  { label: "Fast", value: "96%" },
+];
+
+export function FeedbackScoreCard() {
+  return (
+    <section className="w-full max-w-sm rounded-lg border border-[#fb923c]/22 bg-[#fb923c]/8 p-5 shadow-2xl">
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#fdba74]">Feedback</p>
+          <h3 className="mt-2 text-lg font-bold text-white">Beta reviewers</h3>
+        </div>
+        <span className="rounded-full bg-white/10 px-2.5 py-1 text-xs font-semibold text-orange-50">128 notes</span>
+      </div>
+      <div className="mt-4 grid grid-cols-3 gap-2">
+        {ratings.map((rating) => (
+          <div key={rating.label} className="rounded-md border border-white/10 bg-[#0b0f14]/55 p-3 text-center">
+            <p className="text-xl font-black text-white">{rating.value}</p>
+            <p className="mt-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-slate-500">{rating.label}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}`,
 } as const;

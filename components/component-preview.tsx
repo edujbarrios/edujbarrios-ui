@@ -3,6 +3,7 @@ import type { ComponentSlug } from "@/lib/components";
 import { brandColor } from "@/lib/color-accent";
 import { AgentMemoryCard } from "@/components/ui/agent-memory-card";
 import { AgentStepTimeline } from "@/components/ui/agent-step-timeline";
+import { AgentStatusRibbon } from "@/components/ui/agent-status-ribbon";
 import { AiChatInput } from "@/components/ui/ai-chat-input";
 import { ApiKeyField } from "@/components/ui/api-key-field";
 import { ApprovalActionPanel } from "@/components/ui/approval-action-panel";
@@ -13,9 +14,12 @@ import { CommandHintBar } from "@/components/ui/command-hint-bar";
 import { ConfidenceMeter } from "@/components/ui/confidence-meter";
 import { ContextMenuPanel } from "@/components/ui/context-menu-panel";
 import { CopyCodeCard } from "@/components/ui/copy-code-card";
+import { CostEstimateCard } from "@/components/ui/cost-estimate-card";
 import { DataPipelineCard } from "@/components/ui/data-pipeline-card";
+import { DatasetUploadQueue } from "@/components/ui/dataset-upload-queue";
 import { EmptyStatePanel } from "@/components/ui/empty-state-panel";
 import { EvalRadarCard } from "@/components/ui/eval-radar-card";
+import { FeedbackScoreCard } from "@/components/ui/feedback-score-card";
 import { FileDropzone } from "@/components/ui/file-dropzone";
 import { FloatingNavDock } from "@/components/ui/floating-nav-dock";
 import { GlassCommandCard } from "@/components/ui/glass-command-card";
@@ -103,6 +107,10 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "segmented-filter-tabs": SegmentedFilterTabs,
   "latency-budget-card": LatencyBudgetCard,
   "webhook-event-log": WebhookEventLog,
+  "cost-estimate-card": CostEstimateCard,
+  "dataset-upload-queue": DatasetUploadQueue,
+  "agent-status-ribbon": AgentStatusRibbon,
+  "feedback-score-card": FeedbackScoreCard,
 };
 
 type ComponentPreviewProps = {
