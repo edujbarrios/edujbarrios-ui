@@ -17,7 +17,7 @@ const spotlight = [
 ];
 
 export default function Home() {
-  const featured = components.filter((component) => component.featured).slice(0, 4);
+  const featured = components.filter((component) => component.featured).slice(-6).reverse();
 
   return (
     <>
@@ -53,7 +53,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {featured.map((component) => (
             <ComponentCard key={component.slug} component={component} />
           ))}
