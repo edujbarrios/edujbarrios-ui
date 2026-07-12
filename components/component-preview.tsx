@@ -58,6 +58,9 @@ import { WebhookEventLog } from "@/components/ui/webhook-event-log";
 import { ToolCallInspector } from "@/components/ui/tool-call-inspector";
 import { HumanCheckpointCard } from "@/components/ui/human-checkpoint-card";
 import { ContextWindowMeter } from "@/components/ui/context-window-meter";
+import { AgentHandoffCard } from "@/components/ui/agent-handoff-card";
+import { RetrievalHealthCard } from "@/components/ui/retrieval-health-card";
+import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
   "neon-gradient-button": NeonGradientButton,
@@ -117,6 +120,9 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "tool-call-inspector": ToolCallInspector,
   "human-checkpoint-card": HumanCheckpointCard,
   "context-window-meter": ContextWindowMeter,
+  "agent-handoff-card": AgentHandoffCard,
+  "retrieval-health-card": RetrievalHealthCard,
+  "rate-limit-gauge": RateLimitGauge,
 };
 
 type ComponentPreviewProps = {

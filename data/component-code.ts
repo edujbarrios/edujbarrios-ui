@@ -916,6 +916,50 @@ export function AgentStatusRibbon() {
     </div>
   );
 }`,
+  "agent-handoff-card": `const context = ["Customer intent", "Billing history", "Draft response"];
+
+export function AgentHandoffCard() {
+  return (
+    <section className="w-full max-w-sm rounded-xl border border-white/12 bg-[#0b0f14]/92 p-5 shadow-2xl">
+      <div className="flex items-center justify-between"><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Agent handoff</p><span className="rounded-full bg-[#a78bfa]/12 px-2.5 py-1 text-xs font-semibold text-[#c4b5fd]">ready</span></div>
+      <div className="mt-4 flex items-center gap-3">
+        <span className="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/[0.06] text-xs font-black text-slate-200">CS</span><span className="text-lg text-slate-600" aria-hidden="true">→</span><span className="grid h-11 w-11 place-items-center rounded-full border border-[#40E0D0]/24 bg-[#40E0D0]/10 text-xs font-black text-[#d8fffb]">BL</span>
+        <div className="min-w-0"><p className="truncate text-sm font-bold text-white">Billing specialist</p><p className="mt-1 text-xs text-slate-500">Confidence 96%</p></div>
+      </div>
+      <div className="mt-4 rounded-lg border border-white/8 bg-white/[0.035] p-3"><p className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-slate-500">Context attached</p><ul className="mt-2 flex flex-wrap gap-2">{context.map((item) => <li key={item} className="rounded-full bg-white/[0.06] px-2.5 py-1 text-[0.65rem] font-semibold text-slate-300">{item}</li>)}</ul></div>
+      <button type="button" className="mt-4 w-full rounded-full bg-[#40E0D0] px-4 py-2.5 text-xs font-bold text-[#0b0f14]">Transfer conversation</button>
+    </section>
+  );
+}`,
+  "retrieval-health-card": `const sources = [
+  { name: "Product docs", freshness: "2m", score: "98%", tone: "bg-[#40E0D0]" },
+  { name: "Help center", freshness: "1h", score: "91%", tone: "bg-[#a78bfa]" },
+  { name: "Release notes", freshness: "3d", score: "76%", tone: "bg-[#fb923c]" },
+];
+
+export function RetrievalHealthCard() {
+  return (
+    <section className="w-full max-w-sm rounded-xl border border-white/12 bg-[#0b0f14]/92 p-5 shadow-2xl">
+      <div className="flex items-end justify-between"><div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Retrieval health</p><h3 className="mt-2 text-lg font-bold text-white">Knowledge index</h3></div><span className="text-xs font-semibold text-[#d8fffb]">healthy</span></div>
+      <dl className="mt-4 space-y-2">{sources.map((source) => <div key={source.name} className="grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-lg border border-white/8 bg-white/[0.035] p-3"><span className={\`\${source.tone} h-2 w-2 rounded-full\`} aria-hidden="true" /><div><dt className="text-xs font-semibold text-slate-200">{source.name}</dt><dd className="mt-1 text-[0.65rem] text-slate-500">Synced {source.freshness} ago</dd></div><dd className="text-xs font-black tabular-nums text-white">{source.score}</dd></div>)}</dl>
+      <p className="mt-4 text-xs leading-5 text-slate-400">12,482 chunks indexed · 3 sources online</p>
+    </section>
+  );
+}`,
+  "rate-limit-gauge": `const limits = [
+  { label: "Requests", value: "342 / 500", width: "w-[68%]" },
+  { label: "Tokens", value: "72k / 100k", width: "w-[72%]" },
+];
+
+export function RateLimitGauge() {
+  return (
+    <section className="w-full max-w-sm rounded-xl border border-white/12 bg-[#0b0f14]/92 p-5 shadow-2xl">
+      <div className="flex items-start justify-between gap-4"><div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Rate limits</p><h3 className="mt-2 text-lg font-bold text-white">Production API</h3></div><span className="rounded-full bg-[#40E0D0]/10 px-2.5 py-1 text-xs font-bold text-[#d8fffb]">resets 42s</span></div>
+      <dl className="mt-5 space-y-4">{limits.map((limit) => <div key={limit.label}><div className="flex items-center justify-between text-xs"><dt className="font-semibold text-slate-300">{limit.label}</dt><dd className="font-bold tabular-nums text-white">{limit.value}</dd></div><div className="mt-2 h-2 overflow-hidden rounded-full bg-white/[0.06]"><div className={\`\${limit.width} h-full rounded-full bg-gradient-to-r from-[#40E0D0] to-[#a78bfa]\`} /></div></div>)}</dl>
+      <div className="mt-5 flex items-center justify-between rounded-lg border border-white/8 bg-white/[0.035] p-3"><span className="text-xs text-slate-400">Projected headroom</span><strong className="text-sm text-[#fdba74]">~158 requests</strong></div>
+    </section>
+  );
+}`,
   "context-window-meter": `const segments = [
   { label: "System", tokens: "4.2k", width: "w-[18%]", color: "bg-[#40E0D0]" },
   { label: "Conversation", tokens: "12.8k", width: "w-[38%]", color: "bg-[#a78bfa]" },
