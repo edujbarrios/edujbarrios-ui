@@ -17,7 +17,7 @@ const spotlight = [
 ];
 
 export default function Home() {
-  const featured = components.filter((component) => component.featured).slice(0, 4);
+  const featured = components.filter((component) => component.featured).slice(-4).reverse();
 
   return (
     <>
