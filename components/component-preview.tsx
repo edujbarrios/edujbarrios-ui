@@ -55,6 +55,9 @@ import { SchemaFieldRow } from "@/components/ui/schema-field-row";
 import { ToggleSettingRow } from "@/components/ui/toggle-setting-row";
 import { UsageSparklineCard } from "@/components/ui/usage-sparkline-card";
 import { WebhookEventLog } from "@/components/ui/webhook-event-log";
+import { ToolCallInspector } from "@/components/ui/tool-call-inspector";
+import { HumanCheckpointCard } from "@/components/ui/human-checkpoint-card";
+import { ContextWindowMeter } from "@/components/ui/context-window-meter";
 
 const previews: Record<ComponentSlug, ComponentType> = {
   "neon-gradient-button": NeonGradientButton,
@@ -111,6 +114,9 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "dataset-upload-queue": DatasetUploadQueue,
   "agent-status-ribbon": AgentStatusRibbon,
   "feedback-score-card": FeedbackScoreCard,
+  "tool-call-inspector": ToolCallInspector,
+  "human-checkpoint-card": HumanCheckpointCard,
+  "context-window-meter": ContextWindowMeter,
 };
 
 type ComponentPreviewProps = {

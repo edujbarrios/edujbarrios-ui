@@ -916,6 +916,74 @@ export function AgentStatusRibbon() {
     </div>
   );
 }`,
+  "context-window-meter": `const segments = [
+  { label: "System", tokens: "4.2k", width: "w-[18%]", color: "bg-[#40E0D0]" },
+  { label: "Conversation", tokens: "12.8k", width: "w-[38%]", color: "bg-[#a78bfa]" },
+  { label: "Sources", tokens: "8.4k", width: "w-[27%]", color: "bg-[#fb923c]" },
+];
+
+export function ContextWindowMeter() {
+  return (
+    <section className="w-full max-w-sm rounded-xl border border-white/12 bg-[#0b0f14]/92 p-5 shadow-2xl">
+      <div className="flex items-end justify-between gap-4">
+        <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Context window</p><h3 className="mt-2 text-2xl font-black tabular-nums text-white">25.4k <span className="text-sm font-semibold text-slate-500">/ 32k</span></h3></div>
+        <span className="rounded-full bg-[#fb923c]/12 px-2.5 py-1 text-xs font-bold text-[#fdba74]">79% used</span>
+      </div>
+      <div className="mt-5 flex h-2.5 gap-1 overflow-hidden rounded-full bg-white/[0.06]" aria-hidden="true">
+        {segments.map((segment) => <span key={segment.label} className={\`\${segment.width} \${segment.color} rounded-full\`} />)}
+      </div>
+      <dl className="mt-4 grid grid-cols-3 gap-2">
+        {segments.map((segment) => <div key={segment.label} className="rounded-lg border border-white/8 bg-white/[0.035] p-2.5"><dt className="text-[0.65rem] text-slate-500">{segment.label}</dt><dd className="mt-1 text-xs font-bold tabular-nums text-slate-200">{segment.tokens}</dd></div>)}
+      </dl>
+      <p className="mt-4 flex items-center gap-2 text-xs text-slate-400"><span className="h-1.5 w-1.5 rounded-full bg-[#40E0D0]" /> 6.6k tokens available for response</p>
+    </section>
+  );
+}`,
+  "human-checkpoint-card": `const impact = ["Publishes to production", "Notifies 12 subscribers"];
+
+export function HumanCheckpointCard() {
+  return (
+    <section className="w-full max-w-sm rounded-xl border border-[#fb923c]/24 bg-[#0b0f14]/92 p-5 shadow-2xl">
+      <div className="flex items-start gap-3">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#fb923c]/12 text-lg text-[#fdba74]" aria-hidden="true">!</span>
+        <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#fdba74]">Human checkpoint</p><h3 className="mt-2 text-base font-bold text-white">Approve release action?</h3><p className="mt-1 text-xs leading-5 text-slate-400">The agent is paused before a high-impact step.</p></div>
+      </div>
+      <ul className="mt-4 space-y-2 rounded-lg border border-white/8 bg-white/[0.04] p-3">
+        {impact.map((item) => <li key={item} className="flex items-center gap-2 text-xs text-slate-300"><span className="h-1.5 w-1.5 rounded-full bg-[#fb923c]" aria-hidden="true" /> {item}</li>)}
+      </ul>
+      <div className="mt-4 grid grid-cols-2 gap-2">
+        <button type="button" className="rounded-full border border-white/12 px-4 py-2.5 text-xs font-bold text-slate-200 transition hover:bg-white/8">Reject</button>
+        <button type="button" className="rounded-full bg-[#40E0D0] px-4 py-2.5 text-xs font-bold text-[#0b0f14] transition hover:bg-[#72eadf]">Approve once</button>
+      </div>
+      <p className="mt-3 text-center text-[0.65rem] text-slate-500">Auto-cancels in 4:58</p>
+    </section>
+  );
+}`,
+  "tool-call-inspector": `const calls = [
+  { tool: "search_docs", detail: "design system tokens", duration: "128ms", status: "done" },
+  { tool: "read_file", detail: "components/card.tsx", duration: "42ms", status: "done" },
+  { tool: "write_patch", detail: "3 changes proposed", duration: "running", status: "active" },
+];
+
+export function ToolCallInspector() {
+  return (
+    <section className="w-full max-w-md overflow-hidden rounded-xl border border-white/12 bg-[#0b0f14]/92 shadow-2xl">
+      <header className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+        <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Agent activity</p><h3 className="mt-1 text-sm font-bold text-white">3 tool calls</h3></div>
+        <span className="inline-flex items-center gap-2 rounded-full bg-[#40E0D0]/10 px-2.5 py-1 text-xs font-semibold text-[#d8fffb]"><span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#40E0D0]" /> live</span>
+      </header>
+      <ol className="divide-y divide-white/8">
+        {calls.map((call, index) => (
+          <li key={call.tool} className="grid grid-cols-[auto_1fr_auto] items-center gap-3 px-4 py-3">
+            <span className={call.status === "active" ? "grid h-7 w-7 place-items-center rounded-md bg-[#a78bfa]/16 text-xs font-bold text-[#c4b5fd]" : "grid h-7 w-7 place-items-center rounded-md bg-[#40E0D0]/12 text-xs font-bold text-[#d8fffb]"}>{call.status === "active" ? "…" : index + 1}</span>
+            <div className="min-w-0"><p className="truncate font-mono text-xs font-semibold text-slate-100">{call.tool}</p><p className="mt-1 truncate text-xs text-slate-500">{call.detail}</p></div>
+            <span className="text-[0.65rem] font-semibold tabular-nums text-slate-500">{call.duration}</span>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}`,
   "feedback-score-card": `const ratings = [
   { label: "Useful", value: "94%" },
   { label: "Clear", value: "89%" },
