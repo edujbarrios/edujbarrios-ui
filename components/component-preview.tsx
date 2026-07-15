@@ -47,6 +47,7 @@ import { ShortcutKey } from "@/components/ui/shortcut-key";
 import { SourceCitationCard } from "@/components/ui/source-citation-card";
 import { SkeletonCard } from "@/components/ui/skeleton-card";
 import { StatusToastStack } from "@/components/ui/status-toast-stack";
+import { StructuredOutputPanel } from "@/components/ui/structured-output-panel";
 import { StatStrip } from "@/components/ui/stat-strip";
 import { StreamingResponseBubble } from "@/components/ui/streaming-response-bubble";
 import { TokenUsagePill } from "@/components/ui/token-usage-pill";
@@ -120,6 +121,7 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "feedback-score-card": FeedbackScoreCard,
   "tool-call-inspector": ToolCallInspector,
   "multimodal-prompt-composer": MultimodalPromptComposer,
+  "structured-output-panel": StructuredOutputPanel,
   "human-checkpoint-card": HumanCheckpointCard,
   "context-window-meter": ContextWindowMeter,
   "agent-handoff-card": AgentHandoffCard,

@@ -706,6 +706,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "structured-output-panel",
+    name: "Structured Output Panel",
+    description: "A schema-first response panel for inspecting typed fields, required values, and validation state.",
+    category: "AI Interfaces",
+    tags: ["schema", "structured-output", "validation"],
+    difficulty: "Intermediate",
+    code: componentCode["structured-output-panel"],
+    usage: `<StructuredOutputPanel />`,
+    accessibility: "A definition list preserves field-to-type relationships and validity is communicated with text rather than color alone.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
