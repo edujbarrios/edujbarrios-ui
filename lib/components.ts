@@ -754,6 +754,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "prompt-test-case",
+    name: "Prompt Test Case",
+    description: "A focused evaluation card for test inputs, behavioral assertions, and prompt regression results.",
+    category: "AI Interfaces",
+    tags: ["prompt", "testing", "eval"],
+    difficulty: "Intermediate",
+    code: componentCode["prompt-test-case"],
+    usage: `<PromptTestCase />`,
+    accessibility: "Every assertion includes a visible Pass or Review label, and the summary reports an exact fraction.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
