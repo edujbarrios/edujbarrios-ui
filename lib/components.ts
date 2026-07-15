@@ -766,6 +766,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "live-voice-session",
+    name: "Live Voice Session",
+    description: "A real-time voice panel with audio activity, streaming transcript, duration, and call controls.",
+    category: "AI Interfaces",
+    tags: ["voice", "realtime", "transcript"],
+    difficulty: "Intermediate",
+    code: componentCode["live-voice-session"],
+    usage: `<LiveVoiceSession />`,
+    accessibility: "Audio activity has a text alternative, the transcript is a polite live region, and controls use explicit labels.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",

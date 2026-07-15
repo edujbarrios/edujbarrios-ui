@@ -30,6 +30,7 @@ import { IconPulseButton } from "@/components/ui/icon-pulse-button";
 import { InlineAlertBanner } from "@/components/ui/inline-alert-banner";
 import { IntegrationStatusGrid } from "@/components/ui/integration-status-grid";
 import { LatencyBudgetCard } from "@/components/ui/latency-budget-card";
+import { LiveVoiceSession } from "@/components/ui/live-voice-session";
 import { ModalShell } from "@/components/ui/modal-shell";
 import { MultimodalPromptComposer } from "@/components/ui/multimodal-prompt-composer";
 import { ModelSwitcher } from "@/components/ui/model-switcher";
@@ -130,6 +131,7 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "tool-permission-card": ToolPermissionCard,
   "model-fallback-route": ModelFallbackRoute,
   "prompt-test-case": PromptTestCase,
+  "live-voice-session": LiveVoiceSession,
   "human-checkpoint-card": HumanCheckpointCard,
   "context-window-meter": ContextWindowMeter,
   "agent-handoff-card": AgentHandoffCard,
