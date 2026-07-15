@@ -22,12 +22,14 @@ export function SearchAndFilter({ components }: SearchAndFilterProps) {
   const filtered = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
 
-    return components.filter((component) => {
-      const searchable = [component.name, component.description, component.category, ...component.tags].join(" ").toLowerCase();
-      const matchesQuery = normalizedQuery.length === 0 || searchable.includes(normalizedQuery);
-      const matchesCategory = category === "All" || component.category === category;
-      return matchesQuery && matchesCategory;
-    });
+    return components
+      .filter((component) => {
+        const searchable = [component.name, component.description, component.category, ...component.tags].join(" ").toLowerCase();
+        const matchesQuery = normalizedQuery.length === 0 || searchable.includes(normalizedQuery);
+        const matchesCategory = category === "All" || component.category === category;
+        return matchesQuery && matchesCategory;
+      })
+      .sort((first, second) => first.name.localeCompare(second.name, undefined, { sensitivity: "base" }));
   }, [category, components, query]);
 
   return (
@@ -42,8 +44,9 @@ export function SearchAndFilter({ components }: SearchAndFilterProps) {
               placeholder="Search by name, tag, category, or use case..."
               className="w-full rounded-lg border border-white/10 bg-[#0b0f14]/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-[#40E0D0]/40"
             />
-            <span className="mt-2 block text-xs text-slate-500">
-              Showing {filtered.length} of {components.length} components
+            <span className="mt-2 flex items-center justify-between gap-3 text-xs text-slate-500">
+              <span>Showing {filtered.length} of {components.length} components</span>
+              <span aria-label="Sorted alphabetically">A–Z</span>
             </span>
           </label>
           <div className="flex max-w-3xl gap-2 overflow-x-auto pb-1">
