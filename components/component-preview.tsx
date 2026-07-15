@@ -46,6 +46,7 @@ import { PromptVersionSelect } from "@/components/ui/prompt-version-select";
 import { PromptTestCase } from "@/components/ui/prompt-test-case";
 import { PromptBadge } from "@/components/ui/prompt-badge";
 import { ReleaseChecklist } from "@/components/ui/release-checklist";
+import { ResponseBranchNavigator } from "@/components/ui/response-branch-navigator";
 import { SegmentedFilterTabs } from "@/components/ui/segmented-filter-tabs";
 import { ShortcutKey } from "@/components/ui/shortcut-key";
 import { SourceCitationCard } from "@/components/ui/source-citation-card";
@@ -132,6 +133,7 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "model-fallback-route": ModelFallbackRoute,
   "prompt-test-case": PromptTestCase,
   "live-voice-session": LiveVoiceSession,
+  "response-branch-navigator": ResponseBranchNavigator,
   "human-checkpoint-card": HumanCheckpointCard,
   "context-window-meter": ContextWindowMeter,
   "agent-handoff-card": AgentHandoffCard,

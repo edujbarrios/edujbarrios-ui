@@ -778,6 +778,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "response-branch-navigator",
+    name: "Response Branch Navigator",
+    description: "A variant switcher for exploring concise, balanced, and detailed generations without losing context.",
+    category: "AI Interfaces",
+    tags: ["response", "variants", "branching"],
+    difficulty: "Intermediate",
+    code: componentCode["response-branch-navigator"],
+    usage: `<ResponseBranchNavigator />`,
+    accessibility: "Variant controls use tab semantics with an explicit selected state, and the active response is exposed as a tab panel.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
