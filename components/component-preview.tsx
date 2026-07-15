@@ -42,6 +42,7 @@ import { PricingTierCard } from "@/components/ui/pricing-tier-card";
 import { ProgressStepper } from "@/components/ui/progress-stepper";
 import { PromptDiffViewer } from "@/components/ui/prompt-diff-viewer";
 import { PromptVersionSelect } from "@/components/ui/prompt-version-select";
+import { PromptTestCase } from "@/components/ui/prompt-test-case";
 import { PromptBadge } from "@/components/ui/prompt-badge";
 import { ReleaseChecklist } from "@/components/ui/release-checklist";
 import { SegmentedFilterTabs } from "@/components/ui/segmented-filter-tabs";
@@ -128,6 +129,7 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "model-eval-comparison": ModelEvalComparison,
   "tool-permission-card": ToolPermissionCard,
   "model-fallback-route": ModelFallbackRoute,
+  "prompt-test-case": PromptTestCase,
   "human-checkpoint-card": HumanCheckpointCard,
   "context-window-meter": ContextWindowMeter,
   "agent-handoff-card": AgentHandoffCard,
