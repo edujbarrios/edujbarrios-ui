@@ -790,6 +790,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "grounding-coverage-card",
+    name: "Grounding Coverage Card",
+    description: "A claim-level evidence audit showing citation coverage, source attribution, and unsupported statements.",
+    category: "AI Interfaces",
+    tags: ["grounding", "citations", "quality"],
+    difficulty: "Intermediate",
+    code: componentCode["grounding-coverage-card"],
+    usage: `<GroundingCoverageCard />`,
+    accessibility: "Coverage is exposed through progress semantics, exact text counts, and explicit source or citation-needed labels.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
