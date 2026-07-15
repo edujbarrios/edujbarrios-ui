@@ -26,6 +26,7 @@ import { GlassCommandCard } from "@/components/ui/glass-command-card";
 import { GlassMetricCard } from "@/components/ui/glass-metric-card";
 import { GlowLoader } from "@/components/ui/glow-loader";
 import { GradientSplitButton } from "@/components/ui/gradient-split-button";
+import { GroundingCoverageCard } from "@/components/ui/grounding-coverage-card";
 import { IconPulseButton } from "@/components/ui/icon-pulse-button";
 import { InlineAlertBanner } from "@/components/ui/inline-alert-banner";
 import { IntegrationStatusGrid } from "@/components/ui/integration-status-grid";
@@ -134,6 +135,7 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "prompt-test-case": PromptTestCase,
   "live-voice-session": LiveVoiceSession,
   "response-branch-navigator": ResponseBranchNavigator,
+  "grounding-coverage-card": GroundingCoverageCard,
   "human-checkpoint-card": HumanCheckpointCard,
   "context-window-meter": ContextWindowMeter,
   "agent-handoff-card": AgentHandoffCard,
