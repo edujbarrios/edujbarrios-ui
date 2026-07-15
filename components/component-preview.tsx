@@ -59,6 +59,7 @@ import { ToggleSettingRow } from "@/components/ui/toggle-setting-row";
 import { UsageSparklineCard } from "@/components/ui/usage-sparkline-card";
 import { WebhookEventLog } from "@/components/ui/webhook-event-log";
 import { ToolCallInspector } from "@/components/ui/tool-call-inspector";
+import { ToolPermissionCard } from "@/components/ui/tool-permission-card";
 import { HumanCheckpointCard } from "@/components/ui/human-checkpoint-card";
 import { ContextWindowMeter } from "@/components/ui/context-window-meter";
 import { AgentHandoffCard } from "@/components/ui/agent-handoff-card";
@@ -124,6 +125,7 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "multimodal-prompt-composer": MultimodalPromptComposer,
   "structured-output-panel": StructuredOutputPanel,
   "model-eval-comparison": ModelEvalComparison,
+  "tool-permission-card": ToolPermissionCard,
   "human-checkpoint-card": HumanCheckpointCard,
   "context-window-meter": ContextWindowMeter,
   "agent-handoff-card": AgentHandoffCard,
