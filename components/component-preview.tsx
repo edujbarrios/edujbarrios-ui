@@ -33,6 +33,7 @@ import { LatencyBudgetCard } from "@/components/ui/latency-budget-card";
 import { ModalShell } from "@/components/ui/modal-shell";
 import { MultimodalPromptComposer } from "@/components/ui/multimodal-prompt-composer";
 import { ModelSwitcher } from "@/components/ui/model-switcher";
+import { ModelEvalComparison } from "@/components/ui/model-eval-comparison";
 import { NeuralSearchInput } from "@/components/ui/neural-search-input";
 import { NeonGradientButton } from "@/components/ui/neon-gradient-button";
 import { NotificationBell } from "@/components/ui/notification-bell";
@@ -122,6 +123,7 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "tool-call-inspector": ToolCallInspector,
   "multimodal-prompt-composer": MultimodalPromptComposer,
   "structured-output-panel": StructuredOutputPanel,
+  "model-eval-comparison": ModelEvalComparison,
   "human-checkpoint-card": HumanCheckpointCard,
   "context-window-meter": ContextWindowMeter,
   "agent-handoff-card": AgentHandoffCard,

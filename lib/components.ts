@@ -718,6 +718,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "model-eval-comparison",
+    name: "Model Eval Comparison",
+    description: "A side-by-side model decision card balancing quality, latency, cost, and groundedness.",
+    category: "AI Interfaces",
+    tags: ["eval", "models", "comparison"],
+    difficulty: "Intermediate",
+    code: componentCode["model-eval-comparison"],
+    usage: `<ModelEvalComparison />`,
+    accessibility: "Every score and tradeoff is expressed as text, and the preferred candidate includes a visible label instead of color alone.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
