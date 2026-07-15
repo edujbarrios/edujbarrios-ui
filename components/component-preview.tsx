@@ -31,6 +31,7 @@ import { InlineAlertBanner } from "@/components/ui/inline-alert-banner";
 import { IntegrationStatusGrid } from "@/components/ui/integration-status-grid";
 import { LatencyBudgetCard } from "@/components/ui/latency-budget-card";
 import { ModalShell } from "@/components/ui/modal-shell";
+import { MultimodalPromptComposer } from "@/components/ui/multimodal-prompt-composer";
 import { ModelSwitcher } from "@/components/ui/model-switcher";
 import { NeuralSearchInput } from "@/components/ui/neural-search-input";
 import { NeonGradientButton } from "@/components/ui/neon-gradient-button";
@@ -118,6 +119,7 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "agent-status-ribbon": AgentStatusRibbon,
   "feedback-score-card": FeedbackScoreCard,
   "tool-call-inspector": ToolCallInspector,
+  "multimodal-prompt-composer": MultimodalPromptComposer,
   "human-checkpoint-card": HumanCheckpointCard,
   "context-window-meter": ContextWindowMeter,
   "agent-handoff-card": AgentHandoffCard,
