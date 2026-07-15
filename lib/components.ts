@@ -730,6 +730,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "tool-permission-card",
+    name: "Tool Permission Card",
+    description: "A transparent permission summary for file access, proposed writes, and external service boundaries.",
+    category: "AI Interfaces",
+    tags: ["tools", "permissions", "safety"],
+    difficulty: "Intermediate",
+    code: componentCode["tool-permission-card"],
+    usage: `<ToolPermissionCard />`,
+    accessibility: "Each permission includes a textual scope and an accessible allowed or blocked state, so switches never rely on color alone.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
