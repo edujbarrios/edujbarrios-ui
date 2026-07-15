@@ -34,6 +34,7 @@ import { ModalShell } from "@/components/ui/modal-shell";
 import { MultimodalPromptComposer } from "@/components/ui/multimodal-prompt-composer";
 import { ModelSwitcher } from "@/components/ui/model-switcher";
 import { ModelEvalComparison } from "@/components/ui/model-eval-comparison";
+import { ModelFallbackRoute } from "@/components/ui/model-fallback-route";
 import { NeuralSearchInput } from "@/components/ui/neural-search-input";
 import { NeonGradientButton } from "@/components/ui/neon-gradient-button";
 import { NotificationBell } from "@/components/ui/notification-bell";
@@ -126,6 +127,7 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "structured-output-panel": StructuredOutputPanel,
   "model-eval-comparison": ModelEvalComparison,
   "tool-permission-card": ToolPermissionCard,
+  "model-fallback-route": ModelFallbackRoute,
   "human-checkpoint-card": HumanCheckpointCard,
   "context-window-meter": ContextWindowMeter,
   "agent-handoff-card": AgentHandoffCard,

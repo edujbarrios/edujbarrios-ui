@@ -742,6 +742,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "model-fallback-route",
+    name: "Model Fallback Route",
+    description: "A resilience chain showing primary, fallback, and cached response routes with activation conditions.",
+    category: "AI Interfaces",
+    tags: ["models", "fallback", "reliability"],
+    difficulty: "Intermediate",
+    code: componentCode["model-fallback-route"],
+    usage: `<ModelFallbackRoute />`,
+    accessibility: "An ordered list preserves routing priority, and every model includes textual conditions and readiness state.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
