@@ -694,6 +694,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "multimodal-prompt-composer",
+    name: "Multimodal Prompt Composer",
+    description: "A polished prompt surface for combining instructions with images, documents, and audio context.",
+    category: "AI Interfaces",
+    tags: ["multimodal", "prompt", "attachments"],
+    difficulty: "Intermediate",
+    code: componentCode["multimodal-prompt-composer"],
+    usage: `<MultimodalPromptComposer />`,
+    accessibility: "The prompt has an accessible label, attachments form a named list, and every icon-only action has a specific label.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
