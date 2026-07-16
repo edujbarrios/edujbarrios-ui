@@ -886,6 +886,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "adversarial-prompt-lab",
+    name: "Adversarial Prompt Lab",
+    description: "A red-team testing surface for instruction overrides, extraction attempts, and role-confusion attacks.",
+    category: "AI Interfaces",
+    tags: ["security", "red-team", "prompt"],
+    difficulty: "Advanced",
+    code: componentCode["adversarial-prompt-lab"],
+    usage: `<AdversarialPromptLab />`,
+    accessibility: "Every attack exposes a readable Blocked or Review result, with explicit test and rerun actions.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
