@@ -814,6 +814,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "guardrail-policy-card",
+    name: "Guardrail Policy Card",
+    description: "A safety policy summary showing enforcement mode, recent events, and enabled controls.",
+    category: "AI Interfaces",
+    tags: ["guardrails", "safety", "policy"],
+    difficulty: "Intermediate",
+    code: componentCode["guardrail-policy-card"],
+    usage: `<GuardrailPolicyCard />`,
+    accessibility: "Every policy exposes its name, event count, enforcement mode, and textual enabled state.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
