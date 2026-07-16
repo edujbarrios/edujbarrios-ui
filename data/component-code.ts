@@ -1275,6 +1275,14 @@ export function AdversarialPromptLab() {
     <ul className="mt-3 space-y-2">{attacks.map((attack) => <li key={attack.name} className="flex items-center justify-between rounded-lg border border-white/9 px-3 py-2.5"><span className="text-xs text-slate-300">{attack.name}</span><span className="text-[0.65rem] font-bold text-slate-400">{attack.result}</span></li>)}</ul>
   </section>;
 }`,
+  "autonomous-run-budget": `const limits = [{ label: "Wall time", used: "08:42", limit: "15 min", width: "w-[58%]" }, { label: "Tool calls", used: "12", limit: "25", width: "w-[48%]" }, { label: "Estimated cost", used: "$0.84", limit: "$2.00", width: "w-[42%]" }];
+
+export function AutonomousRunBudget() {
+  return <section className="w-full max-w-sm rounded-xl border border-white/12 bg-[#0b0f14]/92 p-4 shadow-2xl">
+    <header className="flex items-start justify-between"><div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Run budget</p><h3 className="mt-1 text-base font-bold text-white">Research workflow</h3></div><span className="rounded-full bg-[#40E0D0]/10 px-2.5 py-1 text-[0.65rem] font-bold text-[#d8fffb]">Within limits</span></header>
+    <dl className="mt-4 space-y-3">{limits.map((item) => <div key={item.label} className="rounded-lg border border-white/9 bg-white/[0.025] p-3"><div className="flex justify-between"><dt className="text-xs font-semibold text-slate-300">{item.label}</dt><dd className="text-[0.65rem] text-slate-500">{item.used} / {item.limit}</dd></div><div className="mt-2 h-1.5 rounded-full bg-white/[0.06]"><span className={"block h-full rounded-full bg-[#40E0D0] " + item.width} /></div></div>)}</dl>
+  </section>;
+}`,
   "feedback-score-card": `const ratings = [
   { label: "Useful", value: "94%" },
   { label: "Clear", value: "89%" },

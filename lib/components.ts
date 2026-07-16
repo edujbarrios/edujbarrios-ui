@@ -898,6 +898,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "autonomous-run-budget",
+    name: "Autonomous Run Budget",
+    description: "A live control surface for time, tool-call, and spending limits on long-running AI workflows.",
+    category: "AI Interfaces",
+    tags: ["budget", "autonomy", "controls"],
+    difficulty: "Advanced",
+    code: componentCode["autonomous-run-budget"],
+    usage: `<AutonomousRunBudget />`,
+    accessibility: "Every budget exposes exact used and limit values, while pause and adjustment actions use explicit labels.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
