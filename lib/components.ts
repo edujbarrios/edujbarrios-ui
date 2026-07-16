@@ -802,6 +802,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "semantic-cache-monitor",
+    name: "Semantic Cache Monitor",
+    description: "A compact cache dashboard for hit rate, cost savings, latency reduction, and similarity policy.",
+    category: "AI Interfaces",
+    tags: ["cache", "latency", "cost"],
+    difficulty: "Intermediate",
+    code: componentCode["semantic-cache-monitor"],
+    usage: `<SemanticCacheMonitor />`,
+    accessibility: "Cache effectiveness is shown with exact values and progress semantics instead of relying on the visual bar.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
