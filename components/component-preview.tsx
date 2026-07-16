@@ -2,6 +2,7 @@ import type { CSSProperties, ComponentType } from "react";
 import type { ComponentSlug } from "@/lib/components";
 import { brandColor } from "@/lib/color-accent";
 import { AgentMemoryCard } from "@/components/ui/agent-memory-card";
+import { AdversarialTestCard } from "@/components/ui/adversarial-test-card";
 import { AgentStepTimeline } from "@/components/ui/agent-step-timeline";
 import { AgentStatusRibbon } from "@/components/ui/agent-status-ribbon";
 import { AiChatInput } from "@/components/ui/ai-chat-input";
@@ -78,6 +79,7 @@ import { RetrievalHealthCard } from "@/components/ui/retrieval-health-card";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "adversarial-test-card": AdversarialTestCard,
   "neon-gradient-button": NeonGradientButton,
   "glass-command-card": GlassCommandCard,
   "ai-chat-input": AiChatInput,
