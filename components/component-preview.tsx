@@ -29,6 +29,7 @@ import { GradientSplitButton } from "@/components/ui/gradient-split-button";
 import { GroundingCoverageCard } from "@/components/ui/grounding-coverage-card";
 import { GuardrailPolicyCard } from "@/components/ui/guardrail-policy-card";
 import { IconPulseButton } from "@/components/ui/icon-pulse-button";
+import { ImageGenerationQueue } from "@/components/ui/image-generation-queue";
 import { InlineAlertBanner } from "@/components/ui/inline-alert-banner";
 import { IntegrationStatusGrid } from "@/components/ui/integration-status-grid";
 import { LatencyBudgetCard } from "@/components/ui/latency-budget-card";
@@ -140,6 +141,7 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "grounding-coverage-card": GroundingCoverageCard,
   "semantic-cache-monitor": SemanticCacheMonitor,
   "guardrail-policy-card": GuardrailPolicyCard,
+  "image-generation-queue": ImageGenerationQueue,
   "human-checkpoint-card": HumanCheckpointCard,
   "context-window-meter": ContextWindowMeter,
   "agent-handoff-card": AgentHandoffCard,

@@ -826,6 +826,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "image-generation-queue",
+    name: "Image Generation Queue",
+    description: "A parallel variant queue showing image dimensions, progress, and generation state.",
+    category: "AI Interfaces",
+    tags: ["image", "generation", "queue"],
+    difficulty: "Intermediate",
+    code: componentCode["image-generation-queue"],
+    usage: `<ImageGenerationQueue />`,
+    accessibility: "Every variant has named progress semantics and a readable Ready, Rendering, or Queued state.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
