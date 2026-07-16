@@ -31,6 +31,18 @@ export type ComponentItem = {
 
 export const components: ComponentItem[] = [
   {
+    slug: "adversarial-test-card",
+    name: "Adversarial Test Card",
+    description: "A red-team evaluation surface for instruction overrides, secret extraction, and role-confusion attacks.",
+    category: "AI Interfaces",
+    tags: ["security", "red-team", "testing"],
+    difficulty: "Advanced",
+    code: componentCode["adversarial-test-card"],
+    usage: `<AdversarialTestCard />`,
+    accessibility: "Every attack includes a textual Blocked or Review result, supplemented by an exact defense score.",
+    featured: true,
+  },
+  {
     slug: "neon-gradient-button",
     name: "Neon Gradient Button",
     description: "A compact call-to-action with a glowing gradient edge and dark inner surface.",
