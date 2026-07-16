@@ -59,6 +59,7 @@ import { SkeletonCard } from "@/components/ui/skeleton-card";
 import { StatusToastStack } from "@/components/ui/status-toast-stack";
 import { StructuredOutputPanel } from "@/components/ui/structured-output-panel";
 import { StatStrip } from "@/components/ui/stat-strip";
+import { SpeculativeModelRace } from "@/components/ui/speculative-model-race";
 import { StreamingResponseBubble } from "@/components/ui/streaming-response-bubble";
 import { TokenUsagePill } from "@/components/ui/token-usage-pill";
 import { VoiceWaveLoader } from "@/components/ui/voice-wave-loader";
@@ -144,6 +145,7 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "guardrail-policy-card": GuardrailPolicyCard,
   "image-generation-queue": ImageGenerationQueue,
   "prompt-variable-editor": PromptVariableEditor,
+  "speculative-model-race": SpeculativeModelRace,
   "human-checkpoint-card": HumanCheckpointCard,
   "context-window-meter": ContextWindowMeter,
   "agent-handoff-card": AgentHandoffCard,
