@@ -49,6 +49,7 @@ import { PromptBadge } from "@/components/ui/prompt-badge";
 import { ReleaseChecklist } from "@/components/ui/release-checklist";
 import { ResponseBranchNavigator } from "@/components/ui/response-branch-navigator";
 import { SegmentedFilterTabs } from "@/components/ui/segmented-filter-tabs";
+import { SemanticCacheMonitor } from "@/components/ui/semantic-cache-monitor";
 import { ShortcutKey } from "@/components/ui/shortcut-key";
 import { SourceCitationCard } from "@/components/ui/source-citation-card";
 import { SkeletonCard } from "@/components/ui/skeleton-card";
@@ -136,6 +137,7 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "live-voice-session": LiveVoiceSession,
   "response-branch-navigator": ResponseBranchNavigator,
   "grounding-coverage-card": GroundingCoverageCard,
+  "semantic-cache-monitor": SemanticCacheMonitor,
   "human-checkpoint-card": HumanCheckpointCard,
   "context-window-meter": ContextWindowMeter,
   "agent-handoff-card": AgentHandoffCard,
