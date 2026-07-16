@@ -850,6 +850,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "speculative-model-race",
+    name: "Speculative Model Race",
+    description: "A parallel routing view where a fast draft streams while a deeper model verifies response quality.",
+    category: "AI Interfaces",
+    tags: ["routing", "latency", "models"],
+    difficulty: "Advanced",
+    code: componentCode["speculative-model-race"],
+    usage: `<SpeculativeModelRace />`,
+    accessibility: "The ordered list preserves race priority and every candidate exposes timing, quality, and status as text.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
