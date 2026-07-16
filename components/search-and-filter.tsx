@@ -9,9 +9,18 @@ type SearchAndFilterProps = {
   components: ComponentItem[];
 };
 
+const componentNameCollator = new Intl.Collator(undefined, {
+  numeric: true,
+  sensitivity: "base",
+});
+
 export function SearchAndFilter({ components }: SearchAndFilterProps) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
+  const sortedComponents = useMemo(
+    () => [...components].sort((first, second) => componentNameCollator.compare(first.name, second.name)),
+    [components],
+  );
   const categoryCounts = useMemo(() => {
     return categories.reduce<Record<string, number>>((counts, item) => {
       counts[item] = components.filter((component) => component.category === item).length;
@@ -22,15 +31,13 @@ export function SearchAndFilter({ components }: SearchAndFilterProps) {
   const filtered = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
 
-    return components
-      .filter((component) => {
-        const searchable = [component.name, component.description, component.category, ...component.tags].join(" ").toLowerCase();
-        const matchesQuery = normalizedQuery.length === 0 || searchable.includes(normalizedQuery);
-        const matchesCategory = category === "All" || component.category === category;
-        return matchesQuery && matchesCategory;
-      })
-      .sort((first, second) => first.name.localeCompare(second.name, undefined, { sensitivity: "base" }));
-  }, [category, components, query]);
+    return sortedComponents.filter((component) => {
+      const searchable = [component.name, component.description, component.category, ...component.tags].join(" ").toLowerCase();
+      const matchesQuery = normalizedQuery.length === 0 || searchable.includes(normalizedQuery);
+      const matchesCategory = category === "All" || component.category === category;
+      return matchesQuery && matchesCategory;
+    });
+  }, [category, query, sortedComponents]);
 
   return (
     <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
