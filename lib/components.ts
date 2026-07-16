@@ -862,6 +862,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "context-provenance-map",
+    name: "Context Provenance Map",
+    description: "A traceable input map showing how policies, retrieved documents, and user context shape an answer.",
+    category: "AI Interfaces",
+    tags: ["context", "provenance", "traceability"],
+    difficulty: "Advanced",
+    code: componentCode["context-provenance-map"],
+    usage: `<ContextProvenanceMap />`,
+    accessibility: "Sources remain ordered in a semantic list with textual token and influence values; arrows are decorative.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
