@@ -27,6 +27,7 @@ import { GlassMetricCard } from "@/components/ui/glass-metric-card";
 import { GlowLoader } from "@/components/ui/glow-loader";
 import { GradientSplitButton } from "@/components/ui/gradient-split-button";
 import { GroundingCoverageCard } from "@/components/ui/grounding-coverage-card";
+import { GuardrailPolicyCard } from "@/components/ui/guardrail-policy-card";
 import { IconPulseButton } from "@/components/ui/icon-pulse-button";
 import { InlineAlertBanner } from "@/components/ui/inline-alert-banner";
 import { IntegrationStatusGrid } from "@/components/ui/integration-status-grid";
@@ -138,6 +139,7 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "response-branch-navigator": ResponseBranchNavigator,
   "grounding-coverage-card": GroundingCoverageCard,
   "semantic-cache-monitor": SemanticCacheMonitor,
+  "guardrail-policy-card": GuardrailPolicyCard,
   "human-checkpoint-card": HumanCheckpointCard,
   "context-window-meter": ContextWindowMeter,
   "agent-handoff-card": AgentHandoffCard,
