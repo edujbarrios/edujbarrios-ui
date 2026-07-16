@@ -46,6 +46,7 @@ import { PricingTierCard } from "@/components/ui/pricing-tier-card";
 import { ProgressStepper } from "@/components/ui/progress-stepper";
 import { PromptDiffViewer } from "@/components/ui/prompt-diff-viewer";
 import { PromptVersionSelect } from "@/components/ui/prompt-version-select";
+import { PromptVariableEditor } from "@/components/ui/prompt-variable-editor";
 import { PromptTestCase } from "@/components/ui/prompt-test-case";
 import { PromptBadge } from "@/components/ui/prompt-badge";
 import { ReleaseChecklist } from "@/components/ui/release-checklist";
@@ -142,6 +143,7 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "semantic-cache-monitor": SemanticCacheMonitor,
   "guardrail-policy-card": GuardrailPolicyCard,
   "image-generation-queue": ImageGenerationQueue,
+  "prompt-variable-editor": PromptVariableEditor,
   "human-checkpoint-card": HumanCheckpointCard,
   "context-window-meter": ContextWindowMeter,
   "agent-handoff-card": AgentHandoffCard,

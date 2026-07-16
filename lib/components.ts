@@ -838,6 +838,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "prompt-variable-editor",
+    name: "Prompt Variable Editor",
+    description: "A typed variable form for configuring reusable prompt templates before previewing or running them.",
+    category: "AI Interfaces",
+    tags: ["prompt", "variables", "template"],
+    difficulty: "Intermediate",
+    code: componentCode["prompt-variable-editor"],
+    usage: `<PromptVariableEditor />`,
+    accessibility: "Every input is wrapped by a label containing its variable name and type, with explicit preview and run actions.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
