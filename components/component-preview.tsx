@@ -10,6 +10,7 @@ import { AdversarialPromptLab } from "@/components/ui/adversarial-prompt-lab";
 import { ApiKeyField } from "@/components/ui/api-key-field";
 import { ApprovalActionPanel } from "@/components/ui/approval-action-panel";
 import { AvatarStack } from "@/components/ui/avatar-stack";
+import { AutonomousRunBudget } from "@/components/ui/autonomous-run-budget";
 import { CodeTabSwitcher } from "@/components/ui/code-tab-switcher";
 import { ColorTokenSwatch } from "@/components/ui/color-token-swatch";
 import { CommandHintBar } from "@/components/ui/command-hint-bar";
@@ -152,6 +153,7 @@ const previews: Record<ComponentSlug, ComponentType> = {
   "speculative-model-race": SpeculativeModelRace,
   "context-provenance-map": ContextProvenanceMap,
   "adversarial-prompt-lab": AdversarialPromptLab,
+  "autonomous-run-budget": AutonomousRunBudget,
   "human-checkpoint-card": HumanCheckpointCard,
   "context-window-meter": ContextWindowMeter,
   "agent-handoff-card": AgentHandoffCard,
