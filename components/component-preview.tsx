@@ -22,6 +22,7 @@ import { ContextMenuPanel } from "@/components/ui/context-menu-panel";
 import { CopyCodeCard } from "@/components/ui/copy-code-card";
 import { CostEstimateCard } from "@/components/ui/cost-estimate-card";
 import { DataPipelineCard } from "@/components/ui/data-pipeline-card";
+import { DataRedactionPreview } from "@/components/ui/data-redaction-preview";
 import { DatasetUploadQueue } from "@/components/ui/dataset-upload-queue";
 import { EmptyStatePanel } from "@/components/ui/empty-state-panel";
 import { EvalRadarCard } from "@/components/ui/eval-radar-card";
@@ -92,6 +93,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "data-redaction-preview": DataRedactionPreview,
   "conversation-fork-map": ConversationForkMap,
   "tool-retry-policy": ToolRetryPolicy,
   "batch-prompt-matrix": BatchPromptMatrix,
