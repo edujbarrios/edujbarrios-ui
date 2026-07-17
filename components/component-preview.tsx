@@ -11,6 +11,7 @@ import { AdversarialPromptLab } from "@/components/ui/adversarial-prompt-lab";
 import { ApiKeyField } from "@/components/ui/api-key-field";
 import { ApprovalActionPanel } from "@/components/ui/approval-action-panel";
 import { AvatarStack } from "@/components/ui/avatar-stack";
+import { BatchPromptMatrix } from "@/components/ui/batch-prompt-matrix";
 import { AutonomousRunBudget } from "@/components/ui/autonomous-run-budget";
 import { CodeTabSwitcher } from "@/components/ui/code-tab-switcher";
 import { ColorTokenSwatch } from "@/components/ui/color-token-swatch";
@@ -89,6 +90,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "batch-prompt-matrix": BatchPromptMatrix,
   "model-drift-alert": ModelDriftAlert,
   "vector-index-explorer": VectorIndexExplorer,
   "ai-session-replay": AiSessionReplay,

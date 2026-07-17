@@ -1,4 +1,9 @@
 export const componentCode = {
+  "batch-prompt-matrix": `const rows = [{ dataset: "Support", scores: [88, 94, 91] }, { dataset: "Sales", scores: [82, 89, 93] }, { dataset: "Policy", scores: [96, 95, 92] }];
+
+export function BatchPromptMatrix() {
+  return <section className="w-full max-w-md rounded-xl border border-white/12 bg-[#0b0f14]/92 p-4"><h3 className="text-base font-bold text-white">Prompt version matrix</h3><div className="mt-4">{rows.map((row) => <div key={row.dataset} className="grid grid-cols-4 border-t border-white/8 py-3"><span>{row.dataset}</span>{row.scores.map((score, index) => <span key={index}>{score}%</span>)}</div>)}</div></section>;
+}`,
   "model-drift-alert": `const signals = [{ label: "Groundedness", current: 86, delta: "−7" }, { label: "Task success", current: 91, delta: "−2" }, { label: "Refusal accuracy", current: 97, delta: "+1" }];
 
 export function ModelDriftAlert() {
