@@ -31,6 +31,18 @@ export type ComponentItem = {
 
 export const components: ComponentItem[] = [
   {
+    slug: "tool-dependency-graph",
+    name: "Tool Dependency Graph",
+    description: "A compact execution DAG showing tool order, dependency gates, live state, and critical-path timing.",
+    category: "AI Interfaces",
+    tags: ["tools", "dependencies", "workflow"],
+    difficulty: "Advanced",
+    code: componentCode["tool-dependency-graph"],
+    usage: `<ToolDependencyGraph />`,
+    accessibility: "An ordered list preserves dependency sequence and each tool includes a readable execution state.",
+    featured: true,
+  },
+  {
     slug: "token-stream-timeline",
     name: "Token Stream Timeline",
     description: "A delivery trace for first-token latency, reasoning time, streaming speed, and total completion.",
