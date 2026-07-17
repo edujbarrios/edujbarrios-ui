@@ -31,6 +31,18 @@ export type ComponentItem = {
 
 export const components: ComponentItem[] = [
   {
+    slug: "ai-session-replay",
+    name: "AI Session Replay",
+    description: "A debugging timeline for replaying prompt, retrieval, tool, and streaming events from a recorded run.",
+    category: "AI Interfaces",
+    tags: ["replay", "debugging", "timeline"],
+    difficulty: "Advanced",
+    code: componentCode["ai-session-replay"],
+    usage: `<AiSessionReplay />`,
+    accessibility: "Events use ordered time semantics, replay progress is exposed numerically, and the play control has a specific label.",
+    featured: true,
+  },
+  {
     slug: "response-contract-validator",
     name: "Response Contract Validator",
     description: "A pre-release gate for schema validity, citation minimums, length budgets, and policy compliance.",

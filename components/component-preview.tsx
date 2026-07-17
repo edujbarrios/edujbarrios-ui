@@ -6,6 +6,7 @@ import { AdversarialTestCard } from "@/components/ui/adversarial-test-card";
 import { AgentStepTimeline } from "@/components/ui/agent-step-timeline";
 import { AgentStatusRibbon } from "@/components/ui/agent-status-ribbon";
 import { AiChatInput } from "@/components/ui/ai-chat-input";
+import { AiSessionReplay } from "@/components/ui/ai-session-replay";
 import { AdversarialPromptLab } from "@/components/ui/adversarial-prompt-lab";
 import { ApiKeyField } from "@/components/ui/api-key-field";
 import { ApprovalActionPanel } from "@/components/ui/approval-action-panel";
@@ -86,6 +87,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "ai-session-replay": AiSessionReplay,
   "response-contract-validator": ResponseContractValidator,
   "retrieval-query-planner": RetrievalQueryPlanner,
   "confidence-escalation-panel": ConfidenceEscalationPanel,

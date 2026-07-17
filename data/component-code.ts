@@ -1,4 +1,13 @@
 export const componentCode = {
+  "ai-session-replay": `const events = [{ time: "00:00", label: "Prompt submitted" }, { time: "00:01", label: "Sources retrieved" }, { time: "00:02", label: "Tool called" }, { time: "00:04", label: "Response streamed" }];
+
+export function AiSessionReplay() {
+  return <section className="w-full max-w-md rounded-xl border border-white/12 bg-[#0b0f14]/92 p-4 shadow-2xl">
+    <header><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#a78bfa]">Session replay</p><h3 className="mt-1 text-base font-bold text-white">Support answer · Run 1842</h3></header>
+    <ol className="mt-4 grid grid-cols-4 gap-2">{events.map((event) => <li key={event.label} className="rounded-lg border border-white/9 p-2.5"><time className="text-[0.6rem] text-slate-500">{event.time}</time><p className="mt-2 text-[0.65rem] text-slate-200">{event.label}</p></li>)}</ol>
+    <div className="mt-4 h-1.5 rounded-full bg-white/[0.06]" role="progressbar" aria-label="Replay position" aria-valuenow={55} aria-valuemin={0} aria-valuemax={100}><span className="block h-full w-[55%] rounded-full bg-[#40E0D0]" /></div>
+  </section>;
+}`,
   "response-contract-validator": `const checks = [{ label: "JSON schema", status: "Valid" }, { label: "Citation minimum", status: "3 of 2" }, { label: "Length budget", status: "418 / 600" }, { label: "Policy rules", status: "Passed" }];
 
 export function ResponseContractValidator() {
