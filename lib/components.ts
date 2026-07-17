@@ -31,6 +31,18 @@ export type ComponentItem = {
 
 export const components: ComponentItem[] = [
   {
+    slug: "model-drift-alert",
+    name: "Model Drift Alert",
+    description: "A production-quality alert comparing live metrics against baselines and rollback thresholds.",
+    category: "AI Interfaces",
+    tags: ["drift", "monitoring", "quality"],
+    difficulty: "Advanced",
+    code: componentCode["model-drift-alert"],
+    usage: `<ModelDriftAlert />`,
+    accessibility: "Every metric includes its exact current value and signed baseline delta, with the rollback cause stated in text.",
+    featured: true,
+  },
+  {
     slug: "vector-index-explorer",
     name: "Vector Index Explorer",
     description: "A namespace browser for vector volume, index freshness, and knowledge-source inspection.",

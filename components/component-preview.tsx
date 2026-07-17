@@ -44,6 +44,7 @@ import { MultimodalPromptComposer } from "@/components/ui/multimodal-prompt-comp
 import { ModelSwitcher } from "@/components/ui/model-switcher";
 import { ModelEvalComparison } from "@/components/ui/model-eval-comparison";
 import { ModelFallbackRoute } from "@/components/ui/model-fallback-route";
+import { ModelDriftAlert } from "@/components/ui/model-drift-alert";
 import { NeuralSearchInput } from "@/components/ui/neural-search-input";
 import { NeonGradientButton } from "@/components/ui/neon-gradient-button";
 import { NotificationBell } from "@/components/ui/notification-bell";
@@ -88,6 +89,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "model-drift-alert": ModelDriftAlert,
   "vector-index-explorer": VectorIndexExplorer,
   "ai-session-replay": AiSessionReplay,
   "response-contract-validator": ResponseContractValidator,
