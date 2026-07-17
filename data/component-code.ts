@@ -1,4 +1,9 @@
 export const componentCode = {
+  "model-drift-alert": `const signals = [{ label: "Groundedness", current: 86, delta: "−7" }, { label: "Task success", current: 91, delta: "−2" }, { label: "Refusal accuracy", current: 97, delta: "+1" }];
+
+export function ModelDriftAlert() {
+  return <section className="w-full max-w-sm rounded-xl border border-[#fb923c]/25 bg-[#0b0f14]/92 p-4"><h3 className="text-base font-bold text-white">Production vs baseline</h3><dl className="mt-4 grid grid-cols-3 gap-2">{signals.map((signal) => <div key={signal.label}><dt>{signal.label}</dt><dd>{signal.current}%</dd><dd>{signal.delta} pts</dd></div>)}</dl></section>;
+}`,
   "vector-index-explorer": `const namespaces = [{ name: "Product docs", vectors: "18.4k", freshness: "2m ago" }, { name: "Support cases", vectors: "42.8k", freshness: "18m ago" }];
 
 export function VectorIndexExplorer() {
