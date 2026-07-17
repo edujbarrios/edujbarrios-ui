@@ -39,6 +39,7 @@ import { IconPulseButton } from "@/components/ui/icon-pulse-button";
 import { ImageGenerationQueue } from "@/components/ui/image-generation-queue";
 import { InlineAlertBanner } from "@/components/ui/inline-alert-banner";
 import { IntegrationStatusGrid } from "@/components/ui/integration-status-grid";
+import { KnowledgeGapDetector } from "@/components/ui/knowledge-gap-detector";
 import { LatencyBudgetCard } from "@/components/ui/latency-budget-card";
 import { LiveVoiceSession } from "@/components/ui/live-voice-session";
 import { ModalShell } from "@/components/ui/modal-shell";
@@ -93,6 +94,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "knowledge-gap-detector": KnowledgeGapDetector,
   "data-redaction-preview": DataRedactionPreview,
   "conversation-fork-map": ConversationForkMap,
   "tool-retry-policy": ToolRetryPolicy,
