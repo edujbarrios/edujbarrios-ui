@@ -1,4 +1,5 @@
 export const componentCode = {
+  "knowledge-gap-detector": `const gaps = [{ topic: "EU pricing", coverage: 32 }, { topic: "2026 roadmap", coverage: 48 }]; export function KnowledgeGapDetector() { return <ul>{gaps.map((gap) => <li key={gap.topic}>{gap.topic}: {gap.coverage}% covered</li>)}</ul>; }`,
   "data-redaction-preview": `const entities = [{ type: "Email", masked: "[EMAIL_1]" }, { type: "Phone", masked: "[PHONE_1]" }]; export function DataRedactionPreview() { return <ul>{entities.map((entity) => <li key={entity.type}>{entity.type}: {entity.masked}</li>)}</ul>; }`,
   "conversation-fork-map": `const branches = ["Original", "Branch A", "Branch B"]; export function ConversationForkMap() { return <ol>{branches.map((branch) => <li key={branch}>{branch}</li>)}</ol>; }`,
   "tool-retry-policy": `const attempts = [{ label: "Attempt 1", result: "Timeout", delay: "0s" }, { label: "Attempt 2", result: "Rate limited", delay: "1s" }, { label: "Attempt 3", result: "Scheduled", delay: "4s" }];
