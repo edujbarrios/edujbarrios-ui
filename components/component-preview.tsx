@@ -65,6 +65,7 @@ import { StatStrip } from "@/components/ui/stat-strip";
 import { SpeculativeModelRace } from "@/components/ui/speculative-model-race";
 import { StreamingResponseBubble } from "@/components/ui/streaming-response-bubble";
 import { TokenUsagePill } from "@/components/ui/token-usage-pill";
+import { TokenStreamTimeline } from "@/components/ui/token-stream-timeline";
 import { VoiceWaveLoader } from "@/components/ui/voice-wave-loader";
 import { WorkflowBreadcrumb } from "@/components/ui/workflow-breadcrumb";
 import { SchemaFieldRow } from "@/components/ui/schema-field-row";
@@ -81,6 +82,7 @@ import { RetrievalHealthCard } from "@/components/ui/retrieval-health-card";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "token-stream-timeline": TokenStreamTimeline,
   "adversarial-test-card": AdversarialTestCard,
   "neon-gradient-button": NeonGradientButton,
   "glass-command-card": GlassCommandCard,
