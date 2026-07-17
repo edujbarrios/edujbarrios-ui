@@ -1,4 +1,5 @@
 export const componentCode = {
+  "model-consensus-panel": `const votes = [{ model: "Analyst", verdict: "Approve" }, { model: "Verifier", verdict: "Approve" }, { model: "Skeptic", verdict: "Review" }]; export function ModelConsensusPanel() { return <ul>{votes.map((vote) => <li key={vote.model}>{vote.model}: {vote.verdict}</li>)}</ul>; }`,
   "knowledge-gap-detector": `const gaps = [{ topic: "EU pricing", coverage: 32 }, { topic: "2026 roadmap", coverage: 48 }]; export function KnowledgeGapDetector() { return <ul>{gaps.map((gap) => <li key={gap.topic}>{gap.topic}: {gap.coverage}% covered</li>)}</ul>; }`,
   "data-redaction-preview": `const entities = [{ type: "Email", masked: "[EMAIL_1]" }, { type: "Phone", masked: "[PHONE_1]" }]; export function DataRedactionPreview() { return <ul>{entities.map((entity) => <li key={entity.type}>{entity.type}: {entity.masked}</li>)}</ul>; }`,
   "conversation-fork-map": `const branches = ["Original", "Branch A", "Branch B"]; export function ConversationForkMap() { return <ol>{branches.map((branch) => <li key={branch}>{branch}</li>)}</ol>; }`,
