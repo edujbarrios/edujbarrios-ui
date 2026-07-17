@@ -56,6 +56,7 @@ import { PricingTierCard } from "@/components/ui/pricing-tier-card";
 import { ProgressStepper } from "@/components/ui/progress-stepper";
 import { PromptDiffViewer } from "@/components/ui/prompt-diff-viewer";
 import { PromptVersionSelect } from "@/components/ui/prompt-version-select";
+import { PromptRollbackCard } from "@/components/ui/prompt-rollback-card";
 import { PromptVariableEditor } from "@/components/ui/prompt-variable-editor";
 import { PromptTestCase } from "@/components/ui/prompt-test-case";
 import { PromptBadge } from "@/components/ui/prompt-badge";
@@ -95,6 +96,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "prompt-rollback-card": PromptRollbackCard,
   "model-consensus-panel": ModelConsensusPanel,
   "knowledge-gap-detector": KnowledgeGapDetector,
   "data-redaction-preview": DataRedactionPreview,
