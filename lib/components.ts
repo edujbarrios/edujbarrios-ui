@@ -31,6 +31,18 @@ export type ComponentItem = {
 
 export const components: ComponentItem[] = [
   {
+    slug: "confidence-escalation-panel",
+    name: "Confidence Escalation Panel",
+    description: "A decision boundary that converts uncertainty signals into request-context or human-review actions.",
+    category: "AI Interfaces",
+    tags: ["confidence", "escalation", "review"],
+    difficulty: "Advanced",
+    code: componentCode["confidence-escalation-panel"],
+    usage: `<ConfidenceEscalationPanel />`,
+    accessibility: "Every signal has an exact text value and the escalation cause is stated explicitly rather than encoded by color.",
+    featured: true,
+  },
+  {
     slug: "tool-dependency-graph",
     name: "Tool Dependency Graph",
     description: "A compact execution DAG showing tool order, dependency gates, live state, and critical-path timing.",
