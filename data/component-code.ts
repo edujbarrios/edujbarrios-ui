@@ -1,4 +1,12 @@
 export const componentCode = {
+  "retrieval-query-planner": `const queries = [{ text: "enterprise retention Q2", source: "Reports", hits: 8 }, { text: "renewal risk signals", source: "CRM", hits: 14 }, { text: "support escalation themes", source: "Tickets", hits: 21 }];
+
+export function RetrievalQueryPlanner() {
+  return <section className="w-full max-w-md rounded-xl border border-white/12 bg-[#0b0f14]/92 p-4 shadow-2xl">
+    <header><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Retrieval plan</p><h3 className="mt-1 text-base font-bold text-white">Quarterly risk brief</h3></header>
+    <ol className="mt-4 space-y-2">{queries.map((query, index) => <li key={query.text} className="grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-lg border border-white/9 p-3"><span>{index + 1}</span><div><p className="font-mono text-xs text-slate-200">{query.text}</p><p className="text-[0.65rem] text-slate-500">Search {query.source}</p></div><span className="text-[0.65rem]">{query.hits} hits</span></li>)}</ol>
+  </section>;
+}`,
   "confidence-escalation-panel": `const signals = [{ label: "Source agreement", value: 84 }, { label: "Policy clarity", value: 62 }, { label: "Answer stability", value: 71 }];
 
 export function ConfidenceEscalationPanel() {
