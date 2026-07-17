@@ -1,4 +1,9 @@
 export const componentCode = {
+  "vector-index-explorer": `const namespaces = [{ name: "Product docs", vectors: "18.4k", freshness: "2m ago" }, { name: "Support cases", vectors: "42.8k", freshness: "18m ago" }];
+
+export function VectorIndexExplorer() {
+  return <section className="w-full max-w-sm rounded-xl border border-white/12 bg-[#0b0f14]/92 p-4"><h3 className="text-base font-bold text-white">Knowledge namespaces</h3><ul className="mt-4 space-y-2">{namespaces.map((space) => <li key={space.name} className="flex justify-between rounded-lg border border-white/9 p-3"><span>{space.name}</span><span>{space.vectors} · {space.freshness}</span></li>)}</ul></section>;
+}`,
   "ai-session-replay": `const events = [{ time: "00:00", label: "Prompt submitted" }, { time: "00:01", label: "Sources retrieved" }, { time: "00:02", label: "Tool called" }, { time: "00:04", label: "Response streamed" }];
 
 export function AiSessionReplay() {

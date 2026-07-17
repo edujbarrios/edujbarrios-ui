@@ -70,6 +70,7 @@ import { StreamingResponseBubble } from "@/components/ui/streaming-response-bubb
 import { TokenUsagePill } from "@/components/ui/token-usage-pill";
 import { TokenStreamTimeline } from "@/components/ui/token-stream-timeline";
 import { VoiceWaveLoader } from "@/components/ui/voice-wave-loader";
+import { VectorIndexExplorer } from "@/components/ui/vector-index-explorer";
 import { WorkflowBreadcrumb } from "@/components/ui/workflow-breadcrumb";
 import { SchemaFieldRow } from "@/components/ui/schema-field-row";
 import { ToggleSettingRow } from "@/components/ui/toggle-setting-row";
@@ -87,6 +88,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "vector-index-explorer": VectorIndexExplorer,
   "ai-session-replay": AiSessionReplay,
   "response-contract-validator": ResponseContractValidator,
   "retrieval-query-planner": RetrievalQueryPlanner,
