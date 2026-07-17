@@ -45,6 +45,7 @@ import { LiveVoiceSession } from "@/components/ui/live-voice-session";
 import { ModalShell } from "@/components/ui/modal-shell";
 import { MultimodalPromptComposer } from "@/components/ui/multimodal-prompt-composer";
 import { ModelSwitcher } from "@/components/ui/model-switcher";
+import { ModelConsensusPanel } from "@/components/ui/model-consensus-panel";
 import { ModelEvalComparison } from "@/components/ui/model-eval-comparison";
 import { ModelFallbackRoute } from "@/components/ui/model-fallback-route";
 import { ModelDriftAlert } from "@/components/ui/model-drift-alert";
@@ -94,6 +95,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "model-consensus-panel": ModelConsensusPanel,
   "knowledge-gap-detector": KnowledgeGapDetector,
   "data-redaction-preview": DataRedactionPreview,
   "conversation-fork-map": ConversationForkMap,
