@@ -31,6 +31,18 @@ export type ComponentItem = {
 
 export const components: ComponentItem[] = [
   {
+    slug: "response-contract-validator",
+    name: "Response Contract Validator",
+    description: "A pre-release gate for schema validity, citation minimums, length budgets, and policy compliance.",
+    category: "AI Interfaces",
+    tags: ["validation", "schema", "quality"],
+    difficulty: "Advanced",
+    code: componentCode["response-contract-validator"],
+    usage: `<ResponseContractValidator />`,
+    accessibility: "Every contract check exposes its name and exact validation result as text rather than relying on status color.",
+    featured: true,
+  },
+  {
     slug: "retrieval-query-planner",
     name: "Retrieval Query Planner",
     description: "A preflight plan showing generated search queries, target sources, expected hits, and context cost.",
