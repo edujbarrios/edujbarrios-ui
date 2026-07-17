@@ -31,6 +31,18 @@ export type ComponentItem = {
 
 export const components: ComponentItem[] = [
   {
+    slug: "token-stream-timeline",
+    name: "Token Stream Timeline",
+    description: "A delivery trace for first-token latency, reasoning time, streaming speed, and total completion.",
+    category: "AI Interfaces",
+    tags: ["tokens", "streaming", "latency"],
+    difficulty: "Advanced",
+    code: componentCode["token-stream-timeline"],
+    usage: `<TokenStreamTimeline />`,
+    accessibility: "Every phase exposes its timing as text; decorative duration rails are hidden from assistive technology.",
+    featured: true,
+  },
+  {
     slug: "adversarial-test-card",
     name: "Adversarial Test Card",
     description: "A red-team evaluation surface for instruction overrides, secret extraction, and role-confusion attacks.",
