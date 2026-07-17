@@ -30,6 +30,7 @@ export type ComponentItem = {
 };
 
 export const components: ComponentItem[] = [
+  { slug: "tool-retry-policy", name: "Tool Retry Policy", description: "A transparent retry sequence showing failures, backoff timing, and stop conditions.", category: "AI Interfaces", tags: ["tools", "retry", "reliability"], difficulty: "Advanced", code: componentCode["tool-retry-policy"], usage: `<ToolRetryPolicy />`, accessibility: "An ordered list preserves attempt sequence and every failure and delay is readable text.", featured: true },
   {
     slug: "batch-prompt-matrix",
     name: "Batch Prompt Matrix",

@@ -1,4 +1,6 @@
 export const componentCode = {
+  "tool-retry-policy": `const attempts = [{ label: "Attempt 1", result: "Timeout", delay: "0s" }, { label: "Attempt 2", result: "Rate limited", delay: "1s" }, { label: "Attempt 3", result: "Scheduled", delay: "4s" }];
+export function ToolRetryPolicy() { return <ol>{attempts.map((attempt) => <li key={attempt.label}>{attempt.label} · {attempt.result} · {attempt.delay}</li>)}</ol>; }`,
   "batch-prompt-matrix": `const rows = [{ dataset: "Support", scores: [88, 94, 91] }, { dataset: "Sales", scores: [82, 89, 93] }, { dataset: "Policy", scores: [96, 95, 92] }];
 
 export function BatchPromptMatrix() {
