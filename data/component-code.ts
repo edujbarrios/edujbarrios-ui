@@ -1,4 +1,12 @@
 export const componentCode = {
+  "response-contract-validator": `const checks = [{ label: "JSON schema", status: "Valid" }, { label: "Citation minimum", status: "3 of 2" }, { label: "Length budget", status: "418 / 600" }, { label: "Policy rules", status: "Passed" }];
+
+export function ResponseContractValidator() {
+  return <section className="w-full max-w-sm rounded-xl border border-white/12 bg-[#0b0f14]/92 p-4 shadow-2xl">
+    <header><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Output contract</p><h3 className="mt-1 text-base font-bold text-white">Release validation</h3></header>
+    <dl className="mt-4 divide-y divide-white/8 rounded-lg border border-white/9">{checks.map((check) => <div key={check.label} className="flex justify-between px-3 py-3"><dt className="text-xs text-slate-300">{check.label}</dt><dd className="text-[0.65rem] font-bold text-[#d8fffb]">{check.status}</dd></div>)}</dl>
+  </section>;
+}`,
   "retrieval-query-planner": `const queries = [{ text: "enterprise retention Q2", source: "Reports", hits: 8 }, { text: "renewal risk signals", source: "CRM", hits: 14 }, { text: "support escalation themes", source: "Tickets", hits: 21 }];
 
 export function RetrievalQueryPlanner() {

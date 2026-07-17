@@ -55,6 +55,7 @@ import { PromptTestCase } from "@/components/ui/prompt-test-case";
 import { PromptBadge } from "@/components/ui/prompt-badge";
 import { ReleaseChecklist } from "@/components/ui/release-checklist";
 import { ResponseBranchNavigator } from "@/components/ui/response-branch-navigator";
+import { ResponseContractValidator } from "@/components/ui/response-contract-validator";
 import { SegmentedFilterTabs } from "@/components/ui/segmented-filter-tabs";
 import { SemanticCacheMonitor } from "@/components/ui/semantic-cache-monitor";
 import { ShortcutKey } from "@/components/ui/shortcut-key";
@@ -85,6 +86,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "response-contract-validator": ResponseContractValidator,
   "retrieval-query-planner": RetrievalQueryPlanner,
   "confidence-escalation-panel": ConfidenceEscalationPanel,
   "tool-dependency-graph": ToolDependencyGraph,
