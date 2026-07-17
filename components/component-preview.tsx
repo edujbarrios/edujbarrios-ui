@@ -74,6 +74,7 @@ import { UsageSparklineCard } from "@/components/ui/usage-sparkline-card";
 import { WebhookEventLog } from "@/components/ui/webhook-event-log";
 import { ToolCallInspector } from "@/components/ui/tool-call-inspector";
 import { ToolPermissionCard } from "@/components/ui/tool-permission-card";
+import { ToolDependencyGraph } from "@/components/ui/tool-dependency-graph";
 import { HumanCheckpointCard } from "@/components/ui/human-checkpoint-card";
 import { ContextWindowMeter } from "@/components/ui/context-window-meter";
 import { ContextProvenanceMap } from "@/components/ui/context-provenance-map";
@@ -82,6 +83,7 @@ import { RetrievalHealthCard } from "@/components/ui/retrieval-health-card";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "tool-dependency-graph": ToolDependencyGraph,
   "token-stream-timeline": TokenStreamTimeline,
   "adversarial-test-card": AdversarialTestCard,
   "neon-gradient-button": NeonGradientButton,

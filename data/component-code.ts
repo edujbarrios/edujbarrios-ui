@@ -1,4 +1,12 @@
 export const componentCode = {
+  "tool-dependency-graph": `const tools = [{ name: "Search docs", state: "Complete", step: "01" }, { name: "Extract facts", state: "Running", step: "02" }, { name: "Draft answer", state: "Waiting", step: "03" }];
+
+export function ToolDependencyGraph() {
+  return <section className="w-full max-w-md rounded-xl border border-white/12 bg-[#0b0f14]/92 p-4 shadow-2xl">
+    <header><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#a78bfa]">Execution graph</p><h3 className="mt-1 text-base font-bold text-white">Research workflow</h3></header>
+    <ol className="mt-5 flex gap-2">{tools.map((tool, index) => <li key={tool.name} className="flex min-w-0 flex-1 items-center gap-2"><div className="min-w-0 flex-1 rounded-lg border border-white/9 bg-white/[0.025] p-3"><span className="text-[0.6rem] text-slate-500">{tool.step}</span><p className="mt-2 text-xs font-semibold text-slate-200">{tool.name}</p><p className="mt-1 text-[0.65rem] text-slate-500">{tool.state}</p></div>{index < tools.length - 1 && <span aria-hidden="true">→</span>}</li>)}</ol>
+  </section>;
+}`,
   "token-stream-timeline": `const phases = [{ label: "First token", value: "240ms", width: "w-[20%]" }, { label: "Reasoning", value: "680ms", width: "w-[38%]" }, { label: "Streaming", value: "1.4s", width: "w-[72%]" }];
 
 export function TokenStreamTimeline() {
