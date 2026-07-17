@@ -15,6 +15,7 @@ import { CodeTabSwitcher } from "@/components/ui/code-tab-switcher";
 import { ColorTokenSwatch } from "@/components/ui/color-token-swatch";
 import { CommandHintBar } from "@/components/ui/command-hint-bar";
 import { ConfidenceMeter } from "@/components/ui/confidence-meter";
+import { ConfidenceEscalationPanel } from "@/components/ui/confidence-escalation-panel";
 import { ContextMenuPanel } from "@/components/ui/context-menu-panel";
 import { CopyCodeCard } from "@/components/ui/copy-code-card";
 import { CostEstimateCard } from "@/components/ui/cost-estimate-card";
@@ -83,6 +84,7 @@ import { RetrievalHealthCard } from "@/components/ui/retrieval-health-card";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "confidence-escalation-panel": ConfidenceEscalationPanel,
   "tool-dependency-graph": ToolDependencyGraph,
   "token-stream-timeline": TokenStreamTimeline,
   "adversarial-test-card": AdversarialTestCard,

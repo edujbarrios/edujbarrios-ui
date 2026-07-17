@@ -1,4 +1,13 @@
 export const componentCode = {
+  "confidence-escalation-panel": `const signals = [{ label: "Source agreement", value: 84 }, { label: "Policy clarity", value: 62 }, { label: "Answer stability", value: 71 }];
+
+export function ConfidenceEscalationPanel() {
+  return <section className="w-full max-w-sm rounded-xl border border-white/12 bg-[#0b0f14]/92 p-4 shadow-2xl">
+    <header><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#fb923c]">Decision boundary</p><h3 className="mt-1 text-base font-bold text-white">Review before answering</h3></header>
+    <dl className="mt-4 space-y-3">{signals.map((signal) => <div key={signal.label}><div className="flex justify-between text-[0.65rem]"><dt>{signal.label}</dt><dd>{signal.value}%</dd></div><div className="mt-1.5 h-1.5 rounded-full bg-white/[0.06]"><span className="block h-full rounded-full bg-[#fb923c]" style={{ width: signal.value + "%" }} /></div></div>)}</dl>
+    <div className="mt-4 rounded-lg border border-[#fb923c]/20 bg-[#fb923c]/[0.06] p-3"><p className="text-xs font-semibold text-[#fdba74]">Escalation triggered</p><p className="mt-1 text-[0.65rem] text-slate-400">Policy clarity is below the 70% automatic-answer threshold.</p></div>
+  </section>;
+}`,
   "tool-dependency-graph": `const tools = [{ name: "Search docs", state: "Complete", step: "01" }, { name: "Extract facts", state: "Running", step: "02" }, { name: "Draft answer", state: "Waiting", step: "03" }];
 
 export function ToolDependencyGraph() {
