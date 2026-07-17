@@ -30,6 +30,7 @@ export type ComponentItem = {
 };
 
 export const components: ComponentItem[] = [
+  { slug: "data-redaction-preview", name: "Data Redaction Preview", description: "A privacy preflight showing detected sensitive entities and their masked replacements before model submission.", category: "AI Interfaces", tags: ["privacy", "pii", "security"], difficulty: "Advanced", code: componentCode["data-redaction-preview"], usage: `<DataRedactionPreview />`, accessibility: "Every entity exposes its type, original value, replacement token, and exact coverage status.", featured: true },
   { slug: "conversation-fork-map", name: "Conversation Fork Map", description: "A visual branch map for comparing alternate conversation directions while preserving shared context.", category: "AI Interfaces", tags: ["conversation", "branches", "context"], difficulty: "Advanced", code: componentCode["conversation-fork-map"], usage: `<ConversationForkMap />`, accessibility: "Branches use an ordered list and the active path is labeled explicitly instead of relying on color.", featured: true },
   { slug: "tool-retry-policy", name: "Tool Retry Policy", description: "A transparent retry sequence showing failures, backoff timing, and stop conditions.", category: "AI Interfaces", tags: ["tools", "retry", "reliability"], difficulty: "Advanced", code: componentCode["tool-retry-policy"], usage: `<ToolRetryPolicy />`, accessibility: "An ordered list preserves attempt sequence and every failure and delay is readable text.", featured: true },
   {

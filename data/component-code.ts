@@ -1,4 +1,5 @@
 export const componentCode = {
+  "data-redaction-preview": `const entities = [{ type: "Email", masked: "[EMAIL_1]" }, { type: "Phone", masked: "[PHONE_1]" }]; export function DataRedactionPreview() { return <ul>{entities.map((entity) => <li key={entity.type}>{entity.type}: {entity.masked}</li>)}</ul>; }`,
   "conversation-fork-map": `const branches = ["Original", "Branch A", "Branch B"]; export function ConversationForkMap() { return <ol>{branches.map((branch) => <li key={branch}>{branch}</li>)}</ol>; }`,
   "tool-retry-policy": `const attempts = [{ label: "Attempt 1", result: "Timeout", delay: "0s" }, { label: "Attempt 2", result: "Rate limited", delay: "1s" }, { label: "Attempt 3", result: "Scheduled", delay: "4s" }];
 export function ToolRetryPolicy() { return <ol>{attempts.map((attempt) => <li key={attempt.label}>{attempt.label} · {attempt.result} · {attempt.delay}</li>)}</ol>; }`,
