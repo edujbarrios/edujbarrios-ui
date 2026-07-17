@@ -30,6 +30,7 @@ export type ComponentItem = {
 };
 
 export const components: ComponentItem[] = [
+  { slug: "conversation-fork-map", name: "Conversation Fork Map", description: "A visual branch map for comparing alternate conversation directions while preserving shared context.", category: "AI Interfaces", tags: ["conversation", "branches", "context"], difficulty: "Advanced", code: componentCode["conversation-fork-map"], usage: `<ConversationForkMap />`, accessibility: "Branches use an ordered list and the active path is labeled explicitly instead of relying on color.", featured: true },
   { slug: "tool-retry-policy", name: "Tool Retry Policy", description: "A transparent retry sequence showing failures, backoff timing, and stop conditions.", category: "AI Interfaces", tags: ["tools", "retry", "reliability"], difficulty: "Advanced", code: componentCode["tool-retry-policy"], usage: `<ToolRetryPolicy />`, accessibility: "An ordered list preserves attempt sequence and every failure and delay is readable text.", featured: true },
   {
     slug: "batch-prompt-matrix",
