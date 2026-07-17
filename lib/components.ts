@@ -31,6 +31,18 @@ export type ComponentItem = {
 
 export const components: ComponentItem[] = [
   {
+    slug: "batch-prompt-matrix",
+    name: "Batch Prompt Matrix",
+    description: "A cross-dataset comparison matrix for selecting prompt versions from batch evaluation results.",
+    category: "AI Interfaces",
+    tags: ["prompt", "batch", "evaluation"],
+    difficulty: "Advanced",
+    code: componentCode["batch-prompt-matrix"],
+    usage: `<BatchPromptMatrix />`,
+    accessibility: "The grid preserves readable dataset and version labels, with every evaluation score presented as text.",
+    featured: true,
+  },
+  {
     slug: "model-drift-alert",
     name: "Model Drift Alert",
     description: "A production-quality alert comparing live metrics against baselines and rollback thresholds.",
