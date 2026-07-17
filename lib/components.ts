@@ -31,6 +31,18 @@ export type ComponentItem = {
 
 export const components: ComponentItem[] = [
   {
+    slug: "vector-index-explorer",
+    name: "Vector Index Explorer",
+    description: "A namespace browser for vector volume, index freshness, and knowledge-source inspection.",
+    category: "AI Interfaces",
+    tags: ["vectors", "embeddings", "retrieval"],
+    difficulty: "Advanced",
+    code: componentCode["vector-index-explorer"],
+    usage: `<VectorIndexExplorer />`,
+    accessibility: "Each namespace exposes its vector count and freshness as readable text in a semantic list.",
+    featured: true,
+  },
+  {
     slug: "ai-session-replay",
     name: "AI Session Replay",
     description: "A debugging timeline for replaying prompt, retrieval, tool, and streaming events from a recorded run.",
