@@ -31,6 +31,18 @@ export type ComponentItem = {
 
 export const components: ComponentItem[] = [
   {
+    slug: "retrieval-query-planner",
+    name: "Retrieval Query Planner",
+    description: "A preflight plan showing generated search queries, target sources, expected hits, and context cost.",
+    category: "AI Interfaces",
+    tags: ["retrieval", "queries", "rag"],
+    difficulty: "Advanced",
+    code: componentCode["retrieval-query-planner"],
+    usage: `<RetrievalQueryPlanner />`,
+    accessibility: "The ordered list preserves query execution order and every source, hit count, and context estimate is readable text.",
+    featured: true,
+  },
+  {
     slug: "confidence-escalation-panel",
     name: "Confidence Escalation Panel",
     description: "A decision boundary that converts uncertainty signals into request-context or human-review actions.",

@@ -81,9 +81,11 @@ import { ContextWindowMeter } from "@/components/ui/context-window-meter";
 import { ContextProvenanceMap } from "@/components/ui/context-provenance-map";
 import { AgentHandoffCard } from "@/components/ui/agent-handoff-card";
 import { RetrievalHealthCard } from "@/components/ui/retrieval-health-card";
+import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "retrieval-query-planner": RetrievalQueryPlanner,
   "confidence-escalation-panel": ConfidenceEscalationPanel,
   "tool-dependency-graph": ToolDependencyGraph,
   "token-stream-timeline": TokenStreamTimeline,
