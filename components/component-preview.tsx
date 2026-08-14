@@ -26,6 +26,7 @@ import { DataPipelineCard } from "@/components/ui/data-pipeline-card";
 import { DataRedactionPreview } from "@/components/ui/data-redaction-preview";
 import { DatasetUploadQueue } from "@/components/ui/dataset-upload-queue";
 import { DatasetSliceExplorer } from "@/components/ui/dataset-slice-explorer";
+import { ContextConflictResolver } from "@/components/ui/context-conflict-resolver";
 import { ToolPermissionInspector } from "@/components/ui/tool-permission-inspector";
 import { TokenBudgetAllocator } from "@/components/ui/token-budget-allocator";
 import { RetrievalFreshnessGauge } from "@/components/ui/retrieval-freshness-gauge";
@@ -111,6 +112,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "context-conflict-resolver": ContextConflictResolver,
   "tool-permission-inspector": ToolPermissionInspector,
   "token-budget-allocator": TokenBudgetAllocator,
   "retrieval-freshness-gauge": RetrievalFreshnessGauge,
