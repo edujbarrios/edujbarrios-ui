@@ -89,6 +89,7 @@ import { ToolRetryPolicy } from "@/components/ui/tool-retry-policy";
 import { ToolDependencyGraph } from "@/components/ui/tool-dependency-graph";
 import { HumanCheckpointCard } from "@/components/ui/human-checkpoint-card";
 import { ContextWindowMeter } from "@/components/ui/context-window-meter";
+import { ContextFirewall } from "@/components/ui/context-firewall";
 import { ConversationForkMap } from "@/components/ui/conversation-fork-map";
 import { ContextProvenanceMap } from "@/components/ui/context-provenance-map";
 import { AgentHandoffCard } from "@/components/ui/agent-handoff-card";
@@ -97,6 +98,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "context-firewall": ContextFirewall,
   "workflow-time-travel": WorkflowTimeTravel,
   "prompt-rollback-card": PromptRollbackCard,
   "model-consensus-panel": ModelConsensusPanel,

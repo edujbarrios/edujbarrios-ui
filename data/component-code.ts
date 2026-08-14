@@ -1,4 +1,5 @@
 export const componentCode = {
+  "context-firewall": `const rules = [{ source: "Public docs", decision: "Allow" }, { source: "Customer CRM", decision: "Redact" }, { source: "Secrets vault", decision: "Block" }]; export function ContextFirewall() { return <ul>{rules.map((rule) => <li key={rule.source}>{rule.source}: {rule.decision}</li>)}</ul>; }`,
   "workflow-time-travel": `const snapshots = ["Before retrieval", "After research", "Current state"]; export function WorkflowTimeTravel() { return <ol>{snapshots.map((snapshot) => <li key={snapshot}>{snapshot}</li>)}</ol>; }`,
   "prompt-rollback-card": `export function PromptRollbackCard() { return <section><h3>Restore prompt version?</h3><p>v18: 87.1 · v17: 93.3</p><button type="button">Restore v17</button></section>; }`,
   "model-consensus-panel": `const votes = [{ model: "Analyst", verdict: "Approve" }, { model: "Verifier", verdict: "Approve" }, { model: "Skeptic", verdict: "Review" }]; export function ModelConsensusPanel() { return <ul>{votes.map((vote) => <li key={vote.model}>{vote.model}: {vote.verdict}</li>)}</ul>; }`,
