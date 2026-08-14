@@ -1,4 +1,5 @@
 export const componentCode = {
+  "budget-circuit-breaker": `export function BudgetCircuitBreaker() { return <section><h3>Run spending limit</h3><p>$8.96 of $10 used</p><p>Execution pauses automatically at the limit.</p></section>; }`,
   "eval-failure-clusters": `const clusters = [{ cause: "Missing citation", cases: 18 }, { cause: "Stale context", cases: 11 }]; export function EvalFailureClusters() { return <ol>{clusters.map((cluster) => <li key={cluster.cause}>{cluster.cause}: {cluster.cases} cases</li>)}</ol>; }`,
   "context-firewall": `const rules = [{ source: "Public docs", decision: "Allow" }, { source: "Customer CRM", decision: "Redact" }, { source: "Secrets vault", decision: "Block" }]; export function ContextFirewall() { return <ul>{rules.map((rule) => <li key={rule.source}>{rule.source}: {rule.decision}</li>)}</ul>; }`,
   "workflow-time-travel": `const snapshots = ["Before retrieval", "After research", "Current state"]; export function WorkflowTimeTravel() { return <ol>{snapshots.map((snapshot) => <li key={snapshot}>{snapshot}</li>)}</ol>; }`,

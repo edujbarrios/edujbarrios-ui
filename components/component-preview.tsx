@@ -12,6 +12,7 @@ import { ApiKeyField } from "@/components/ui/api-key-field";
 import { ApprovalActionPanel } from "@/components/ui/approval-action-panel";
 import { AvatarStack } from "@/components/ui/avatar-stack";
 import { BatchPromptMatrix } from "@/components/ui/batch-prompt-matrix";
+import { BudgetCircuitBreaker } from "@/components/ui/budget-circuit-breaker";
 import { AutonomousRunBudget } from "@/components/ui/autonomous-run-budget";
 import { CodeTabSwitcher } from "@/components/ui/code-tab-switcher";
 import { ColorTokenSwatch } from "@/components/ui/color-token-swatch";
@@ -99,6 +100,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "budget-circuit-breaker": BudgetCircuitBreaker,
   "eval-failure-clusters": EvalFailureClusters,
   "context-firewall": ContextFirewall,
   "workflow-time-travel": WorkflowTimeTravel,
