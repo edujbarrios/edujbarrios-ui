@@ -26,6 +26,7 @@ import { DataPipelineCard } from "@/components/ui/data-pipeline-card";
 import { DataRedactionPreview } from "@/components/ui/data-redaction-preview";
 import { DatasetUploadQueue } from "@/components/ui/dataset-upload-queue";
 import { DatasetSliceExplorer } from "@/components/ui/dataset-slice-explorer";
+import { HandoffReadinessCard } from "@/components/ui/handoff-readiness-card";
 import { OutputSchemaDriftMonitor } from "@/components/ui/output-schema-drift-monitor";
 import { ContextConflictResolver } from "@/components/ui/context-conflict-resolver";
 import { ToolPermissionInspector } from "@/components/ui/tool-permission-inspector";
@@ -113,6 +114,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "handoff-readiness-card": HandoffReadinessCard,
   "output-schema-drift-monitor": OutputSchemaDriftMonitor,
   "context-conflict-resolver": ContextConflictResolver,
   "tool-permission-inspector": ToolPermissionInspector,
