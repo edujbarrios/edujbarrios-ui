@@ -1,4 +1,5 @@
 export const componentCode = {
+  "prompt-canary-monitor": `const metrics = [{ label: "Task success", stable: 91, canary: 94 }, { label: "Citation rate", stable: 88, canary: 90 }]; export function PromptCanaryMonitor() { return <ul>{metrics.map((metric) => <li key={metric.label}>{metric.label}: {metric.stable}% / {metric.canary}%</li>)}</ul>; }`,
   "tool-result-merge-panel": `const results = [{ source: "CRM", value: "Enterprise" }, { source: "Billing", value: "Business" }]; export function ToolResultMergePanel() { return <ul>{results.map((result) => <li key={result.source}>{result.source}: {result.value}</li>)}</ul>; }`,
   "budget-circuit-breaker": `export function BudgetCircuitBreaker() { return <section><h3>Run spending limit</h3><p>$8.96 of $10 used</p><p>Execution pauses automatically at the limit.</p></section>; }`,
   "eval-failure-clusters": `const clusters = [{ cause: "Missing citation", cases: 18 }, { cause: "Stale context", cases: 11 }]; export function EvalFailureClusters() { return <ol>{clusters.map((cluster) => <li key={cluster.cause}>{cluster.cause}: {cluster.cases} cases</li>)}</ol>; }`,
