@@ -1,4 +1,5 @@
 export const componentCode = {
+  "semantic-diff-heatmap": `const dimensions = [{ label: "Intent", shift: 8 }, { label: "Tone", shift: 34 }, { label: "Specificity", shift: 61 }]; export function SemanticDiffHeatmap() { return <dl>{dimensions.map((item) => <div key={item.label}><dt>{item.label}</dt><dd>{item.shift}% shift</dd></div>)}</dl>; }`,
   "prompt-canary-monitor": `const metrics = [{ label: "Task success", stable: 91, canary: 94 }, { label: "Citation rate", stable: 88, canary: 90 }]; export function PromptCanaryMonitor() { return <ul>{metrics.map((metric) => <li key={metric.label}>{metric.label}: {metric.stable}% / {metric.canary}%</li>)}</ul>; }`,
   "tool-result-merge-panel": `const results = [{ source: "CRM", value: "Enterprise" }, { source: "Billing", value: "Business" }]; export function ToolResultMergePanel() { return <ul>{results.map((result) => <li key={result.source}>{result.source}: {result.value}</li>)}</ul>; }`,
   "budget-circuit-breaker": `export function BudgetCircuitBreaker() { return <section><h3>Run spending limit</h3><p>$8.96 of $10 used</p><p>Execution pauses automatically at the limit.</p></section>; }`,
