@@ -26,6 +26,7 @@ import { DataPipelineCard } from "@/components/ui/data-pipeline-card";
 import { DataRedactionPreview } from "@/components/ui/data-redaction-preview";
 import { DatasetUploadQueue } from "@/components/ui/dataset-upload-queue";
 import { DatasetSliceExplorer } from "@/components/ui/dataset-slice-explorer";
+import { ModelRouteSimulator } from "@/components/ui/model-route-simulator";
 import { SyntheticUserCohort } from "@/components/ui/synthetic-user-cohort";
 import { GuardrailDecisionTrace } from "@/components/ui/guardrail-decision-trace";
 import { ResponseRepairQueue } from "@/components/ui/response-repair-queue";
@@ -121,6 +122,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "model-route-simulator": ModelRouteSimulator,
   "synthetic-user-cohort": SyntheticUserCohort,
   "guardrail-decision-trace": GuardrailDecisionTrace,
   "response-repair-queue": ResponseRepairQueue,
