@@ -92,6 +92,7 @@ import { ToolPermissionCard } from "@/components/ui/tool-permission-card";
 import { ToolRetryPolicy } from "@/components/ui/tool-retry-policy";
 import { ToolResultMergePanel } from "@/components/ui/tool-result-merge-panel";
 import { ToolDependencyGraph } from "@/components/ui/tool-dependency-graph";
+import { ToolLatencyWaterfall } from "@/components/ui/tool-latency-waterfall";
 import { HumanCheckpointCard } from "@/components/ui/human-checkpoint-card";
 import { HumanOverrideLedger } from "@/components/ui/human-override-ledger";
 import { HallucinationRiskBanner } from "@/components/ui/hallucination-risk-banner";
@@ -106,6 +107,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "tool-latency-waterfall": ToolLatencyWaterfall,
   "hallucination-risk-banner": HallucinationRiskBanner,
   "human-override-ledger": HumanOverrideLedger,
   "context-compression-preview": ContextCompressionPreview,
