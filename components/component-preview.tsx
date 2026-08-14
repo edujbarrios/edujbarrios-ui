@@ -26,6 +26,7 @@ import { DataPipelineCard } from "@/components/ui/data-pipeline-card";
 import { DataRedactionPreview } from "@/components/ui/data-redaction-preview";
 import { DatasetUploadQueue } from "@/components/ui/dataset-upload-queue";
 import { DatasetSliceExplorer } from "@/components/ui/dataset-slice-explorer";
+import { TokenBudgetAllocator } from "@/components/ui/token-budget-allocator";
 import { RetrievalFreshnessGauge } from "@/components/ui/retrieval-freshness-gauge";
 import { EmptyStatePanel } from "@/components/ui/empty-state-panel";
 import { EvalRadarCard } from "@/components/ui/eval-radar-card";
@@ -109,6 +110,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "token-budget-allocator": TokenBudgetAllocator,
   "retrieval-freshness-gauge": RetrievalFreshnessGauge,
   "dataset-slice-explorer": DatasetSliceExplorer,
   "tool-latency-waterfall": ToolLatencyWaterfall,
