@@ -78,6 +78,7 @@ import { TokenStreamTimeline } from "@/components/ui/token-stream-timeline";
 import { VoiceWaveLoader } from "@/components/ui/voice-wave-loader";
 import { VectorIndexExplorer } from "@/components/ui/vector-index-explorer";
 import { WorkflowBreadcrumb } from "@/components/ui/workflow-breadcrumb";
+import { WorkflowTimeTravel } from "@/components/ui/workflow-time-travel";
 import { SchemaFieldRow } from "@/components/ui/schema-field-row";
 import { ToggleSettingRow } from "@/components/ui/toggle-setting-row";
 import { UsageSparklineCard } from "@/components/ui/usage-sparkline-card";
@@ -96,6 +97,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "workflow-time-travel": WorkflowTimeTravel,
   "prompt-rollback-card": PromptRollbackCard,
   "model-consensus-panel": ModelConsensusPanel,
   "knowledge-gap-detector": KnowledgeGapDetector,

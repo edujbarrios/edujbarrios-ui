@@ -1,4 +1,5 @@
 export const componentCode = {
+  "workflow-time-travel": `const snapshots = ["Before retrieval", "After research", "Current state"]; export function WorkflowTimeTravel() { return <ol>{snapshots.map((snapshot) => <li key={snapshot}>{snapshot}</li>)}</ol>; }`,
   "prompt-rollback-card": `export function PromptRollbackCard() { return <section><h3>Restore prompt version?</h3><p>v18: 87.1 · v17: 93.3</p><button type="button">Restore v17</button></section>; }`,
   "model-consensus-panel": `const votes = [{ model: "Analyst", verdict: "Approve" }, { model: "Verifier", verdict: "Approve" }, { model: "Skeptic", verdict: "Review" }]; export function ModelConsensusPanel() { return <ul>{votes.map((vote) => <li key={vote.model}>{vote.model}: {vote.verdict}</li>)}</ul>; }`,
   "knowledge-gap-detector": `const gaps = [{ topic: "EU pricing", coverage: 32 }, { topic: "2026 roadmap", coverage: 48 }]; export function KnowledgeGapDetector() { return <ul>{gaps.map((gap) => <li key={gap.topic}>{gap.topic}: {gap.coverage}% covered</li>)}</ul>; }`,
