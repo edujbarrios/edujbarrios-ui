@@ -1,4 +1,5 @@
 export const componentCode = {
+  "eval-failure-clusters": `const clusters = [{ cause: "Missing citation", cases: 18 }, { cause: "Stale context", cases: 11 }]; export function EvalFailureClusters() { return <ol>{clusters.map((cluster) => <li key={cluster.cause}>{cluster.cause}: {cluster.cases} cases</li>)}</ol>; }`,
   "context-firewall": `const rules = [{ source: "Public docs", decision: "Allow" }, { source: "Customer CRM", decision: "Redact" }, { source: "Secrets vault", decision: "Block" }]; export function ContextFirewall() { return <ul>{rules.map((rule) => <li key={rule.source}>{rule.source}: {rule.decision}</li>)}</ul>; }`,
   "workflow-time-travel": `const snapshots = ["Before retrieval", "After research", "Current state"]; export function WorkflowTimeTravel() { return <ol>{snapshots.map((snapshot) => <li key={snapshot}>{snapshot}</li>)}</ol>; }`,
   "prompt-rollback-card": `export function PromptRollbackCard() { return <section><h3>Restore prompt version?</h3><p>v18: 87.1 · v17: 93.3</p><button type="button">Restore v17</button></section>; }`,

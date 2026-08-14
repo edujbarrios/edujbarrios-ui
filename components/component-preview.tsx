@@ -26,6 +26,7 @@ import { DataRedactionPreview } from "@/components/ui/data-redaction-preview";
 import { DatasetUploadQueue } from "@/components/ui/dataset-upload-queue";
 import { EmptyStatePanel } from "@/components/ui/empty-state-panel";
 import { EvalRadarCard } from "@/components/ui/eval-radar-card";
+import { EvalFailureClusters } from "@/components/ui/eval-failure-clusters";
 import { FeedbackScoreCard } from "@/components/ui/feedback-score-card";
 import { FileDropzone } from "@/components/ui/file-dropzone";
 import { FloatingNavDock } from "@/components/ui/floating-nav-dock";
@@ -98,6 +99,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "eval-failure-clusters": EvalFailureClusters,
   "context-firewall": ContextFirewall,
   "workflow-time-travel": WorkflowTimeTravel,
   "prompt-rollback-card": PromptRollbackCard,
