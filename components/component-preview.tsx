@@ -26,6 +26,7 @@ import { DataPipelineCard } from "@/components/ui/data-pipeline-card";
 import { DataRedactionPreview } from "@/components/ui/data-redaction-preview";
 import { DatasetUploadQueue } from "@/components/ui/dataset-upload-queue";
 import { DatasetSliceExplorer } from "@/components/ui/dataset-slice-explorer";
+import { CitationClaimMatrix } from "@/components/ui/citation-claim-matrix";
 import { EvaluationRegressionTimeline } from "@/components/ui/evaluation-regression-timeline";
 import { AiIncidentTriageBoard } from "@/components/ui/ai-incident-triage-board";
 import { PromptInjectionQuarantine } from "@/components/ui/prompt-injection-quarantine";
@@ -117,6 +118,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "citation-claim-matrix": CitationClaimMatrix,
   "evaluation-regression-timeline": EvaluationRegressionTimeline,
   "ai-incident-triage-board": AiIncidentTriageBoard,
   "prompt-injection-quarantine": PromptInjectionQuarantine,
