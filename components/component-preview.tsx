@@ -88,6 +88,7 @@ import { WebhookEventLog } from "@/components/ui/webhook-event-log";
 import { ToolCallInspector } from "@/components/ui/tool-call-inspector";
 import { ToolPermissionCard } from "@/components/ui/tool-permission-card";
 import { ToolRetryPolicy } from "@/components/ui/tool-retry-policy";
+import { ToolResultMergePanel } from "@/components/ui/tool-result-merge-panel";
 import { ToolDependencyGraph } from "@/components/ui/tool-dependency-graph";
 import { HumanCheckpointCard } from "@/components/ui/human-checkpoint-card";
 import { ContextWindowMeter } from "@/components/ui/context-window-meter";
@@ -100,6 +101,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "tool-result-merge-panel": ToolResultMergePanel,
   "budget-circuit-breaker": BudgetCircuitBreaker,
   "eval-failure-clusters": EvalFailureClusters,
   "context-firewall": ContextFirewall,
