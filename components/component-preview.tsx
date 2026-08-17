@@ -108,6 +108,7 @@ import { ToggleSettingRow } from "@/components/ui/toggle-setting-row";
 import { UsageSparklineCard } from "@/components/ui/usage-sparkline-card";
 import { WebhookEventLog } from "@/components/ui/webhook-event-log";
 import { ToolCallInspector } from "@/components/ui/tool-call-inspector";
+import { ToolCostBreakdown } from "@/components/ui/tool-cost-breakdown";
 import { ToolPermissionCard } from "@/components/ui/tool-permission-card";
 import { ToolRetryPolicy } from "@/components/ui/tool-retry-policy";
 import { ToolResultMergePanel } from "@/components/ui/tool-result-merge-panel";
@@ -127,6 +128,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "tool-cost-breakdown": ToolCostBreakdown,
   "model-availability-grid": ModelAvailabilityGrid,
   "answer-evidence-card": AnswerEvidenceCard,
   "prompt-quality-score": PromptQualityScore,

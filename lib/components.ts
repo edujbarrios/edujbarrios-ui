@@ -1110,6 +1110,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "tool-cost-breakdown",
+    name: "Tool Cost Breakdown",
+    description: "A per-tool spending summary showing call volume and relative cost for an agent run.",
+    category: "AI Interfaces",
+    tags: ["tools", "cost", "usage"],
+    difficulty: "Intermediate",
+    code: componentCode["tool-cost-breakdown"],
+    usage: `<ToolCostBreakdown />`,
+    accessibility: "Every tool exposes exact call counts and costs as readable text.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
