@@ -63,6 +63,7 @@ import { LiveVoiceSession } from "@/components/ui/live-voice-session";
 import { ModalShell } from "@/components/ui/modal-shell";
 import { MultimodalPromptComposer } from "@/components/ui/multimodal-prompt-composer";
 import { ModelSwitcher } from "@/components/ui/model-switcher";
+import { McpConnectionCard } from "@/components/ui/mcp-connection-card";
 import { ModelConsensusPanel } from "@/components/ui/model-consensus-panel";
 import { ModelEvalComparison } from "@/components/ui/model-eval-comparison";
 import { ModelFallbackRoute } from "@/components/ui/model-fallback-route";
@@ -123,6 +124,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "mcp-connection-card": McpConnectionCard,
   "agent-activity-feed": AgentActivityFeed,
   "model-route-simulator": ModelRouteSimulator,
   "synthetic-user-cohort": SyntheticUserCohort,
