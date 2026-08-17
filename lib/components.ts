@@ -1086,6 +1086,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "answer-evidence-card",
+    name: "Answer Evidence Card",
+    description: "A claim-level evidence summary that connects generated answers to sources and confidence scores.",
+    category: "AI Interfaces",
+    tags: ["evidence", "citations", "confidence"],
+    difficulty: "Intermediate",
+    code: componentCode["answer-evidence-card"],
+    usage: `<AnswerEvidenceCard />`,
+    accessibility: "Every claim exposes its source and confidence as readable text.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
