@@ -1062,6 +1062,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "mcp-connection-card",
+    name: "MCP Connection Card",
+    description: "A connection summary for MCP servers with transport health, latency, and available capabilities.",
+    category: "AI Interfaces",
+    tags: ["mcp", "connection", "tools"],
+    difficulty: "Intermediate",
+    code: componentCode["mcp-connection-card"],
+    usage: `<McpConnectionCard />`,
+    accessibility: "Connection state, transport, latency, and capabilities are all represented as readable text.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
