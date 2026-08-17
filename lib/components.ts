@@ -1122,6 +1122,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "locale-coverage-card",
+    name: "Locale Coverage Card",
+    description: "A localization progress summary with per-language completion percentages.",
+    category: "Cards",
+    tags: ["localization", "progress", "languages"],
+    difficulty: "Beginner",
+    code: componentCode["locale-coverage-card"],
+    usage: `<LocaleCoverageCard />`,
+    accessibility: "Each locale exposes its language code and exact coverage percentage.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
