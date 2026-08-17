@@ -61,6 +61,7 @@ import { IntegrationStatusGrid } from "@/components/ui/integration-status-grid";
 import { KnowledgeGapDetector } from "@/components/ui/knowledge-gap-detector";
 import { LatencyBudgetCard } from "@/components/ui/latency-budget-card";
 import { LiveVoiceSession } from "@/components/ui/live-voice-session";
+import { LocaleCoverageCard } from "@/components/ui/locale-coverage-card";
 import { ModalShell } from "@/components/ui/modal-shell";
 import { MultimodalPromptComposer } from "@/components/ui/multimodal-prompt-composer";
 import { ModelSwitcher } from "@/components/ui/model-switcher";
@@ -128,6 +129,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "locale-coverage-card": LocaleCoverageCard,
   "tool-cost-breakdown": ToolCostBreakdown,
   "model-availability-grid": ModelAvailabilityGrid,
   "answer-evidence-card": AnswerEvidenceCard,
