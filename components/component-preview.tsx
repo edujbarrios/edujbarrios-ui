@@ -74,6 +74,7 @@ import { NotificationBell } from "@/components/ui/notification-bell";
 import { PricingTierCard } from "@/components/ui/pricing-tier-card";
 import { ProgressStepper } from "@/components/ui/progress-stepper";
 import { PromptDiffViewer } from "@/components/ui/prompt-diff-viewer";
+import { PromptQualityScore } from "@/components/ui/prompt-quality-score";
 import { PromptVersionSelect } from "@/components/ui/prompt-version-select";
 import { PromptRollbackCard } from "@/components/ui/prompt-rollback-card";
 import { PromptVariableEditor } from "@/components/ui/prompt-variable-editor";
@@ -124,6 +125,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "prompt-quality-score": PromptQualityScore,
   "mcp-connection-card": McpConnectionCard,
   "agent-activity-feed": AgentActivityFeed,
   "model-route-simulator": ModelRouteSimulator,
