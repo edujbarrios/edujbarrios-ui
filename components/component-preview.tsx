@@ -127,8 +127,10 @@ import { AgentHandoffCard } from "@/components/ui/agent-handoff-card";
 import { RetrievalHealthCard } from "@/components/ui/retrieval-health-card";
 import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
+import { QuotaForecastCard } from "@/components/ui/quota-forecast-card";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "quota-forecast-card": QuotaForecastCard,
   "locale-coverage-card": LocaleCoverageCard,
   "tool-cost-breakdown": ToolCostBreakdown,
   "model-availability-grid": ModelAvailabilityGrid,
