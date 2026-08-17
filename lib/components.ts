@@ -1050,6 +1050,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "agent-activity-feed",
+    name: "Agent Activity Feed",
+    description: "A compact live timeline for narrating agent progress, intermediate work, and completion state.",
+    category: "AI Interfaces",
+    tags: ["agent", "activity", "timeline"],
+    difficulty: "Beginner",
+    code: componentCode["agent-activity-feed"],
+    usage: `<AgentActivityFeed />`,
+    accessibility: "Activity is presented as an ordered list with readable labels, details, and elapsed times.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
