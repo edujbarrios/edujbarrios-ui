@@ -1074,6 +1074,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "prompt-quality-score",
+    name: "Prompt Quality Score",
+    description: "A prompt review card that scores clarity, context, and output constraints with a focused recommendation.",
+    category: "AI Interfaces",
+    tags: ["prompt", "quality", "score"],
+    difficulty: "Intermediate",
+    code: componentCode["prompt-quality-score"],
+    usage: `<PromptQualityScore />`,
+    accessibility: "The overall rating and every dimension expose textual scores in addition to visual progress bars.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
