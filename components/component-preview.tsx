@@ -2,6 +2,7 @@ import type { CSSProperties, ComponentType } from "react";
 import type { ComponentSlug } from "@/lib/components";
 import { brandColor } from "@/lib/color-accent";
 import { AgentMemoryCard } from "@/components/ui/agent-memory-card";
+import { AgentActivityFeed } from "@/components/ui/agent-activity-feed";
 import { AdversarialTestCard } from "@/components/ui/adversarial-test-card";
 import { AgentStepTimeline } from "@/components/ui/agent-step-timeline";
 import { AgentStatusRibbon } from "@/components/ui/agent-status-ribbon";
@@ -122,6 +123,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "agent-activity-feed": AgentActivityFeed,
   "model-route-simulator": ModelRouteSimulator,
   "synthetic-user-cohort": SyntheticUserCohort,
   "guardrail-decision-trace": GuardrailDecisionTrace,
