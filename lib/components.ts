@@ -1134,6 +1134,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "quota-forecast-card",
+    name: "Quota Forecast Card",
+    description: "A compact usage forecast with a seven-day trend, projected total, and plan limit.",
+    category: "Data Display",
+    tags: ["quota", "forecast", "usage"],
+    difficulty: "Intermediate",
+    code: componentCode["quota-forecast-card"],
+    usage: `<QuotaForecastCard />`,
+    accessibility: "Projected usage, limit, and remaining time are exposed as readable text.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
