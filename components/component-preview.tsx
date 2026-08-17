@@ -69,6 +69,7 @@ import { ModelConsensusPanel } from "@/components/ui/model-consensus-panel";
 import { ModelEvalComparison } from "@/components/ui/model-eval-comparison";
 import { ModelFallbackRoute } from "@/components/ui/model-fallback-route";
 import { ModelDriftAlert } from "@/components/ui/model-drift-alert";
+import { ModelAvailabilityGrid } from "@/components/ui/model-availability-grid";
 import { NeuralSearchInput } from "@/components/ui/neural-search-input";
 import { NeonGradientButton } from "@/components/ui/neon-gradient-button";
 import { NotificationBell } from "@/components/ui/notification-bell";
@@ -126,6 +127,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "model-availability-grid": ModelAvailabilityGrid,
   "answer-evidence-card": AnswerEvidenceCard,
   "prompt-quality-score": PromptQualityScore,
   "mcp-connection-card": McpConnectionCard,

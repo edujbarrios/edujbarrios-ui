@@ -1098,6 +1098,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "model-availability-grid",
+    name: "Model Availability Grid",
+    description: "A regional model status grid showing endpoint health and observed latency.",
+    category: "AI Interfaces",
+    tags: ["models", "availability", "status"],
+    difficulty: "Beginner",
+    code: componentCode["model-availability-grid"],
+    usage: `<ModelAvailabilityGrid />`,
+    accessibility: "Availability, region, and latency are readable without relying on status colors.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
