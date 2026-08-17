@@ -11,6 +11,7 @@ import { AiSessionReplay } from "@/components/ui/ai-session-replay";
 import { AdversarialPromptLab } from "@/components/ui/adversarial-prompt-lab";
 import { ApiKeyField } from "@/components/ui/api-key-field";
 import { ApprovalActionPanel } from "@/components/ui/approval-action-panel";
+import { AnswerEvidenceCard } from "@/components/ui/answer-evidence-card";
 import { AvatarStack } from "@/components/ui/avatar-stack";
 import { BatchPromptMatrix } from "@/components/ui/batch-prompt-matrix";
 import { BudgetCircuitBreaker } from "@/components/ui/budget-circuit-breaker";
@@ -125,6 +126,7 @@ import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "answer-evidence-card": AnswerEvidenceCard,
   "prompt-quality-score": PromptQualityScore,
   "mcp-connection-card": McpConnectionCard,
   "agent-activity-feed": AgentActivityFeed,
