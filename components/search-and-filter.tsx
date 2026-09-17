@@ -87,7 +87,7 @@ export function SearchAndFilter({ components }: SearchAndFilterProps) {
 
   return (
     <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-      <div className="glass rounded-xl p-4 sm:p-5">
+      <div id="component-search" className="glass scroll-mt-28 rounded-xl p-4 sm:p-5">
         <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_auto] xl:items-start">
           <label>
             <span className="sr-only">Search components</span>
