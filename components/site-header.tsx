@@ -46,7 +46,19 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-2 md:flex">
+          <Link
+            href="/components#component-search"
+            aria-label="Search components"
+            className="group flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.03] px-3.5 py-2 text-sm font-medium text-slate-200 transition hover:border-[#40E0D0]/40 hover:bg-[#40E0D0]/10 hover:text-white"
+          >
+            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.5" />
+              <path d="m16 16 4 4" />
+            </svg>
+            <span>Search</span>
+            <span className="rounded border border-white/10 bg-white/[0.04] px-1.5 py-0.5 text-[0.65rem] text-slate-500 transition group-hover:text-slate-300">/</span>
+          </Link>
           <a
             href={siteConfig.links.github}
             className="rounded-full border border-white/12 px-4 py-2 text-sm font-medium text-slate-100 transition hover:border-[#40E0D0]/40 hover:bg-[#40E0D0]/10"
@@ -68,6 +80,17 @@ export function SiteHeader() {
 
       <div id="mobile-nav" className={cn("border-t border-white/10 px-4 py-3 md:hidden", !open && "hidden")}>
         <nav className="mx-auto grid max-w-7xl gap-2">
+          <Link
+            href="/components#component-search"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-2 rounded-lg bg-[#40E0D0]/8 px-3 py-2 text-sm font-semibold text-[#d8fffb] transition hover:bg-[#40E0D0]/12"
+          >
+            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.5" />
+              <path d="m16 16 4 4" />
+            </svg>
+            Search components
+          </Link>
           {navItems.map((item) => (
             <Link
               key={item.href}
