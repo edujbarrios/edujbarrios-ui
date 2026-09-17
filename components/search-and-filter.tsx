@@ -10,6 +10,7 @@ type SearchAndFilterProps = {
 };
 
 type SortOption = "name-asc" | "name-desc" | "featured" | "difficulty";
+type ViewMode = "grid" | "grouped";
 
 const difficulties: Array<"All" | Difficulty> = ["All", "Beginner", "Intermediate", "Advanced"];
 const difficultyRank: Record<Difficulty, number> = {
@@ -29,6 +30,7 @@ export function SearchAndFilter({ components }: SearchAndFilterProps) {
   const [difficulty, setDifficulty] = useState<"All" | Difficulty>("All");
   const [featuredOnly, setFeaturedOnly] = useState(false);
   const [sort, setSort] = useState<SortOption>("name-asc");
+  const [viewMode, setViewMode] = useState<ViewMode>("grouped");
 
   const categoryCounts = useMemo(() => {
     return categories.reduce<Record<string, number>>((counts, item) => {
@@ -63,6 +65,15 @@ export function SearchAndFilter({ components }: SearchAndFilterProps) {
       return componentNameCollator.compare(first.name, second.name);
     });
   }, [category, components, difficulty, featuredOnly, query, sort]);
+
+  const groupedResults = useMemo(() => {
+    return categories
+      .map((item) => ({
+        category: item,
+        components: filtered.filter((component) => component.category === item),
+      }))
+      .filter((group) => group.components.length > 0);
+  }, [filtered]);
 
   const hasActiveFilters = query.length > 0 || category !== "All" || difficulty !== "All" || featuredOnly;
 
@@ -149,17 +160,61 @@ export function SearchAndFilter({ components }: SearchAndFilterProps) {
           ))}
         </div>
 
-        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-white/8 pt-4 text-xs text-slate-500">
-          <span>Showing <b className="font-semibold text-slate-300">{filtered.length}</b> of {components.length} components</span>
-          {hasActiveFilters ? (
-            <button type="button" onClick={clearFilters} className="font-semibold text-[#d8fffb] transition hover:text-white">Clear filters</button>
-          ) : (
-            <span>Use filters to narrow the gallery</span>
-          )}
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-white/8 pt-4">
+          <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500">
+            <span>Showing <b className="font-semibold text-slate-300">{filtered.length}</b> of {components.length} components</span>
+            {hasActiveFilters ? (
+              <button type="button" onClick={clearFilters} className="font-semibold text-[#d8fffb] transition hover:text-white">Clear filters</button>
+            ) : null}
+          </div>
+
+          <div className="flex rounded-lg border border-white/10 bg-[#0b0f14]/60 p-1" aria-label="Gallery view">
+            <button
+              type="button"
+              aria-pressed={viewMode === "grouped"}
+              onClick={() => setViewMode("grouped")}
+              className={cn(
+                "rounded-md px-3 py-1.5 text-xs font-semibold transition",
+                viewMode === "grouped" ? "bg-white/10 text-white" : "text-slate-500 hover:text-slate-300",
+              )}
+            >
+              By category
+            </button>
+            <button
+              type="button"
+              aria-pressed={viewMode === "grid"}
+              onClick={() => setViewMode("grid")}
+              className={cn(
+                "rounded-md px-3 py-1.5 text-xs font-semibold transition",
+                viewMode === "grid" ? "bg-white/10 text-white" : "text-slate-500 hover:text-slate-300",
+              )}
+            >
+              All results
+            </button>
+          </div>
         </div>
       </div>
 
-      {filtered.length > 0 ? (
+      {filtered.length > 0 && viewMode === "grouped" ? (
+        <div className="mt-8 space-y-12">
+          {groupedResults.map((group) => (
+            <section key={group.category} aria-labelledby={`category-${group.category.replace(/\s+/g, "-").toLowerCase()}`}>
+              <div className="mb-5 flex flex-col gap-2 border-b border-white/10 pb-4 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#40E0D0]">Category</p>
+                  <h2 id={`category-${group.category.replace(/\s+/g, "-").toLowerCase()}`} className="mt-1 text-2xl font-bold text-white">{group.category}</h2>
+                </div>
+                <p className="text-sm text-slate-500">{group.components.length} {group.components.length === 1 ? "component" : "components"}</p>
+              </div>
+              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                {group.components.map((component) => (
+                  <ComponentCard key={component.slug} component={component} />
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      ) : filtered.length > 0 ? (
         <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {filtered.map((component) => (
             <ComponentCard key={component.slug} component={component} />
