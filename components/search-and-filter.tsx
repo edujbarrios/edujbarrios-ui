@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useDeferredValue, useMemo, useState } from "react";
 import { ComponentCard } from "@/components/component-card";
 import { categories, type ComponentItem, type Difficulty } from "@/lib/components";
 import { cn } from "@/lib/utils";
@@ -31,28 +31,39 @@ export function SearchAndFilter({ components }: SearchAndFilterProps) {
   const [featuredOnly, setFeaturedOnly] = useState(false);
   const [sort, setSort] = useState<SortOption>("name-asc");
   const [viewMode, setViewMode] = useState<ViewMode>("grouped");
+  const deferredQuery = useDeferredValue(query);
+  const isSearching = query !== deferredQuery;
+
+  const searchIndex = useMemo(
+    () => components.map((component) => ({
+      component,
+      searchable: [component.name, component.description, component.category, component.difficulty, ...component.tags]
+        .join(" ")
+        .toLowerCase(),
+    })),
+    [components],
+  );
 
   const categoryCounts = useMemo(() => {
-    return categories.reduce<Record<string, number>>((counts, item) => {
-      counts[item] = components.filter((component) => component.category === item).length;
-      return counts;
-    }, {});
+    const counts: Record<string, number> = Object.fromEntries(categories.map((item) => [item, 0]));
+    for (const component of components) counts[component.category] += 1;
+    return counts;
   }, [components]);
 
   const filtered = useMemo(() => {
-    const normalizedQuery = query.trim().toLowerCase();
-    const matches = components.filter((component) => {
-      const searchable = [component.name, component.description, component.category, component.difficulty, ...component.tags]
-        .join(" ")
-        .toLowerCase();
-      const matchesQuery = normalizedQuery.length === 0 || searchable.includes(normalizedQuery);
-      const matchesCategory = category === "All" || component.category === category;
-      const matchesDifficulty = difficulty === "All" || component.difficulty === difficulty;
-      const matchesFeatured = !featuredOnly || component.featured;
-      return matchesQuery && matchesCategory && matchesDifficulty && matchesFeatured;
-    });
+    const normalizedQuery = deferredQuery.trim().toLowerCase();
+    const matches: ComponentItem[] = [];
 
-    return [...matches].sort((first, second) => {
+    for (const entry of searchIndex) {
+      const component = entry.component;
+      if (normalizedQuery && !entry.searchable.includes(normalizedQuery)) continue;
+      if (category !== "All" && component.category !== category) continue;
+      if (difficulty !== "All" && component.difficulty !== difficulty) continue;
+      if (featuredOnly && !component.featured) continue;
+      matches.push(component);
+    }
+
+    return matches.sort((first, second) => {
       if (sort === "name-desc") return componentNameCollator.compare(second.name, first.name);
       if (sort === "featured") {
         const featuredDelta = Number(Boolean(second.featured)) - Number(Boolean(first.featured));
@@ -64,15 +75,20 @@ export function SearchAndFilter({ components }: SearchAndFilterProps) {
       }
       return componentNameCollator.compare(first.name, second.name);
     });
-  }, [category, components, difficulty, featuredOnly, query, sort]);
+  }, [category, deferredQuery, difficulty, featuredOnly, searchIndex, sort]);
 
   const groupedResults = useMemo(() => {
-    return categories
-      .map((item) => ({
-        category: item,
-        components: filtered.filter((component) => component.category === item),
-      }))
-      .filter((group) => group.components.length > 0);
+    const groups = new Map<string, ComponentItem[]>();
+    for (const component of filtered) {
+      const group = groups.get(component.category);
+      if (group) group.push(component);
+      else groups.set(component.category, [component]);
+    }
+
+    return categories.flatMap((item) => {
+      const group = groups.get(item);
+      return group ? [{ category: item, components: group }] : [];
+    });
   }, [filtered]);
 
   const hasActiveFilters = query.length > 0 || category !== "All" || difficulty !== "All" || featuredOnly;
@@ -97,8 +113,9 @@ export function SearchAndFilter({ components }: SearchAndFilterProps) {
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 placeholder="Search by component, tag, category, difficulty, or use case..."
-                className="w-full rounded-lg border border-white/10 bg-[#0b0f14]/70 py-3 pl-10 pr-4 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-[#40E0D0]/40"
+                className="w-full rounded-lg border border-white/10 bg-[#0b0f14]/70 py-3 pl-10 pr-16 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-[#40E0D0]/40"
               />
+              {isSearching ? <span className="absolute inset-y-0 right-4 grid place-items-center text-[0.65rem] font-semibold uppercase tracking-wide text-[#40E0D0]">Searching</span> : null}
             </div>
             <span className="mt-2 block text-xs text-slate-500">Searches names, descriptions, tags, categories, and difficulty.</span>
           </label>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { memo, useState } from "react";
 import Link from "next/link";
 import { ComponentPreview } from "@/components/component-preview";
 import { ColorCopyButton } from "@/components/color-copy-button";
@@ -12,12 +12,12 @@ type ComponentCardProps = {
   component: ComponentItem;
 };
 
-export function ComponentCard({ component }: ComponentCardProps) {
+export const ComponentCard = memo(function ComponentCard({ component }: ComponentCardProps) {
   const [accentColor, setAccentColor] = useState(brandColor);
 
   return (
-    <article className="glow-border h-full rounded-lg bg-[#0b0f14]/70 p-px">
-      <div className="glass flex h-full flex-col rounded-lg p-4">
+    <article className="component-card-shell glow-border h-full rounded-lg bg-[#0b0f14]/70 p-px">
+      <div className="component-card-panel glass flex h-full flex-col rounded-lg p-4">
         <ComponentPreview slug={component.slug} accentColor={accentColor} />
         <div className="mt-4 flex min-h-20 items-start justify-between gap-3">
           <div className="min-w-0">
@@ -47,4 +47,4 @@ export function ComponentCard({ component }: ComponentCardProps) {
       </div>
     </article>
   );
-}
+});
