@@ -41,6 +41,18 @@ export function Hero() {
             >
               Explore Components
             </Link>
+            <Link
+              href="/components#component-search"
+              className="rounded-full border border-[#40E0D0]/30 bg-[#40E0D0]/8 px-5 py-3 text-sm font-bold text-[#d8fffb] transition hover:bg-[#40E0D0]/14"
+            >
+              Search Library
+            </Link>
+            <Link
+              href="/components#component-search"
+              className="rounded-full border border-white/12 px-5 py-3 text-sm font-bold text-slate-200 transition hover:border-[#fb923c]/40 hover:bg-[#fb923c]/10 hover:text-white"
+            >
+              Browse Categories
+            </Link>
             <a
               href={siteConfig.links.github}
               className="rounded-full border border-white/12 px-5 py-3 text-sm font-bold text-white transition hover:border-[#a78bfa]/40 hover:bg-[#a78bfa]/10"
