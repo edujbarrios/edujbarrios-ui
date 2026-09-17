@@ -37,6 +37,7 @@ export const ComponentCard = memo(function ComponentCard({ component }: Componen
         <div className="mt-auto flex flex-wrap gap-3 pt-5">
           <Link
             href={`/components/${component.slug}`}
+            prefetch={false}
             className="rounded-full bg-[#40E0D0] px-4 py-2 text-sm font-semibold text-[#0b0f14] transition hover:bg-[#7ff2e8]"
           >
             View component
