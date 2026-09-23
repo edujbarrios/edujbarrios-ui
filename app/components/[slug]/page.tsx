@@ -39,16 +39,16 @@ export default async function ComponentDetailPage({ params }: PageProps) {
   const related = getRelatedComponents(component);
 
   return (
-    <article className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <article className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
       <Link href="/components" className="text-sm font-semibold text-[#d8fffb] transition hover:text-white">
         Back to components
       </Link>
 
-      <div className="mt-8 grid gap-8 lg:grid-cols-[0.92fr_1.08fr]">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#40E0D0]">{component.category}</p>
-          <h1 className="mt-4 text-4xl font-black text-white sm:text-5xl">{component.name}</h1>
-          <p className="mt-5 text-base leading-8 text-slate-300">{component.description}</p>
+      <div className="mt-8 grid min-w-0 gap-8 lg:grid-cols-[0.92fr_1.08fr]">
+        <div className="min-w-0">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#40E0D0] sm:tracking-[0.24em]">{component.category}</p>
+          <h1 className="mt-4 text-3xl font-black text-white sm:text-5xl">{component.name}</h1>
+          <p className="mt-5 text-base leading-7 text-slate-300 sm:leading-8">{component.description}</p>
           <div className="mt-5 flex flex-wrap gap-2">
             {component.tags.map((tag) => (
               <span key={tag} className="rounded-full bg-white/7 px-3 py-1 text-xs text-slate-300">
@@ -70,13 +70,13 @@ export default async function ComponentDetailPage({ params }: PageProps) {
         <ComponentColorPlayground component={component} />
       </div>
 
-      <div className="mt-10 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+      <div className="mt-10 grid min-w-0 gap-8 lg:grid-cols-[1.15fr_0.85fr]">
         <CodeBlock code={component.code} />
         <CodeBlock code={component.usage} label="Usage" />
       </div>
 
       {related.length > 0 ? (
-        <section className="mt-16">
+        <section className="mt-14 sm:mt-16">
           <h2 className="text-2xl font-bold text-white">Related components</h2>
           <div className="mt-6 grid gap-5 md:grid-cols-3">
             {related.map((item) => (
