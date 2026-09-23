@@ -16,17 +16,35 @@
 }
 
 html {
+  width: 100%;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at top left, rgba(64, 224, 208, 0.14), transparent 28rem),
     radial-gradient(circle at 85% 8%, rgba(167, 139, 250, 0.12), transparent 28rem),
     linear-gradient(180deg, #05080d 0%, #0b0f14 45%, #05080d 100%);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+main,
+section,
+article,
+header,
+footer {
+  min-width: 0;
 }
 
 ::selection {
@@ -47,6 +65,25 @@ body {
   border: 1px solid rgba(148, 163, 184, 0.18);
   box-shadow: 0 24px 80px rgba(2, 6, 23, 0.36);
   backdrop-filter: blur(20px);
+}
+
+.mobile-preview-frame,
+.mobile-preview-frame > div,
+.mobile-preview-frame > div > div:last-child {
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 639px) {
+  .mobile-preview-frame > div > div:last-child {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  .mobile-preview-frame > div > div:last-child > * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
 }
 
 .component-card-shell {

@@ -18,14 +18,14 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0b0f14]/78 shadow-[0_16px_60px_rgba(2,6,23,0.32)] backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="group flex items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-[#40E0D0] via-[#a78bfa] to-[#fb923c] text-sm font-black text-[#0b0f14] shadow-[0_0_28px_rgba(64,224,208,0.22)] transition group-hover:scale-105">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4 lg:px-8">
+        <Link href="/" className="group flex min-w-0 items-center gap-2 sm:gap-3">
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-[#40E0D0] via-[#a78bfa] to-[#fb923c] text-xs font-black text-[#0b0f14] shadow-[0_0_28px_rgba(64,224,208,0.22)] transition group-hover:scale-105 sm:h-10 sm:w-10 sm:text-sm">
             eu
           </span>
-          <span>
-            <span className="block text-sm font-semibold text-white">{siteConfig.name}</span>
-            <span className="block text-xs text-slate-400">by {siteConfig.handle}</span>
+          <span className="min-w-0">
+            <span className="block truncate text-sm font-semibold text-white">{siteConfig.name}</span>
+            <span className="hidden text-xs text-slate-400 sm:block">by {siteConfig.handle}</span>
           </span>
         </Link>
 
@@ -70,7 +70,7 @@ export function SiteHeader() {
         <button
           type="button"
           onClick={() => setOpen((value) => !value)}
-          className="rounded-lg border border-white/12 px-3 py-2 text-sm font-semibold text-slate-100 transition hover:bg-white/8 md:hidden"
+          className="shrink-0 rounded-lg border border-white/12 px-3 py-2 text-sm font-semibold text-slate-100 transition hover:bg-white/8 md:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
         >
@@ -78,12 +78,12 @@ export function SiteHeader() {
         </button>
       </div>
 
-      <div id="mobile-nav" className={cn("border-t border-white/10 px-4 py-3 md:hidden", !open && "hidden")}>
+      <div id="mobile-nav" className={cn("border-t border-white/10 px-3 py-3 sm:px-4 md:hidden", !open && "hidden")}>
         <nav className="mx-auto grid max-w-7xl gap-2">
           <Link
             href="/components#component-search"
             onClick={() => setOpen(false)}
-            className="flex items-center gap-2 rounded-lg bg-[#40E0D0]/8 px-3 py-2 text-sm font-semibold text-[#d8fffb] transition hover:bg-[#40E0D0]/12"
+            className="flex items-center gap-2 rounded-lg bg-[#40E0D0]/8 px-3 py-2.5 text-sm font-semibold text-[#d8fffb] transition hover:bg-[#40E0D0]/12"
           >
             <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
               <circle cx="11" cy="11" r="6.5" />
@@ -97,14 +97,14 @@ export function SiteHeader() {
               href={item.href}
               onClick={() => setOpen(false)}
               className={cn(
-                "rounded-lg px-3 py-2 text-sm transition",
+                "rounded-lg px-3 py-2.5 text-sm transition",
                 isActivePath(pathname, item.href) ? "bg-[#40E0D0]/12 text-[#d8fffb]" : "text-slate-200 hover:bg-white/8",
               )}
             >
               {item.label}
             </Link>
           ))}
-          <a href={siteConfig.links.github} className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-200 transition hover:bg-white/8">
+          <a href={siteConfig.links.github} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-200 transition hover:bg-white/8">
             GitHub
           </a>
         </nav>
