@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { BackgroundGlow } from "@/components/background-glow";
 import { ComponentPreview } from "@/components/component-preview";
-import { categories, components } from "@/lib/components";
+import { categories } from "@/lib/components";
+import { galleryComponents as components } from "@/lib/gallery-components";
 import { siteConfig } from "@/lib/config";
 
 const previewSlugs = ["usage-sparkline-card", "agent-status-ribbon", "latency-budget-card", "feedback-score-card"] as const;
