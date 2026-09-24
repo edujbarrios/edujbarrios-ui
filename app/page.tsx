@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ComponentCard } from "@/components/component-card";
 import { Hero } from "@/components/hero";
-import { components } from "@/lib/components";
+import { galleryComponents as components } from "@/lib/gallery-components";
 import { siteConfig } from "@/lib/config";
 
 const principles = [

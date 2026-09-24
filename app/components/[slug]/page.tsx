@@ -4,7 +4,11 @@ import { notFound } from "next/navigation";
 import { CodeBlock } from "@/components/code-block";
 import { ComponentColorPlayground } from "@/components/component-color-playground";
 import { ComponentCard } from "@/components/component-card";
-import { components, getComponent, getRelatedComponents } from "@/lib/components";
+import {
+  galleryComponents as components,
+  getGalleryComponent as getComponent,
+  getGalleryRelatedComponents as getRelatedComponents,
+} from "@/lib/gallery-components";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
