@@ -1,5 +1,6 @@
 import { SearchAndFilter } from "@/components/search-and-filter";
-import { categories, components } from "@/lib/components";
+import { categories } from "@/lib/components";
+import { galleryComponents as components } from "@/lib/gallery-components";
 
 const galleryStats = [
   { label: "Components", value: components.length },
