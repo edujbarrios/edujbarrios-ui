@@ -2,7 +2,7 @@
 
 import { memo, useState } from "react";
 import Link from "next/link";
-import { ComponentPreview } from "@/components/component-preview";
+import { GalleryPreview } from "@/components/gallery-preview";
 import { ColorCopyButton } from "@/components/color-copy-button";
 import { CopyButton } from "@/components/copy-button";
 import { brandColor } from "@/lib/color-accent";
@@ -19,7 +19,7 @@ export const ComponentCard = memo(function ComponentCard({ component }: Componen
     <article className="component-card-shell glow-border min-w-0 h-full rounded-lg bg-[#0b0f14]/70 p-px">
       <div className="component-card-panel glass flex h-full min-w-0 flex-col rounded-lg p-3 sm:p-4">
         <div className="mobile-preview-frame">
-          <ComponentPreview slug={component.slug} accentColor={accentColor} />
+          <GalleryPreview slug={component.slug} accentColor={accentColor} />
         </div>
         <div className="mt-4 flex min-h-0 flex-wrap items-start justify-between gap-3 sm:min-h-20">
           <div className="min-w-0">
