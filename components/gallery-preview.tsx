@@ -5,8 +5,14 @@ import { ReasoningCheckpointRail } from "@/components/ui/reasoning-checkpoint-ra
 import { ReleaseConfidenceCard } from "@/components/ui/release-confidence-card";
 import { ToolHealthMatrix } from "@/components/ui/tool-health-matrix";
 import type { ComponentSlug } from "@/lib/components";
+import { AiEvaluationRubric } from "@/components/ui/ai-evaluation-rubric";
+import { AgentRunControlPanel } from "@/components/ui/agent-run-control-panel";
+import { RetrievalChunkInspector } from "@/components/ui/retrieval-chunk-inspector";
 
 const newPreviews: Record<string, ComponentType> = {
+  "ai-evaluation-rubric": AiEvaluationRubric,
+  "agent-run-control-panel": AgentRunControlPanel,
+  "retrieval-chunk-inspector": RetrievalChunkInspector,
   "agent-sla-scorecard": AgentSlaScorecard,
   "reasoning-checkpoint-rail": ReasoningCheckpointRail,
   "tool-health-matrix": ToolHealthMatrix,
