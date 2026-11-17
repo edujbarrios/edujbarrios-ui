@@ -1508,6 +1508,14 @@ export function ApiErrorSummary() {
     <div className="mt-4 overflow-hidden rounded-lg border border-white/9"><table className="w-full text-left"><thead className="bg-white/[0.04] text-[0.65rem] text-slate-500"><tr><th className="px-3 py-2 font-semibold">Error</th><th className="px-3 py-2 text-right font-semibold">Count</th><th className="px-3 py-2 text-right font-semibold">Change</th></tr></thead><tbody className="divide-y divide-white/8">{errors.map((error) => <tr key={error.code}><td className="px-3 py-3"><span className="font-mono text-xs font-bold text-[#fb923c]">{error.code}</span><span className="ml-2 text-xs text-slate-300">{error.label}</span></td><td className="px-3 py-3 text-right text-xs font-bold text-white">{error.count}</td><td className="px-3 py-3 text-right text-xs text-slate-400">{error.change}</td></tr>)}</tbody></table></div>
   </section>;
 }`,
+  "webhook-delivery-card": `const attempts = [{ endpoint: "/billing/events", status: "Delivered", code: 200, time: "84ms" }, { endpoint: "/crm/sync", status: "Retrying", code: 503, time: "1.8s" }, { endpoint: "/audit/logs", status: "Delivered", code: 202, time: "112ms" }];
+
+export function WebhookDeliveryCard() {
+  return <section className="w-full max-w-md rounded-xl border border-white/12 bg-[#0b0f14]/92 p-4 shadow-2xl">
+    <header className="flex items-start justify-between gap-4"><div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#40E0D0]">Webhook delivery</p><h3 className="mt-1 text-base font-bold text-white">Recent attempts</h3></div><span className="rounded-full bg-[#40E0D0]/10 px-2.5 py-1 text-[0.65rem] font-bold text-[#d8fffb]">98.7% healthy</span></header>
+    <ul className="mt-4 space-y-2">{attempts.map((attempt) => <li key={attempt.endpoint} className="grid grid-cols-[1fr_auto] items-center gap-3 rounded-lg border border-white/9 bg-white/[0.025] p-3"><div><p className="font-mono text-xs font-semibold text-slate-200">{attempt.endpoint}</p><p className="mt-1 text-[0.65rem] text-slate-500">HTTP {attempt.code} · {attempt.time}</p></div><span className={"rounded-full px-2 py-1 text-[0.65rem] font-bold " + (attempt.status === "Delivered" ? "bg-[#40E0D0]/10 text-[#d8fffb]" : "bg-[#fb923c]/10 text-[#fed7aa]")}>{attempt.status}</span></li>)}</ul>
+  </section>;
+}`,
   "feedback-score-card": `const ratings = [
   { label: "Useful", value: "94%" },
   { label: "Clear", value: "89%" },

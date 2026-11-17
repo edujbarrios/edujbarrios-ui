@@ -111,6 +111,7 @@ import { SchemaFieldRow } from "@/components/ui/schema-field-row";
 import { ToggleSettingRow } from "@/components/ui/toggle-setting-row";
 import { UsageSparklineCard } from "@/components/ui/usage-sparkline-card";
 import { WebhookEventLog } from "@/components/ui/webhook-event-log";
+import { WebhookDeliveryCard } from "@/components/ui/webhook-delivery-card";
 import { ToolCallInspector } from "@/components/ui/tool-call-inspector";
 import { ToolCostBreakdown } from "@/components/ui/tool-cost-breakdown";
 import { ToolPermissionCard } from "@/components/ui/tool-permission-card";
@@ -134,6 +135,7 @@ import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 import { QuotaForecastCard } from "@/components/ui/quota-forecast-card";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "webhook-delivery-card": WebhookDeliveryCard,
   "ai-evaluation-rubric": AiEvaluationRubric,
   "agent-run-control-panel": AgentRunControlPanel,
   "retrieval-chunk-inspector": RetrievalChunkInspector,

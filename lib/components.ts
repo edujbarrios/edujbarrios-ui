@@ -1161,6 +1161,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "webhook-delivery-card",
+    name: "Webhook Delivery Card",
+    description: "A delivery-health summary for recent webhook attempts with status codes and response times.",
+    category: "Cards",
+    tags: ["webhooks", "delivery", "monitoring"],
+    difficulty: "Intermediate",
+    code: componentCode["webhook-delivery-card"],
+    usage: `<WebhookDeliveryCard />`,
+    accessibility: "Every attempt exposes its endpoint, HTTP status, response time, and delivery state as text.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
