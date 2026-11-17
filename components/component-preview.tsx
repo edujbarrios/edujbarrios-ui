@@ -49,6 +49,7 @@ import { EmptyStatePanel } from "@/components/ui/empty-state-panel";
 import { EvalRadarCard } from "@/components/ui/eval-radar-card";
 import { EvalFailureClusters } from "@/components/ui/eval-failure-clusters";
 import { FeedbackScoreCard } from "@/components/ui/feedback-score-card";
+import { FeatureRolloutMeter } from "@/components/ui/feature-rollout-meter";
 import { FileDropzone } from "@/components/ui/file-dropzone";
 import { FloatingNavDock } from "@/components/ui/floating-nav-dock";
 import { GlassCommandCard } from "@/components/ui/glass-command-card";
@@ -135,6 +136,7 @@ import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 import { QuotaForecastCard } from "@/components/ui/quota-forecast-card";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "feature-rollout-meter": FeatureRolloutMeter,
   "webhook-delivery-card": WebhookDeliveryCard,
   "ai-evaluation-rubric": AiEvaluationRubric,
   "agent-run-control-panel": AgentRunControlPanel,

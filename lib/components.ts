@@ -1173,6 +1173,18 @@ export const components: ComponentItem[] = [
     featured: true,
   },
   {
+    slug: "feature-rollout-meter",
+    name: "Feature Rollout Meter",
+    description: "A staged-release summary showing rollout percentages across audience segments.",
+    category: "Cards",
+    tags: ["rollout", "release", "progress"],
+    difficulty: "Intermediate",
+    code: componentCode["feature-rollout-meter"],
+    usage: `<FeatureRolloutMeter />`,
+    accessibility: "Each audience segment exposes its label, size, and exact rollout percentage.",
+    featured: true,
+  },
+  {
     slug: "feedback-score-card",
     name: "Feedback Score Card",
     description: "A reviewer feedback summary for beta launches, QA passes, and design reviews.",
