@@ -7,9 +7,12 @@ import { AdversarialTestCard } from "@/components/ui/adversarial-test-card";
 import { AgentStepTimeline } from "@/components/ui/agent-step-timeline";
 import { AgentStatusRibbon } from "@/components/ui/agent-status-ribbon";
 import { AiChatInput } from "@/components/ui/ai-chat-input";
+import { AiEvaluationRubric } from "@/components/ui/ai-evaluation-rubric";
 import { AiSessionReplay } from "@/components/ui/ai-session-replay";
+import { AgentRunControlPanel } from "@/components/ui/agent-run-control-panel";
 import { AdversarialPromptLab } from "@/components/ui/adversarial-prompt-lab";
 import { ApiKeyField } from "@/components/ui/api-key-field";
+import { ApiErrorSummary } from "@/components/ui/api-error-summary";
 import { ApprovalActionPanel } from "@/components/ui/approval-action-panel";
 import { AnswerEvidenceCard } from "@/components/ui/answer-evidence-card";
 import { AvatarStack } from "@/components/ui/avatar-stack";
@@ -125,11 +128,16 @@ import { ConversationForkMap } from "@/components/ui/conversation-fork-map";
 import { ContextProvenanceMap } from "@/components/ui/context-provenance-map";
 import { AgentHandoffCard } from "@/components/ui/agent-handoff-card";
 import { RetrievalHealthCard } from "@/components/ui/retrieval-health-card";
+import { RetrievalChunkInspector } from "@/components/ui/retrieval-chunk-inspector";
 import { RetrievalQueryPlanner } from "@/components/ui/retrieval-query-planner";
 import { RateLimitGauge } from "@/components/ui/rate-limit-gauge";
 import { QuotaForecastCard } from "@/components/ui/quota-forecast-card";
 
 const previews: Record<ComponentSlug, ComponentType> = {
+  "ai-evaluation-rubric": AiEvaluationRubric,
+  "agent-run-control-panel": AgentRunControlPanel,
+  "retrieval-chunk-inspector": RetrievalChunkInspector,
+  "api-error-summary": ApiErrorSummary,
   "quota-forecast-card": QuotaForecastCard,
   "locale-coverage-card": LocaleCoverageCard,
   "tool-cost-breakdown": ToolCostBreakdown,
